@@ -1,0 +1,29 @@
+@use "../../utils/mixins"as*;
+@use "../../utils/functions/"as*;
+
+.reviews {
+  padding: clamp(20px, rem(30), 33px) 0 clamp(20px, rem(30), 40px);
+
+  h2 {
+    margin-bottom: clamp(20px, rem(30), 44px);
+  }
+
+  ul {
+    @include font-size(16, 19);
+
+    margin: 0 auto;
+    width: 100%;
+    max-width: 930px;
+    text-align: center;
+  }
+
+  li {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 725px;
+
+    blockquote {
+      margin-bottom: clamp(20px, rem(30), 40px);
+    }
+  }
+}

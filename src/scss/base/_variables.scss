@@ -1,0 +1,31 @@
+:root {
+  // base
+  --font-family-primary: "Museo Sans", sans-serif;
+  --font-family-inter: 'Inter', sans-serif;
+  --font-family-raleway: 'Raleway', sans-serif;
+  --font-family-roboto: 'Roboto', sans-serif;
+
+  --content-width: 1400px;
+  --container-offset: 20px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+  // colors
+  --color-white: #fff;
+  --color-main: #283864;
+  --color-gray-400: #606060;
+  --color-green-200: #dbedc4;
+  --color-green-300: #c3e5b5;
+  --color-green-400: #82aa33;
+  --color-yellow-300: #f4eecc;
+  --color-yellow-400: #e7c94e;
+  --color-red-400: #fe3934;
+  --color-violet-400: #a0b2e3;
+
+  // radius
+  --radius-main: 20px;
+
+  //box-shadow
+  --shadow-card: 4px 4px 11px rgba(0, 0, 0, 0.1);
+  --shadow-hero: 0px 4px 20px 5px rgba(167, 161, 161, 0.1);
+  --shadow-card-bold: 10px 10px 30px rgba(0, 0, 0, 0.25);
+}

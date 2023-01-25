@@ -1,0 +1,30 @@
+@use "../../utils/mixins"as*;
+@use "../../utils/functions/"as*;
+
+.product {
+  padding: clamp(40px, rem(50), 45px) 0 clamp(30px, rem(50), 40px);
+
+  &__inner {
+    position: relative;
+    background-color: var(--color-green-300);
+  }
+
+  &__image {
+    position: absolute;
+    left: 50px;
+    top: -54%;
+    width: 100%;
+    max-width: 650px;
+  }
+
+  &__content {
+    margin-left: auto;
+    padding: clamp(20px, rem(40), 48px) 0 clamp(20px, rem(40), 54px);
+    width: 100%;
+    max-width: 887px;
+  }
+
+  p {
+    @include font-size(36, 43);
+  }
+}

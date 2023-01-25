@@ -1,0 +1,14 @@
+@use "../utils/functions/"as*;
+@use "../utils/mixins/"as*;
+
+.nav {
+  ul {
+    @include flex-v-center;
+  }
+
+  li {
+    &:not(:last-child) {
+      margin-right: rem(40);
+    }
+  }
+}

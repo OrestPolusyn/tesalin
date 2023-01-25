@@ -1,0 +1,11 @@
+@use "../utils/mixins"as*;
+@use "../utils/functions/"as*;
+
+.footer {
+  @include flex-all-center;
+  @include font-size(25, 30);
+
+  padding: clamp(10px, rem(25), 35px) 0;
+  color: var(--color-white);
+  background-color: var(--color-green-400);
+}

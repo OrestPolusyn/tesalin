@@ -1,0 +1,17 @@
+@use "../utils/mixins"as*;
+@use "../utils/functions/"as*;
+
+.btn {
+  @include flex-all-center;
+  @include font-size(30, 36);
+
+  position: relative;
+  margin: 0 auto;
+  border-radius: calc(var(--radius-main) - 5px);
+  padding: 10px;
+  width: 100%;
+  max-width: 230px;
+  text-align: center;
+  color: var(--color-white);
+  background-color: var(--color-green-400);
+}

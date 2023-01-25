@@ -1,0 +1,19 @@
+@use "../utils/mixins"as*;
+@use "../utils/functions/"as*;
+
+.banner {
+  @include flex-all-center;
+
+  margin-bottom: clamp(20px, rem(33), 85px);
+
+  padding: clamp(120px, rem(154), 236px) 0 clamp(80px, rem(90), 134px);
+  background-position: center 26%;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  h1 {
+    position: relative;
+    z-index: 1;
+    color: var(--color-white);
+  }
+}

@@ -1,0 +1,19 @@
+@use "../../utils/mixins"as*;
+@use "../../utils/functions/"as*;
+
+.articles {
+  h2 {
+    margin-bottom: rem(76);
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    margin-bottom: rem(44);
+    gap: rem(33) rem(26);
+  }
+
+  a {
+    margin-bottom: rem(36);
+  }
+}

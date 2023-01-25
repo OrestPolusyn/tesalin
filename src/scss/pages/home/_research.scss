@@ -1,0 +1,21 @@
+@use "../../utils/mixins"as*;
+@use "../../utils/functions/"as*;
+
+.research {
+  border-bottom: 19px solid var(--color-yellow-300);
+
+  h2 {
+    margin-bottom: clamp(20px, rem(75), 108px);
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: clamp(50px, rem(80), 121px);
+    gap: clamp(20px, rem(45), 40px);
+  }
+
+  a {
+    margin-bottom: clamp(40px, rem(70), 88px);
+  }
+}

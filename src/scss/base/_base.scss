@@ -1,0 +1,39 @@
+@use "../utils/functions/"as*;
+@use "../utils/mixins"as*;
+
+.page {
+  height: 100%;
+  font-family: var(--font-family-primary);
+  font-weight: 300;
+  font-style: normal;
+  font-size: clamp(18px, 1.3vw, 25px);
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: var(--color-main);
+  background-color: var(--color-white);
+  scroll-padding-top: var(--header-height, 15px);
+
+  &__body {
+    min-width: 320px;
+    min-height: 100%;
+  }
+
+  @include media(desktop-hd, min) {
+    font-size: 25px;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 var(--container-offset);
+  width: 100%;
+  max-width: var(--container-width);
+
+  &--wide {
+    max-width: var(--container-wide);
+  }
+}
+
+.main {
+  @include footerToBottom;
+}

@@ -1,0 +1,6 @@
+@use "./mixins/font-face"as *;
+
+@include font-ttf("Museo Sans", "../font/museosanscyrl-300", 300, normal);
+@include font-ttf("Museo Sans", "../font/museosanscyrl-500", 500, normal);
+@include font-ttf("Museo Sans", "../font/museosanscyrl-700", 700, normal);
+@include font-ttf("Museo Sans", "../font/museosanscyrl-900", 900, normal);
