@@ -1969,7 +1969,7 @@
 
 .allergy img {
   border-radius: 50%;
-  margin-bottom: 23px;
+  margin: 0 auto 23px;
 }
 
 .allergy > div {
