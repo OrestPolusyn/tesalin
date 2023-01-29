@@ -8604,7 +8604,7 @@ new jBox("Tooltip", {
     attach: "[tip]",
     preventDefault: true,
     trigger: "click",
-    animation: "pulse",
+    animation: "slide",
     closeOnClick: false,
     closeButton: true,
     maxWidth: 450,

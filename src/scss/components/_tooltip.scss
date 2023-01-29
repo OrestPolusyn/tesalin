@@ -21,8 +21,7 @@
 
 .popper-close {
   position: absolute;
-  right: 13px;
-  top: 10px;
+
   width: 30px;
   height: 30px;
 
@@ -38,4 +37,30 @@
     background-position: center;
     background-repeat: no-repeat;
   }
+}
+
+.jBox-content {
+  padding: 0 !important;
+}
+
+.jBox-closeButton-box {
+  z-index: 9 !important;
+}
+
+.jBox-closeButton-box .jBox-closeButton {
+  right: 13px;
+  top: 10px;
+}
+
+.jBox-closeButton-box:before {
+  display: none !important;
+}
+
+.jBox-closeButton-box .jBox-closeButton svg {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+.jBox-closeButton path {
+  fill: #000;
 }

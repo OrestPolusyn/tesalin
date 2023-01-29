@@ -47,11 +47,13 @@
   --color-yellow-300: #f4eecc;
   --color-blue-200: #c4edd9;
   --color-blue-300: #a2e0c3;
+  --color-blue-400: #8dd4b3;
   --color-yellow-400: #e7c94e;
   --color-yellow-500: #dad098;
   --color-red-400: #fe3934;
   --color-violet-400: #a0b2e3;
   --color-violet-600: #6e8bdc;
+  --color-violet-700: #4f72d3;
   --radius-main: 20px;
   --shadow-card: 4px 4px 11px #0000001a;
   --shadow-hero: 0px 4px 20px 5px #a7a1a11a;
@@ -2390,6 +2392,8 @@
 
 .calendar {
   max-width: 1920px;
+  -webkit-user-select: none;
+  user-select: none;
   margin: 0 auto;
   position: relative;
 }
@@ -2450,6 +2454,10 @@
   background-color: var(--color-green-300);
 }
 
+.calendar__seasons:nth-child(1) .calendar__mounth span:hover, .calendar__seasons:nth-child(1) .calendar__mounth span:focus {
+  background-color: var(--color-green-400);
+}
+
 .calendar__seasons:nth-child(2):before {
   background-color: var(--color-blue-200);
 }
@@ -2458,12 +2466,20 @@
   background-color: var(--color-blue-300);
 }
 
+.calendar__seasons:nth-child(2) .calendar__mounth span:hover, .calendar__seasons:nth-child(2) .calendar__mounth span:focus {
+  background-color: var(--color-blue-400);
+}
+
 .calendar__seasons:nth-child(3):before {
   background-color: var(--color-yellow-300);
 }
 
 .calendar__seasons:nth-child(3) .calendar__mounth span {
   background-color: var(--color-yellow-500);
+}
+
+.calendar__seasons:nth-child(3) .calendar__mounth span:hover, .calendar__seasons:nth-child(3) .calendar__mounth span:focus {
+  background-color: var(--color-yellow-400);
 }
 
 .calendar__seasons > span {
@@ -2533,8 +2549,10 @@
   border-left: 1px solid var(--color-white);
   width: 100%;
   height: 100%;
+  cursor: pointer;
   justify-content: center;
   align-items: center;
+  transition: background-color .15s;
   display: flex;
   position: relative;
 }
@@ -2632,14 +2650,20 @@
   width: 100%;
   writing-mode: tb;
   background-color: var(--color-violet-400);
+  cursor: pointer;
   justify-content: center;
   align-items: center;
+  transition: background-color .15s;
   display: flex;
   transform: scale(-1);
 }
 
 .calendar__item span.active {
   background-color: var(--color-violet-600);
+}
+
+.calendar__item span:hover, .calendar__item span:focus {
+  background-color: var(--color-violet-700);
 }
 
 .calendar__instruction {
@@ -2778,8 +2802,6 @@
   width: 30px;
   height: 30px;
   position: absolute;
-  top: 10px;
-  right: 13px;
 }
 
 .popper-close:before {
@@ -2793,6 +2815,32 @@
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.jBox-content {
+  padding: 0 !important;
+}
+
+.jBox-closeButton-box {
+  z-index: 9 !important;
+}
+
+.jBox-closeButton-box .jBox-closeButton {
+  top: 10px;
+  right: 13px;
+}
+
+.jBox-closeButton-box:before {
+  display: none !important;
+}
+
+.jBox-closeButton-box .jBox-closeButton svg {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+.jBox-closeButton path {
+  fill: #000;
 }
 
 label {
