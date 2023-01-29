@@ -1,4 +1,5 @@
-import { createPopper } from '@popperjs/core';
 import './vendor/_focus-visible.js';
+import jBox from 'jbox';
+import 'jbox/dist/jBox.all.css';
 
-window.createPopper = createPopper;
+window.jBox = jBox;

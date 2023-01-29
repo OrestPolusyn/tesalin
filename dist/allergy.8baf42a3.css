@@ -183,4 +183,1228 @@ details > summary {
   list-style: none;
 }
 
+.jBox-wrapper {
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.jBox-title, .jBox-content, .jBox-container {
+  word-break: break-word;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.jBox-container {
+  background: #fff;
+}
+
+.jBox-content {
+  padding: 8px 12px;
+  transition: opacity .2s;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.jBox-footer {
+  box-sizing: border-box;
+}
+
+.jBox-Tooltip .jBox-container, .jBox-Mouse .jBox-container {
+  border-radius: 4px;
+  box-shadow: 0 0 3px #00000040;
+}
+
+.jBox-Tooltip .jBox-title, .jBox-Mouse .jBox-title {
+  padding: 8px 10px 0;
+  font-weight: bold;
+}
+
+.jBox-Tooltip.jBox-hasTitle .jBox-content, .jBox-Mouse.jBox-hasTitle .jBox-content {
+  padding-top: 5px;
+}
+
+.jBox-Mouse {
+  pointer-events: none;
+}
+
+.jBox-pointer {
+  box-sizing: border-box;
+  position: absolute;
+  overflow: hidden;
+}
+
+.jBox-pointer:after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+  background: #fff;
+  position: absolute;
+  transform: rotate(45deg);
+}
+
+.jBox-pointer-top {
+  top: 0;
+}
+
+.jBox-pointer-top:after {
+  top: 6px;
+  left: 5px;
+  box-shadow: -1px -1px 2px #00000026;
+}
+
+.jBox-pointer-right {
+  right: 0;
+}
+
+.jBox-pointer-right:after {
+  top: 5px;
+  right: 6px;
+  box-shadow: 1px -1px 2px #00000026;
+}
+
+.jBox-pointer-left {
+  left: 0;
+}
+
+.jBox-pointer-left:after {
+  top: 5px;
+  left: 6px;
+  box-shadow: -1px 1px 2px #00000026;
+}
+
+.jBox-pointer-bottom {
+  bottom: 0;
+}
+
+.jBox-pointer-bottom:after {
+  bottom: 6px;
+  left: 5px;
+  box-shadow: 1px 1px 2px #00000026;
+}
+
+.jBox-pointer-top, .jBox-pointer-bottom {
+  width: 30px;
+  height: 12px;
+}
+
+.jBox-pointer-left, .jBox-pointer-right {
+  width: 12px;
+  height: 30px;
+}
+
+.jBox-Modal .jBox-container {
+  border-radius: 4px;
+}
+
+.jBox-Modal .jBox-container, .jBox-Modal.jBox-closeButton-box:before {
+  box-shadow: 0 3px 15px #0006, 0 0 5px #0006;
+}
+
+.jBox-Modal .jBox-content {
+  padding: 15px 20px;
+}
+
+.jBox-Modal .jBox-title {
+  background: #fafafa;
+  border-bottom: 1px solid #eee;
+  border-radius: 4px 4px 0 0;
+  padding: 15px 20px;
+}
+
+.jBox-Modal.jBox-closeButton-title .jBox-title {
+  padding-right: 65px;
+}
+
+.jBox-Modal .jBox-footer {
+  border-radius: 0 0 4px 4px;
+}
+
+.jBox-closeButton {
+  z-index: 1;
+  cursor: pointer;
+  box-sizing: border-box;
+  position: absolute;
+}
+
+.jBox-closeButton svg {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+}
+
+.jBox-closeButton path {
+  fill: #aaa;
+  transition: fill .2s;
+}
+
+.jBox-closeButton:hover path {
+  fill: #888;
+}
+
+.jBox-overlay .jBox-closeButton {
+  width: 40px;
+  height: 40px;
+  top: 0;
+  right: 0;
+}
+
+.jBox-overlay .jBox-closeButton svg {
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  margin-right: -10px;
+}
+
+.jBox-overlay .jBox-closeButton path {
+  fill: #ddd;
+}
+
+.jBox-overlay .jBox-closeButton:hover path {
+  fill: #fff;
+}
+
+.jBox-closeButton-title .jBox-closeButton {
+  width: 50px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.jBox-closeButton-title svg {
+  width: 12px;
+  height: 12px;
+  margin-top: -6px;
+  margin-right: -6px;
+}
+
+.jBox-closeButton-box {
+  box-sizing: border-box;
+}
+
+.jBox-closeButton-box .jBox-closeButton {
+  width: 24px;
+  height: 24px;
+  background: #fff;
+  border-radius: 50%;
+  top: -8px;
+  right: -10px;
+}
+
+.jBox-closeButton-box .jBox-closeButton svg {
+  width: 10px;
+  height: 10px;
+  margin-top: -5px;
+  margin-right: -5px;
+}
+
+.jBox-closeButton-box:before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  box-shadow: 0 0 5px #0000004d;
+}
+
+.jBox-closeButton-box.jBox-pointerPosition-top:before {
+  top: 5px;
+}
+
+.jBox-closeButton-box.jBox-pointerPosition-right:before {
+  right: 2px;
+}
+
+.jBox-Modal.jBox-hasTitle.jBox-closeButton-box .jBox-closeButton {
+  background: #fafafa;
+}
+
+.jBox-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: #000000d1;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.jBox-footer {
+  background: #fafafa;
+  border-top: 1px solid #eee;
+  border-radius: 0 0 3px 3px;
+  padding: 8px 10px;
+}
+
+body[class^="jBox-blockScroll-"], body[class*=" jBox-blockScroll-"] {
+  overflow: hidden;
+}
+
+.jBox-draggable {
+  cursor: move;
+}
+
+@keyframes jBoxLoading {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.jBox-loading .jBox-content {
+  opacity: .2;
+}
+
+.jBox-loading-spinner .jBox-content {
+  opacity: 0;
+  min-height: 38px !important;
+  min-width: 38px !important;
+}
+
+.jBox-spinner {
+  box-sizing: border-box;
+  width: 24px;
+  height: 24px;
+  margin-top: -12px;
+  margin-left: -12px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.jBox-spinner:before {
+  box-sizing: border-box;
+  content: "";
+  width: 24px;
+  height: 24px;
+  border: 2px solid #0003;
+  border-top-color: #000c;
+  border-radius: 50%;
+  animation: .6s linear infinite jBoxLoading;
+  display: block;
+}
+
+.jBox-countdown {
+  z-index: 0;
+  opacity: .2;
+  height: 3px;
+  background: #000;
+  border-radius: 4px 4px 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+.jBox-countdown-inner {
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+[class^="jBox-animated-"], [class*=" jBox-animated-"] {
+  animation-fill-mode: both;
+}
+
+@keyframes jBox-tada {
+  0% {
+    transform: scale(1);
+  }
+
+  10%, 20% {
+    transform: scale(.8)rotate(-4deg);
+  }
+
+  30%, 50%, 70%, 90% {
+    transform: scale(1.2)rotate(4deg);
+  }
+
+  40%, 60%, 80% {
+    transform: scale(1.2)rotate(-4deg);
+  }
+
+  100% {
+    transform: scale(1)rotate(0);
+  }
+}
+
+.jBox-animated-tada {
+  animation: 1s jBox-tada;
+}
+
+@keyframes jBox-tadaSmall {
+  0% {
+    transform: scale(1);
+  }
+
+  10%, 20% {
+    transform: scale(.9)rotate(-2deg);
+  }
+
+  30%, 50%, 70%, 90% {
+    transform: scale(1.1)rotate(2deg);
+  }
+
+  40%, 60%, 80% {
+    transform: scale(1.1)rotate(-2deg);
+  }
+
+  100% {
+    transform: scale(1)rotate(0);
+  }
+}
+
+.jBox-animated-tadaSmall {
+  animation: 1s jBox-tadaSmall;
+}
+
+@keyframes jBox-flash {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+.jBox-animated-flash {
+  animation: .5s jBox-flash;
+}
+
+@keyframes jBox-shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+
+  20%, 60% {
+    transform: translateX(-6px);
+  }
+
+  40%, 80% {
+    transform: translateX(6px);
+  }
+}
+
+.jBox-animated-shake {
+  animation: .4s jBox-shake;
+}
+
+@keyframes jBox-pulseUp {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.jBox-animated-pulseUp {
+  animation: .25s jBox-pulseUp;
+}
+
+@keyframes jBox-pulseDown {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(.85);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.jBox-animated-pulseDown {
+  animation: .25s jBox-pulseDown;
+}
+
+@keyframes jBox-popIn {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.jBox-animated-popIn {
+  animation: .25s jBox-popIn;
+}
+
+@keyframes jBox-popOut {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+.jBox-animated-popOut {
+  animation: .25s jBox-popOut;
+}
+
+@keyframes jBox-fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.jBox-animated-fadeIn {
+  animation: .2s jBox-fadeIn;
+}
+
+@keyframes jBox-fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.jBox-animated-fadeOut {
+  animation: .2s jBox-fadeOut;
+}
+
+@keyframes jBox-slideUp {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-300px);
+  }
+}
+
+.jBox-animated-slideUp {
+  animation: .4s jBox-slideUp;
+}
+
+@keyframes jBox-slideRight {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(300px);
+  }
+}
+
+.jBox-animated-slideRight {
+  animation: .4s jBox-slideRight;
+}
+
+@keyframes jBox-slideDown {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(300px);
+  }
+}
+
+.jBox-animated-slideDown {
+  animation: .4s jBox-slideDown;
+}
+
+@keyframes jBox-slideLeft {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-300px);
+  }
+}
+
+.jBox-animated-slideLeft {
+  animation: .4s jBox-slideLeft;
+}
+
+.jBox-Confirm .jBox-content {
+  text-align: center;
+  padding: 46px 35px;
+}
+
+@media (max-width: 500px) {
+  .jBox-Confirm .jBox-content {
+    padding: 32px 20px;
+  }
+}
+
+.jBox-Confirm-footer {
+  height: 46px;
+}
+
+.jBox-Confirm-button {
+  float: left;
+  cursor: pointer;
+  text-align: center;
+  width: 50%;
+  height: 46px;
+  box-sizing: border-box;
+  padding: 0 10px;
+  line-height: 46px;
+  transition: color .2s, background-color .2s;
+  display: block;
+  overflow: hidden;
+}
+
+.jBox-Confirm-button-cancel {
+  color: #666;
+  background: #ddd;
+  border-bottom-left-radius: 4px;
+}
+
+.jBox-Confirm-button-cancel:hover, .jBox-Confirm-button-cancel:active {
+  background: #ccc;
+}
+
+.jBox-Confirm-button-cancel:active {
+  box-shadow: inset 0 1px 3px #0003;
+}
+
+.jBox-Confirm-button-submit {
+  color: #fff;
+  background: #7d0;
+  border-bottom-right-radius: 4px;
+}
+
+.jBox-Confirm-button-submit:hover, .jBox-Confirm-button-submit:active {
+  background: #6c0;
+}
+
+.jBox-Confirm-button-submit:active {
+  box-shadow: inset 0 1px 3px #0003;
+}
+
+.jBox-Image .jBox-container {
+  background-color: #0000;
+}
+
+.jBox-Image .jBox-content {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+.jBox-image-container {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background: center no-repeat;
+  position: absolute;
+}
+
+.jBox-image-label-wrapper {
+  height: 40px;
+  z-index: 100;
+  display: flex;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.jBox-image-label-container {
+  flex: 1;
+  position: relative;
+}
+
+.jBox-image-label {
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
+  padding: 8px 12px;
+  font-size: 15px;
+  line-height: 24px;
+  transition: opacity .36s;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.jBox-image-label.expanded {
+  background: #000;
+}
+
+.jBox-image-label:not(.expanded) {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.jBox-image-label.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+@media (max-width: 600px) {
+  .jBox-image-label {
+    font-size: 13px;
+  }
+}
+
+.jBox-image-pointer-next, .jBox-image-pointer-prev {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  opacity: .8;
+  -webkit-user-select: none;
+  user-select: none;
+  z-index: 1;
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ijc0LjcgMjI0IDE4LjcgMzIiPg0KPHBhdGggZmlsbD0iI2ZmZmZmZiIgZD0iTTkzLDIyNy40TDgwLjQsMjQwTDkzLDI1Mi42YzAuNCwwLjQsMC40LDEuMSwwLDEuNWwtMS42LDEuNmMtMC40LDAuNC0xLDAuNS0xLjUsMEw3NSwyNDAuN2MtMC40LTAuNC0wLjUtMSwwLTEuNWwxNC45LTE0LjljMC40LTAuNCwxLTAuNCwxLjUsMGwxLjYsMS42QzkzLjUsMjI2LjQsOTMuNCwyMjcsOTMsMjI3LjR6Ii8+DQo8L3N2Zz4=") center / 11px no-repeat;
+  flex-shrink: 0;
+  transition: opacity .2s;
+}
+
+.jBox-image-pointer-next:hover, .jBox-image-pointer-prev:hover {
+  opacity: 1;
+}
+
+.jBox-image-pointer-next {
+  transform: scaleX(-1);
+}
+
+.jBox-image-counter-container {
+  white-space: nowrap;
+  height: 40px;
+  color: #fff;
+  text-align: right;
+  flex-shrink: 0;
+  font-size: 13px;
+  line-height: 40px;
+  display: none;
+}
+
+.jBox-image-has-counter .jBox-image-counter-container {
+  display: block;
+}
+
+.jBox-overlay.jBox-overlay-Image, .jBox-image-not-found {
+  background: #000;
+}
+
+.jBox-image-not-found:before {
+  content: "";
+  box-sizing: border-box;
+  width: 80px;
+  height: 80px;
+  border: 5px solid #222;
+  border-radius: 50%;
+  margin-top: -40px;
+  margin-left: -40px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.jBox-image-not-found:after {
+  content: "";
+  box-sizing: content-box;
+  z-index: auto;
+  width: 6px;
+  height: 74px;
+  transform-origin: 50% 50% 0;
+  background: #222;
+  margin-top: -37px;
+  margin-left: -3px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: rotateZ(45deg);
+}
+
+.jBox-image-download-button-wrapper {
+  height: 40px;
+  cursor: pointer;
+  opacity: .8;
+  transition: opacity .2s;
+  display: flex;
+  position: absolute;
+  top: -40px;
+  right: 35px;
+}
+
+.jBox-image-download-button-wrapper:hover {
+  opacity: 1;
+}
+
+.jBox-image-download-button-icon {
+  width: 40px;
+  height: 40px;
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNjQwIj48cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNNDE2IDI1NnYtMTkyaC0xOTJ2MTkyaC0xNjBsMjU2IDI1NiAyNTYtMjU2aC0xNjB6TTAgNTc2aDY0MHY2NGgtNjQwdi02NHoiPjwvcGF0aD48L3N2Zz4=") center / 60% no-repeat;
+}
+
+.jBox-image-download-button-text {
+  white-space: nowrap;
+  color: #fff;
+  padding: 0 10px 0 0;
+  font-size: 14px;
+  line-height: 40px;
+}
+
+@keyframes jBoxImageLoading {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.jBox-image-loading:before {
+  content: "";
+  width: 32px;
+  height: 32px;
+  border: 4px solid #333;
+  border-bottom-color: #666;
+  border-radius: 50%;
+  margin-top: -16px;
+  margin-left: -16px;
+  animation: 1.2s linear infinite jBoxImageLoading;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.jBox-Notice {
+  transition: margin .2s;
+}
+
+.jBox-Notice .jBox-container {
+  border-radius: 4px;
+  box-shadow: inset 1px 1px #ffffff40, inset -1px -1px #0000001a;
+}
+
+.jBox-Notice .jBox-content {
+  border-radius: 4px;
+  padding: 12px 20px;
+}
+
+@media (max-width: 768px) {
+  .jBox-Notice .jBox-content {
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 500px) {
+  .jBox-Notice .jBox-content {
+    padding: 8px 10px;
+  }
+}
+
+.jBox-Notice.jBox-hasTitle .jBox-content {
+  padding-top: 5px;
+}
+
+@media (max-width: 500px) {
+  .jBox-Notice.jBox-hasTitle .jBox-content {
+    padding-top: 0;
+  }
+}
+
+.jBox-Notice.jBox-hasTitle .jBox-title {
+  padding: 12px 20px 0;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .jBox-Notice.jBox-hasTitle .jBox-title {
+    padding: 10px 15px 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .jBox-Notice.jBox-hasTitle .jBox-title {
+    padding: 8px 10px 0;
+  }
+}
+
+.jBox-Notice.jBox-closeButton-title .jBox-title {
+  padding-right: 55px;
+}
+
+.jBox-Notice.jBox-closeButton-title.jBox-hasTitle .jBox-closeButton {
+  width: 40px;
+}
+
+.jBox-Notice.jBox-Notice-black .jBox-container {
+  color: #fff;
+  background: #000;
+}
+
+.jBox-Notice.jBox-Notice-black.jBox-closeButton-title.jBox-hasTitle .jBox-closeButton path, .jBox-Notice.jBox-Notice-black.jBox-closeButton-title.jBox-hasTitle .jBox-closeButton:hover path {
+  fill: #fff;
+}
+
+.jBox-Notice.jBox-Notice-gray .jBox-container {
+  color: #222;
+  background: #f6f6f6;
+}
+
+.jBox-Notice.jBox-Notice-gray.jBox-closeButton-title.jBox-hasTitle .jBox-closeButton path, .jBox-Notice.jBox-Notice-gray.jBox-closeButton-title.jBox-hasTitle .jBox-closeButton:hover path {
+  fill: #222;
+}
+
+.jBox-Notice.jBox-Notice-red .jBox-container {
+  color: #fff;
+  background: #d00;
+}
+
+.jBox-Notice.jBox-Notice-red.jBox-closeButton-title.jBox-hasTitle .jBox-closeButton path, .jBox-Notice.jBox-Notice-red.jBox-closeButton-title.jBox-hasTitle .jBox-closeButton:hover path {
+  fill: #fff;
+}
+
+.jBox-Notice.jBox-Notice-green .jBox-container {
+  color: #fff;
+  background: #5d0;
+}
+
+.jBox-Notice.jBox-Notice-green.jBox-closeButton-title.jBox-hasTitle .jBox-closeButton path, .jBox-Notice.jBox-Notice-green.jBox-closeButton-title.jBox-hasTitle .jBox-closeButton:hover path {
+  fill: #fff;
+}
+
+.jBox-Notice.jBox-Notice-blue .jBox-container {
+  color: #fff;
+  background: #49d;
+}
+
+.jBox-Notice.jBox-Notice-blue.jBox-closeButton-title.jBox-hasTitle .jBox-closeButton path, .jBox-Notice.jBox-Notice-blue.jBox-closeButton-title.jBox-hasTitle .jBox-closeButton:hover path {
+  fill: #fff;
+}
+
+.jBox-Notice.jBox-Notice-yellow .jBox-container {
+  color: #000;
+  background: #fd0;
+}
+
+.jBox-Notice.jBox-Notice-yellow.jBox-closeButton-title.jBox-hasTitle .jBox-closeButton path, .jBox-Notice.jBox-Notice-yellow.jBox-closeButton-title.jBox-hasTitle .jBox-closeButton:hover path {
+  fill: #fff;
+}
+
+.jBox-NoticeFancy .jBox-content, .jBox-NoticeFancy .jBox-title {
+  padding-left: 25px;
+}
+
+.jBox-NoticeFancy.jBox-Notice-color .jBox-container {
+  color: #fff;
+  background: #000;
+}
+
+.jBox-NoticeFancy.jBox-Notice-color .jBox-container:after {
+  content: "";
+  width: 8px;
+  background-image: linear-gradient(45deg, #fff6 25%, #0000 25% 50%, #fff6 50% 75%, #0000 75%, #0000);
+  background-size: 14px 14px;
+  border-radius: 4px 0 0 4px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.jBox-NoticeFancy.jBox-Notice-black .jBox-container:after, .jBox-NoticeFancy.jBox-Notice-gray .jBox-container:after {
+  background-color: #888;
+}
+
+.jBox-NoticeFancy.jBox-Notice-red .jBox-container:after {
+  background-color: #e00;
+}
+
+.jBox-NoticeFancy.jBox-Notice-green .jBox-container:after {
+  background-color: #6c0;
+}
+
+.jBox-NoticeFancy.jBox-Notice-blue .jBox-container:after {
+  background-color: #49d;
+}
+
+.jBox-NoticeFancy.jBox-Notice-yellow .jBox-container:after {
+  background-color: #fb0;
+}
+
+.jBox-NoticeFancy .jBox-countdown {
+  border-radius: 0 4px 0 0;
+  left: 8px;
+}
+
+.jBox-TooltipBorder .jBox-container, .jBox-TooltipBorder .jBox-pointer:after {
+  border: 2px solid #49d;
+}
+
+.jBox-TooltipBorder .jBox-pointer:after {
+  width: 22px;
+  height: 22px;
+}
+
+.jBox-TooltipBorder .jBox-pointer-top, .jBox-TooltipBorder .jBox-pointer-bottom {
+  width: 34px;
+  height: 13px;
+}
+
+.jBox-TooltipBorder .jBox-pointer-top:after, .jBox-TooltipBorder .jBox-pointer-bottom:after {
+  left: 6px;
+}
+
+.jBox-TooltipBorder .jBox-pointer-left, .jBox-TooltipBorder .jBox-pointer-right {
+  width: 13px;
+  height: 34px;
+}
+
+.jBox-TooltipBorder .jBox-pointer-left:after, .jBox-TooltipBorder .jBox-pointer-right:after {
+  top: 6px;
+}
+
+.jBox-TooltipBorder.jBox-closeButton-box:before {
+  width: 28px;
+  height: 28px;
+  background: #49d;
+}
+
+.jBox-TooltipBorderThick .jBox-container {
+  box-shadow: none;
+  border: 4px solid #ccc;
+  border-radius: 8px;
+}
+
+.jBox-TooltipBorderThick .jBox-pointer:after {
+  box-shadow: none;
+  width: 24px;
+  height: 24px;
+  border: 4px solid #ccc;
+}
+
+.jBox-TooltipBorderThick .jBox-pointer-top, .jBox-TooltipBorderThick .jBox-pointer-bottom {
+  width: 38px;
+  height: 13px;
+}
+
+.jBox-TooltipBorderThick .jBox-pointer-left, .jBox-TooltipBorderThick .jBox-pointer-right {
+  width: 13px;
+  height: 38px;
+}
+
+.jBox-TooltipBorderThick.jBox-closeButton-box:before {
+  width: 32px;
+  height: 32px;
+  background: #ccc;
+}
+
+.jBox-TooltipDark .jBox-container {
+  color: #fff;
+  background: #000;
+  border-radius: 4px;
+  box-shadow: 0 0 6px #0006;
+}
+
+.jBox-TooltipDark .jBox-pointer:after, .jBox-TooltipDark .jBox-closeButton {
+  background: #000;
+}
+
+.jBox-TooltipDark.jBox-closeButton-box:before {
+  box-shadow: 0 0 6px #0006;
+}
+
+.jBox-TooltipDark.jBox-closeButton-box .jBox-closeButton path {
+  fill: #ddd;
+}
+
+.jBox-TooltipDark.jBox-closeButton-box .jBox-closeButton:hover path {
+  fill: #fff;
+}
+
+.jBox-TooltipDark.jBox-closeButton-box .jBox-closeButton:active path {
+  fill: #bbb;
+}
+
+.jBox-TooltipError {
+  pointer-events: none;
+}
+
+.jBox-TooltipError .jBox-container {
+  color: #fff;
+  background: #d00;
+  border-radius: 2px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.jBox-TooltipError .jBox-content {
+  padding: 0 10px;
+  line-height: 28px;
+}
+
+.jBox-TooltipError .jBox-pointer:after {
+  width: 20px;
+  height: 20px;
+  background: #d00;
+}
+
+.jBox-TooltipError .jBox-pointer-top, .jBox-TooltipError .jBox-pointer-bottom {
+  width: 22px;
+  height: 8px;
+}
+
+.jBox-TooltipError .jBox-pointer-right, .jBox-TooltipError .jBox-pointer-left {
+  width: 8px;
+  height: 22px;
+}
+
+.jBox-TooltipError .jBox-pointer-top:after {
+  top: 6px;
+  left: 1px;
+}
+
+.jBox-TooltipError .jBox-pointer-right:after {
+  top: 1px;
+  right: 6px;
+}
+
+.jBox-TooltipError .jBox-pointer-bottom:after {
+  bottom: 6px;
+  left: 1px;
+}
+
+.jBox-TooltipError .jBox-pointer-left:after {
+  top: 1px;
+  left: 6px;
+}
+
+.jBox-TooltipSmall {
+  pointer-events: none;
+}
+
+.jBox-TooltipSmall .jBox-container {
+  border-radius: 2px;
+}
+
+.jBox-TooltipSmall .jBox-content {
+  padding: 0 10px;
+  line-height: 28px;
+}
+
+.jBox-TooltipSmall .jBox-pointer:after {
+  width: 20px;
+  height: 20px;
+}
+
+.jBox-TooltipSmall .jBox-pointer-top, .jBox-TooltipSmall .jBox-pointer-bottom {
+  width: 22px;
+  height: 8px;
+}
+
+.jBox-TooltipSmall .jBox-pointer-right, .jBox-TooltipSmall .jBox-pointer-left {
+  width: 8px;
+  height: 22px;
+}
+
+.jBox-TooltipSmall .jBox-pointer-top:after {
+  top: 6px;
+  left: 1px;
+}
+
+.jBox-TooltipSmall .jBox-pointer-right:after {
+  top: 1px;
+  right: 6px;
+}
+
+.jBox-TooltipSmall .jBox-pointer-bottom:after {
+  bottom: 6px;
+  left: 1px;
+}
+
+.jBox-TooltipSmall .jBox-pointer-left:after {
+  top: 1px;
+  left: 6px;
+}
+
+.jBox-TooltipSmallGray {
+  pointer-events: none;
+}
+
+.jBox-TooltipSmallGray .jBox-container {
+  background-image: linear-gradient(#fafafa, #f2f2f2);
+  border-radius: 12px;
+  font-size: 13px;
+  line-height: 24px;
+}
+
+.jBox-TooltipSmallGray .jBox-content {
+  padding: 0 10px;
+}
+
+.jBox-TooltipSmallGray .jBox-pointer:after {
+  width: 20px;
+  height: 20px;
+}
+
+.jBox-TooltipSmallGray .jBox-pointer-top, .jBox-TooltipSmallGray .jBox-pointer-bottom {
+  width: 22px;
+  height: 8px;
+}
+
+.jBox-TooltipSmallGray .jBox-pointer-left, .jBox-TooltipSmallGray .jBox-pointer-right {
+  width: 8px;
+  height: 22px;
+}
+
+.jBox-TooltipSmallGray .jBox-pointer-top:after {
+  background: #fafafa;
+  top: 6px;
+  left: 1px;
+}
+
+.jBox-TooltipSmallGray .jBox-pointer-right:after {
+  top: 1px;
+  right: 6px;
+}
+
+.jBox-TooltipSmallGray .jBox-pointer-bottom:after {
+  background: #f2f2f2;
+  bottom: 6px;
+  left: 1px;
+}
+
+.jBox-TooltipSmallGray .jBox-pointer-left:after {
+  top: 1px;
+  left: 6px;
+}
+
 /*# sourceMappingURL=allergy.8baf42a3.css.map */

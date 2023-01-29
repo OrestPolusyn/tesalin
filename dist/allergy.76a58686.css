@@ -45,9 +45,13 @@
   --color-green-300: #c3e5b5;
   --color-green-400: #82aa33;
   --color-yellow-300: #f4eecc;
+  --color-blue-200: #c4edd9;
+  --color-blue-300: #a2e0c3;
   --color-yellow-400: #e7c94e;
+  --color-yellow-500: #dad098;
   --color-red-400: #fe3934;
   --color-violet-400: #a0b2e3;
+  --color-violet-600: #6e8bdc;
   --radius-main: 20px;
   --shadow-card: 4px 4px 11px #0000001a;
   --shadow-hero: 0px 4px 20px 5px #a7a1a11a;
@@ -88,7 +92,7 @@
 
 .page__body:before {
   content: "";
-  left: -100%;
+  left: -200%;
   top: var(--header-height);
   z-index: 5;
   width: 100vw;
@@ -2384,16 +2388,382 @@
   }
 }
 
-.allergy-popper {
+.calendar {
+  max-width: 1920px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.calendar__wrapper {
+  text-transform: capitalize;
+  grid-template-columns: 435px 1fr;
+  margin-bottom: 30px;
+  display: grid;
+}
+
+@media only screen and (max-width: 1180px) {
+  .calendar__wrapper {
+    grid-template-columns: 380px 1fr;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .calendar__wrapper {
+    grid-template-columns: 276px 1fr;
+  }
+}
+
+@media only screen and (max-width: 475px) {
+  .calendar__wrapper {
+    grid-template-columns: 215px 1fr;
+  }
+}
+
+.calendar__inner {
+  grid-template-rows: repeat(3, minmax(235px, 1fr));
+  display: grid;
+}
+
+.calendar__seasons {
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: 260px 175px;
+  font-size: 18px;
+  line-height: 1.2;
+  display: grid;
+  position: relative;
+}
+
+.calendar__seasons:before {
+  content: "";
+  z-index: -1;
+  width: 1000vw;
+  height: 100%;
+  position: absolute;
+  right: -100vw;
+}
+
+.calendar__seasons:nth-child(1):before {
+  background-color: var(--color-green-200);
+}
+
+.calendar__seasons:nth-child(1) .calendar__mounth span {
+  background-color: var(--color-green-300);
+}
+
+.calendar__seasons:nth-child(2):before {
+  background-color: var(--color-blue-200);
+}
+
+.calendar__seasons:nth-child(2) .calendar__mounth span {
+  background-color: var(--color-blue-300);
+}
+
+.calendar__seasons:nth-child(3):before {
+  background-color: var(--color-yellow-300);
+}
+
+.calendar__seasons:nth-child(3) .calendar__mounth span {
+  background-color: var(--color-yellow-500);
+}
+
+.calendar__seasons > span {
+  letter-spacing: normal;
+  writing-mode: tb;
+  max-width: 200px;
+  color: var(--color-green-400);
+  grid-row: 1 / span 3;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  font-weight: 900;
+  line-height: 1.2;
+  display: flex;
+  transform: scale(-1);
+}
+
+@media only screen and (max-width: 1180px) {
+  .calendar__seasons > span {
+    letter-spacing: normal;
+    align-items: start;
+    padding-right: 25px;
+    font-size: 35px;
+    line-height: 1.14286;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .calendar__seasons > span {
+    letter-spacing: normal;
+    padding-right: 15px;
+    font-size: 28px;
+    line-height: 1.25;
+  }
+}
+
+@media only screen and (max-width: 1180px) {
+  .calendar__seasons {
+    grid-template-columns: 200px 175px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .calendar__seasons {
+    grid-template-columns: 150px 125px;
+  }
+}
+
+@media only screen and (max-width: 475px) {
+  .calendar__seasons {
+    grid-template-columns: 120px 100px;
+  }
+}
+
+.calendar__mounth {
+  max-width: 175px;
+  grid-row: 1 / span 3;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+}
+
+.calendar__mounth span {
+  border-right: 1px solid var(--color-white);
+  border-bottom: 1px solid var(--color-white);
+  border-left: 1px solid var(--color-white);
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+
+.calendar__mounth span span {
+  position: relative;
+  background-color: #0000 !important;
+}
+
+.calendar__mounth span span:before {
+  content: "";
+  width: 40px;
+  height: 50px;
+  opacity: 0;
+  visibility: hidden;
+  background-image: url("icons/nose.ee88a688.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 50%;
+  left: -50%;
+  transform: translate(50%, -50%);
+}
+
+@media only screen and (max-width: 768px) {
+  .calendar__mounth span span:before {
+    transform: translate(-15%, -50%);
+  }
+}
+
+.calendar__mounth span:nth-child(2) {
+  position: relative;
+}
+
+.calendar__mounth span:nth-child(2):before, .calendar__mounth span:nth-child(2):after {
+  content: "";
+  width: 100vw;
+  z-index: -1;
+  height: 1px;
+  background-image: repeating-linear-gradient(0deg, #82aa33, #82aa33 12px, #0000 12px 27px, #82aa33 27px), repeating-linear-gradient(90deg, #82aa33, #82aa33 12px, #0000 12px 27px, #82aa33 27px), repeating-linear-gradient(#82aa33, #82aa33 12px, #0000 12px 27px, #82aa33 27px), repeating-linear-gradient(270deg, #82aa33, #82aa33 12px, #0000 12px 27px, #82aa33 27px);
+  background-position: 0 0, 0 0, 100% 0, 0 100%;
+  background-repeat: no-repeat;
+  background-size: 2px 100%, 100% 2px, 2px 100%, 100% 2px;
+  position: absolute;
+  left: -75px;
+}
+
+@media only screen and (max-width: 576px) {
+  .calendar__mounth span:nth-child(2):before, .calendar__mounth span:nth-child(2):after {
+    left: -50px;
+  }
+}
+
+.calendar__mounth span:nth-child(2):before {
+  top: -1px;
+}
+
+.calendar__mounth span:nth-child(2):after {
+  bottom: -1px;
+}
+
+.calendar__mounth span.active {
+  background-color: var(--color-green-400) !important;
+}
+
+.calendar__mounth span.active span:before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.calendar__grid {
+  grid-template-columns: repeat(21, minmax(40px, 1fr));
+  column-gap: 31px;
+  padding: 0 10px;
+  display: grid;
+  overflow-x: auto;
+}
+
+.calendar__grid span {
+  letter-spacing: normal;
+  color: var(--color-white);
+  grid-row: span 20;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.21429;
+}
+
+.calendar__item {
+  grid-template-rows: repeat(18, 1fr);
+  display: grid;
+}
+
+.calendar__item span {
+  width: 100%;
+  writing-mode: tb;
+  background-color: var(--color-violet-400);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  transform: scale(-1);
+}
+
+.calendar__item span.active {
+  background-color: var(--color-violet-600);
+}
+
+.calendar__instruction {
+  letter-spacing: normal;
+  z-index: 1;
+  width: 100%;
+  max-width: 180px;
+  background-color: var(--color-white);
+  border: 1px solid #283864cc;
+  padding: 2px 9px;
+  font-size: 14px;
+  line-height: 1.21429;
+  position: absolute;
+  top: 0;
+  left: 30px;
+}
+
+.calendar .yasen {
+  grid-row: 3 / span 5;
+}
+
+.calendar .ambrosia {
+  grid-row: 11 / -1;
+}
+
+.calendar .shovkovycia {
+  grid-row: 6 / span 3;
+}
+
+.calendar .kropyva {
+  grid-row: 10 / span 8;
+}
+
+.calendar .rose {
+  grid-row: 6 / span 6;
+}
+
+.calendar .hazel {
+  grid-row: 2 / span 2;
+}
+
+.calendar .plantain {
+  grid-row: 9 / span 9;
+}
+
+.calendar .topol {
+  grid-row: 4 / span 5;
+}
+
+.calendar .alternaria {
+  grid-row: 1 / -1;
+}
+
+.calendar .birch {
+  grid-row: 3 / span 5;
+}
+
+.calendar .sunflower {
+  grid-row: 9 / span 9;
+}
+
+.calendar .willow {
+  grid-row: 3 / span 4;
+}
+
+.calendar .tarragon {
+  grid-row: 9 / -1;
+}
+
+.calendar .alder {
+  grid-row: 2 / span 4;
+}
+
+.calendar .pine {
+  grid-row: 9 / span 4;
+}
+
+.calendar .elm {
+  grid-row: 2 / span 4;
+}
+
+.calendar .hornbeam {
+  grid-row: 4 / span 4;
+}
+
+.calendar .oak {
+  grid-row: 4 / span 5;
+}
+
+.calendar .epipoccum {
+  grid-row: 4 / -1;
+}
+
+.calendar .cereals {
+  grid-row: 5 / -1;
+}
+
+.calendar .cypress {
+  grid-row: 3 / span 4;
+}
+
+.calendar .cladosporium {
+  grid-row: 4 / -1;
+}
+
+.calendar .maple, .calendar .dandelion {
+  grid-row: 3 / span 5;
+}
+
+.calendar .sorrel {
+  grid-row: 9 / span 8;
+}
+
+.tooltip {
   width: 100%;
   max-width: 450px;
   border: 1px solid #283864cc;
   padding: 40px 24px;
   font-size: 14px;
   line-height: 1.2;
+  display: none;
 }
 
-.allergy-popper:before {
+.tooltip:before {
   content: "";
   z-index: -1;
   width: 100%;
@@ -2540,6 +2910,27 @@ input[type="checkbox"] + label:after {
 input:checked + label:after {
   opacity: 1;
   visibility: visible;
+}
+
+.scroll {
+  scrollbar-color: var(--color-green-300);
+  scrollbar-width: thin;
+  overflow: auto;
+}
+
+.scroll::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.scroll::-webkit-scrollbar-track {
+  background-color: var(--color-green-400);
+  border-radius: 10px;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  background-color: var(--color-green-400);
+  border-radius: 10px;
 }
 
 /*# sourceMappingURL=allergy.76a58686.css.map */

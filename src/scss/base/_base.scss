@@ -20,7 +20,7 @@
     &::before {
       content: "";
       position: fixed;
-      left: -100%;
+      left: -200%;
       top: var(--header-height);
       z-index: 5;
       width: 100vw;
