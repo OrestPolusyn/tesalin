@@ -44,3 +44,8 @@
 .jBox-closeButton path {
   fill: #000;
 }
+
+.jBox-pointer-left::after,
+.jBox-pointer-right::after {
+  display: none !important;
+}

@@ -2832,6 +2832,10 @@
   fill: #000;
 }
 
+.jBox-pointer-left:after, .jBox-pointer-right:after {
+  display: none !important;
+}
+
 label {
   letter-spacing: .03em;
   cursor: pointer;
