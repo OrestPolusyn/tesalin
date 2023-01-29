@@ -1,7 +1,8 @@
 @use "../utils/mixins"as*;
 @use "../utils/functions/"as*;
 
-.btn {
+.btn,
+button:not(.burger, .tabs__btn, .slick-arrow, .slick-dots button, .allergy button) {
   @include flex-all-center;
   @include font-size(30, 36);
 
@@ -14,4 +15,8 @@
   text-align: center;
   color: var(--color-white);
   background-color: var(--color-green-400);
+
+  @include media(tablet) {
+    @include font-size(23, 28);
+  }
 }

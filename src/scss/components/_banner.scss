@@ -5,7 +5,6 @@
   @include flex-all-center;
 
   margin-bottom: clamp(20px, rem(33), 85px);
-
   padding: clamp(120px, rem(154), 236px) 0 clamp(80px, rem(90), 134px);
   background-position: center 26%;
   background-size: cover;
@@ -13,7 +12,15 @@
 
   h1 {
     position: relative;
-    z-index: 1;
+    z-index: 0;
     color: var(--color-white);
+  }
+
+  @include media(tablet-wide) {
+    padding: rem(100) 0 rem(50);
+  }
+
+  @include media(mobile-s) {
+    padding: rem(80) 0 rem(30);
   }
 }

@@ -2,7 +2,7 @@
 @use "../../utils/functions/"as*;
 
 .advantages {
-  margin-bottom: clamp(70px, rem(120), 130px);
+  margin-bottom: clamp(70px, rem(120), 173px);
   padding: clamp(20px, rem(50), 80px) 0;
 
   h2 {
@@ -12,17 +12,37 @@
   &__list {
     display: grid;
     justify-content: space-between;
-    grid-template-columns: repeat(3, 375px);
-    gap: 40px 50px;
+    grid-template-columns: repeat(3, minmax(200px, 375px));
+    gap: rem(40);
 
     >li {
-      padding: 30px 0 clamp(20px, rem(38), 60px);
+      padding: 30px 0 clamp(20px, rem(38), 58px);
+      line-height: 1.2;
+
+      @include media(mobile-m) {
+        padding: 20px 0 clamp(20px, rem(38), 58px);
+      }
     }
 
     ul {
-      li {
-        padding: 0 clamp(15px, rem(32), 30px) 0 clamp(15px, rem(34), 54px);
-      }
+      padding-left: rem(33);
+    }
+
+    @include media(desktop-mac) {
+      gap: rem(20);
+    }
+
+    @include media(tablet) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: rem(40);
+    }
+
+    @include media(mobile-l) {
+      justify-content: center;
+      grid-template-columns: 1fr;
+      margin: 0 auto;
+      max-width: 475px;
+      gap: rem(20);
     }
   }
 
@@ -31,18 +51,49 @@
     background-color: var(--color-yellow-300);
 
     h3 {
-      margin-bottom: 12px;
+      margin-bottom: 20px;
       text-align: center;
+
+      @include media(mobile-l) {
+        margin-bottom: 10px;
+      }
     }
 
-    ul {
-      font-size: 18px;
-      line-height: 1.22;
+    ul.list {
+      padding-right: rem(30);
+
+      li {
+        @include font-size(18, 22);
+
+        margin-bottom: 0;
+      }
+
+      @include media(tablet) {
+        padding: 0 50px;
+      }
+
+      @include media(mobile-l) {
+        margin: 0 auto;
+      }
+
+      @include media(mobile-s) {
+        padding: 0 15px 0 30px;
+      }
+    }
+
+    &:last-child {
+      @include media(tablet) {
+        grid-column: 1 / span 2;
+      }
+
+      @include media(mobile-l) {
+        grid-column: auto;
+      }
     }
   }
 
   img {
-    margin: 0 auto 28px;
+    margin: 0 auto 30px;
     border: 1px solid var(--color-main);
     border-radius: 50%;
     padding: 23px;
@@ -50,5 +101,16 @@
     height: 100px;
     max-width: 100px;
     background-color: var(--color-green-300);
+
+    @include media(mobile-l) {
+      margin: 0 auto 20px;
+      padding: 15px;
+      width: 70px;
+      height: 70px;
+    }
+  }
+
+  @include media(tablet) {
+    margin-bottom: clamp(70px, rem(70), 10px);
   }
 }

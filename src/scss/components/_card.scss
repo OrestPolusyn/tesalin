@@ -2,30 +2,78 @@
 @use "../utils/functions/"as*;
 
 .card {
+  position: relative;
+  height: 100%;
   box-shadow: var(--shadow-card);
-  transition-property: filter;
+  transition-property: box-shadow;
   transition-duration: 0.2s;
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    background-color: var(--color-white);
+    transition-property: transform;
+    transition-duration: 0.2s;
+  }
 
   h3 {
     @include flex-all-center;
     @include font-size(25, 30);
 
     margin: 0 auto;
-    padding: 20px 10 25px;
+    padding: 20px 10px 25px;
     width: 100%;
     min-height: 140px;
     max-width: 280px;
     font-weight: 500;
     text-align: center;
     color: var(--color-green-400);
+
+    a {
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    @include media(desktop-mac) {
+      @include font-size(21, 23);
+    }
+
+    @include media(mobile-s) {
+      min-height: auto;
+    }
   }
 
-  a {
-    display: none;
+  img {
+    width: 100%;
+    object-fit: contain;
   }
 
-  &:hover,
-  &:focus {
-    filter: drop-shadow(10px 10px 30px rgba(0, 0, 0, 0.25));
+  >a {
+    @include font-size(25, 30);
+
+    position: absolute;
+    bottom: 0;
+    z-index: 0;
+    padding: 15px;
+    width: 100%;
+    font-weight: 700;
+    text-align: center;
+    color: var(--color-white);
+    background-color: var(--color-green-400);
+  }
+
+  &:hover {
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.25);
+
+    .card__inner {
+      transform: translateY(-60px);
+    }
   }
 }

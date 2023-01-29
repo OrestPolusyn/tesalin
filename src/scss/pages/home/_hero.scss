@@ -2,12 +2,25 @@
 @use "../../utils/mixins/"as*;
 
 .hero {
+  display: block;
   padding-top: clamp(114px, rem(150), 224px);
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+
+  &__inner {
+    @include media(tablet-wide) {
+      @include flex;
+
+      flex-direction: column;
+      justify-content: center;
+      padding-top: rem(60);
+      height: 100vh;
+      height: calc(var(--vh, 1vh) * 100);
+    }
+  }
 
   ul {
     position: relative;
@@ -37,7 +50,35 @@
 
       &:not(:last-child) {
         margin-bottom: clamp(15px, rem(20), 30px);
+
+        @include media(mobile-m) {
+          margin-bottom: 15px;
+        }
       }
+
+      @include media(desktop-mac) {
+        @include font-size(27, 31);
+      }
+
+      @include media(tablet) {
+        @include font-size(25, 31);
+      }
+
+      @include media(mobile-s) {
+        @include font-size(22, 28);
+      }
+    }
+
+    @include media(tablet) {
+      margin-bottom: rem(35);
+    }
+
+    @include media(mobile-m) {
+      padding: rem(30);
+    }
+
+    @include media(mobile-s) {
+      padding: 30px 10px;
     }
   }
 
@@ -53,5 +94,26 @@
     text-transform: uppercase;
     color: var(--color-white);
     background-color: var(--color-green-400);
+
+    @include media(desktop-mac) {
+      @include font-size(25, 30);
+    }
+
+    @include media(tablet) {
+      @include font-size(22, 30);
+
+      padding: 15px 20px;
+      max-width: fit-content;
+    }
+
+    @include media(mobile-m) {
+      @include font-size(20, 27);
+
+      padding: 10px 15px;
+    }
+  }
+
+  @include media(tablet-wide) {
+    padding: 0;
   }
 }

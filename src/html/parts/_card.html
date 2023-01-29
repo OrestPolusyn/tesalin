@@ -1,14 +1,16 @@
 <article class="card">
-  <picture>
-    <source srcset="./images/{{image}}?as=webp" type="image/webp">
-    <img src="./images/{{image}}" width="320" height="255" alt=" {{title}}" loading="lazy">
-  </picture>
+  <div class="card__inner">
+    <picture>
+      <source srcset="./images/{{image}}?as=webp" type="image/webp">
+      <img src="./images/{{image}}" width="320" height="255" alt=" {{title}}" loading="lazy">
+    </picture>
 
-  <h3>
-    <a href="#">
-      {{title}}
-    </a>
-  </h3>
+    <h3>
+      <a href="#">
+        {{title}}
+      </a>
+    </h3>
+  </div>
 
   <a href="#">
     Читати

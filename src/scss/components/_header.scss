@@ -36,10 +36,18 @@
 
     padding: clamp(15px, rem(30), 26px) 0 clamp(15px, rem(30), 25px);
     width: 100%;
+
+    @include media(tablet-wide) {
+      padding: 15px 0;
+    }
   }
 
   &__sublogo {
     margin-right: 34px;
+
+    @include media(tablet) {
+      margin-right: 20px;
+    }
   }
 
   .container {
@@ -49,5 +57,4 @@
   &.hide {
     transform: translateY(-100%);
   }
-
 }

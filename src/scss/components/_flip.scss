@@ -4,7 +4,6 @@
 .flip {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 265px;
   margin: 0 auto;
   width: 100%;
   max-width: 870px;
@@ -13,6 +12,7 @@
 
   &__item {
     position: relative;
+    width: 100%;
     cursor: pointer;
 
     &::before {
@@ -29,6 +29,12 @@
       background-position: center;
       background-size: contain;
       background-repeat: no-repeat;
+
+      @include media(mobile-s) {
+        bottom: 10px;
+        width: 40px;
+        height: 40px;
+      }
     }
 
     div {
@@ -52,6 +58,12 @@
     &:nth-child(odd) {
       .flip__text {
         max-width: 150px;
+
+        @include media(mobile-s) {
+          left: 0;
+          width: 100%;
+          max-width: none;
+        }
       }
     }
 
@@ -61,6 +73,17 @@
         right: auto;
         margin-right: auto;
         max-width: 285px;
+
+        @include media(tablet) {
+          left: 10px;
+        }
+
+        @include media(mobile-s) {
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+          width: 100%;
+        }
       }
     }
 
@@ -85,7 +108,7 @@
       width: 100%;
       height: 100%;
       background-color: var(--color-white);
-      opacity: 0.2;
+      opacity: 0.55;
     }
   }
 
@@ -95,6 +118,14 @@
     top: 43px;
     z-index: 2;
     text-align: center;
+
+    @include media(tablet) {
+      top: 20px;
+    }
+
+    @include media(mobile-l) {
+      top: 15%;
+    }
   }
 
   &__back {
@@ -118,6 +149,10 @@
       max-width: 300px;
       line-height: 1.2;
     }
+
+    @include media(mobile-s) {
+      padding: 15px;
+    }
   }
 
   h3 {
@@ -125,11 +160,36 @@
 
     margin-bottom: 0;
     font-weight: 500;
+
+    @include media(mobile-l) {
+      @include font-size(27, 27);
+
+      margin-bottom: 10px;
+    }
   }
 
   span {
     font-weight: 300;
     font-size: 25px;
     line-height: 1;
+
+    @include media(mobile-l) {
+      font-size: 20px;
+      line-height: 1.5;
+    }
+
+    @include media(mobile-s) {
+      font-weight: 500;
+      font-size: 16px;
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+
+  @include media(mobile-l) {
+    grid-template-columns: 1fr;
+    max-width: 475px;
   }
 }

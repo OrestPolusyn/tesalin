@@ -5,39 +5,31 @@
   margin-bottom: 50px;
 
   h2 {
-    margin-bottom: clamp(20px, rem(40), 58px);
+    margin-bottom: clamp(20px, rem(40), 60px);
   }
 }
 
 .symptoms-banner {
   margin-bottom: clamp(20px, rem(45), 65px);
-  padding: 34px 0 57px;
+  padding: 34px 0 rem(37);
   text-align: center;
-  background-position: 88% bottom;
-  background-size: 91% 94%;
+  background-position: 64px 20px;
+  background-size: 96% 94%;
   background-repeat: no-repeat;
   background-color: var(--color-yellow-300);
 
   p {
     @include font-size(36, 43);
 
-    margin-bottom: 110px;
+    margin-bottom: rem(70);
+
+    @include media(tablet) {
+      margin-bottom: rem(30);
+    }
   }
 
-  a {
-    @include flex-all-center;
-    @include font-size(30, 36);
-
-    position: relative;
-    margin: 0 auto;
-    border-radius: calc(var(--radius-main) - 5px);
-    padding: 10px;
-    width: 100%;
-    max-width: 230px;
-    text-align: center;
-    color: var(--color-white);
-    background-color: var(--color-green-400);
-    transform: rotate(-3deg) translateX(-94%);
+  button {
+    transform: rotate(-3deg) translateX(-111%);
 
     &::before {
       content: "";
@@ -45,14 +37,42 @@
       right: 0;
       top: 50%;
       width: 100%;
-      height: 94px;
-      max-width: 205px;
+      height: 114px;
+      max-width: 200px;
       background-image: url("../icons/line.svg");
       background-position: center;
       background-size: contain;
       background-repeat: no-repeat;
-      transform: translate(100%, -65%);
+      transform: translate(100%, -58%) rotate(24deg);
+
+      @include media(tablet) {
+        display: none;
+      }
     }
+
+    @include media(tablet) {
+      transform: rotate(0) translateX(0);
+    }
+  }
+
+  @include media(desktop-hd, min) {
+    background-position: 20px center;
+    background-size: 100%;
+  }
+
+  @include media(desktop) {
+    background-position: 64px 20px;
+    background-size: 96% 100%;
+  }
+
+  @include media(desktop-mac) {
+    background-position: 45% center;
+    background-size: auto;
+  }
+
+  @include media(tablet) {
+    background-position: right bottom;
+    background-size: auto;
   }
 }
 

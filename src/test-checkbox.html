@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="uk" class="page scroll">
+
+<include src="./html/_head.html">
+  { "title": "Тесалін | Тест на алергію"}
+</include>
+
+<body class="page__body">
+  <div class="site-container">
+
+    <include src="./html/_header.html"></include>
+
+    <main class="main">
+
+      <include src="./html/parts/_banner.html">
+        {
+        "title":"Тест на алергію"
+        }
+      </include>
+
+      <div class="container">
+
+        <h2 class="title title--test">
+          Тест на алергію
+        </h2>
+
+        <div class="tabs">
+          <ul class="tabs__switcher">
+            <li class="tabs__item">
+              <button class="tabs__btn tabs__btn--active" type="button">
+                Який у Вас вид алергії?
+              </button>
+            </li>
+
+            <li class="tabs__item">
+              <button class="tabs__btn" type="button">
+                Алергічний риніт
+              </button>
+            </li>
+          </ul>
+
+          <div class="tabs__content">
+            <div class="tabs__panel tabs__panel--active">
+              <include src="./html/test/_type.html"></include>
+            </div>
+
+            <div class="tabs__panel">
+              <include src="./html/test/_checkbox.html"></include>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+    <include src="./html/_footer.html"></include>
+</body>
+
+</html>

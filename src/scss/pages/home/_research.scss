@@ -3,6 +3,7 @@
 
 .research {
   border-bottom: 19px solid var(--color-yellow-300);
+  padding-bottom: clamp(40px, rem(58), 87px);
 
   h2 {
     margin-bottom: clamp(20px, rem(75), 108px);
@@ -13,9 +14,30 @@
     grid-template-columns: repeat(4, 1fr);
     margin-bottom: clamp(50px, rem(80), 121px);
     gap: clamp(20px, rem(45), 40px);
+
+    @include media(desktop-mac) {
+      margin-bottom: rem(40);
+      gap: 17px;
+    }
+
+    @include media(tablet) {
+      grid-template-columns: repeat(2, 1fr);
+      margin: 0 auto rem(40);
+      max-width: 768px;
+      gap: 40px 20px;
+    }
+
+    @include media(mobile-s) {
+      grid-template-columns: 1fr;
+      max-width: 375px;
+    }
   }
 
-  a {
+  >a {
     margin-bottom: clamp(40px, rem(70), 88px);
+  }
+
+  @include media(tablet) {
+    padding-bottom: rem(40);
   }
 }

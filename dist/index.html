@@ -9,9 +9,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Raleway:wght@300;500&family=Roboto&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="allergy.8baf42a3.css">
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="allergy.8baf42a3.css">
   <link rel="stylesheet" href="allergy.76a58686.css">
-  <script src="allergy.75b513a4.js" type="module"></script><script src="allergy.5062d1d5.js" nomodule="" defer=""></script>
 </head>
 
 <body class="page__body">
@@ -63,6 +63,9 @@
         <img src="images/amaxa.1b4bc59e.jpg" width="190" height="60" alt="Amaxa logo" loading="lazy">
       </picture>
     </div>
+
+    <button class="burger" aria-label="#" data-burger="" type="button">
+    </button>
   </div>
 </header>
 
@@ -70,28 +73,30 @@
 
       <hero class="hero" style="background-image: url(&quot;images/hero.d29eceaa.webp&quot;)">
   <div class="container">
+    <div class="hero__inner">
 
-    <h1 class="sr-only">
-      Тесалін
-    </h1>
+      <h1 class="sr-only">
+        Тесалін
+      </h1>
 
-    <ul>
-      <li>
-        Протиалергічний
-      </li>
+      <ul>
+        <li>
+          Протиалергічний
+        </li>
 
-      <li>
-        Протизапальний
-      </li>
+        <li>
+          Протизапальний
+        </li>
 
-      <li>
-        Без седативного ефекту
-      </li>
-    </ul>
+        <li>
+          Без седативного ефекту
+        </li>
+      </ul>
 
-    <a href="#">
-      Детальніше
-    </a>
+      <a href="#">
+        Детальніше
+      </a>
+    </div>
   </div>
 </hero>
 
@@ -111,7 +116,7 @@
             Унікальний
           </h3>
 
-          <ul>
+          <ul class="list">
             <li>
               На ранній фазі алергічного риніту Тесалін блокує вивільнення запальних медіаторів, таких як гістаміни. Це
               призводить до зменшення ринореї, чхання та сверблячки.
@@ -131,7 +136,7 @@
             Безпечний
           </h3>
 
-          <ul>
+          <ul class="list">
             <li>
               Не викликає сонливості
             </li>
@@ -169,7 +174,7 @@
             Ефективний
           </h3>
 
-          <ul>
+          <ul class="list">
             <li>
               Доведена ефективність у прямих порівняльних клінічних дослідженнях з антигістамінними препаратами
             </li>
@@ -180,7 +185,6 @@
             </li>
 
             <li>
-              Подвійна дія – протиалергічна та протизапальна
               Усуває симптоми алергічного риніту, полегшує закладеність носа, почервоніння очей, нежить та свербіж
             </li>
           </ul>
@@ -192,8 +196,8 @@
 </section>
 
       <div class="product">
-  <div class="product__inner">
-    <div class="container">
+  <div class="container">
+    <div class="product__inner">
 
       <div class="product__image">
         <picture>
@@ -404,14 +408,15 @@
 </section>
 
       <section class="symptoms-banner section" style="background-image: url(&quot;images/symptoms.54de308b.svg&quot;)">
-  <p>
-    Відчуваєте симптоми алергії?
-  </p>
+  <div class="container">
+    <p>
+      Відчуваєте симптоми алергії?
+    </p>
 
-  <a href="#">
-    Пройти тест
-  </a>
-
+    <button type="button">
+      Пройти тест
+    </button>
+  </div>
 </section>
 
       <section class="research">
@@ -424,35 +429,18 @@
     <ul>
       <li>
         <article class="card">
-  <picture>
-    <source srcset="images/doctors.a3281a44.webp" type="image/webp">
-    <img src="images/doctors.d9b364b2.jpg" width="320" height="255" alt=" Унікальна подвійна дія" loading="lazy">
-  </picture>
+  <div class="card__inner">
+    <picture>
+      <source srcset="images/doctors.a3281a44.webp" type="image/webp">
+      <img src="images/doctors.d9b364b2.jpg" width="320" height="255" alt=" Унікальна подвійна дія" loading="lazy">
+    </picture>
 
-  <h3>
-    <a href="#">
-      Унікальна подвійна дія
-    </a>
-  </h3>
-
-  <a href="#">
-    Читати
-  </a>
-</article>
-      </li>
-
-      <li>
-        <article class="card">
-  <picture>
-    <source srcset="images/women-sneeze.fda80fd2.webp" type="image/webp">
-    <img src="images/women-sneeze.25713053.jpg" width="320" height="255" alt=" Нове слово в лікуванні алергічного риніту" loading="lazy">
-  </picture>
-
-  <h3>
-    <a href="#">
-      Нове слово в лікуванні алергічного риніту
-    </a>
-  </h3>
+    <h3>
+      <a href="#">
+        Унікальна подвійна дія
+      </a>
+    </h3>
+  </div>
 
   <a href="#">
     Читати
@@ -462,16 +450,18 @@
 
       <li>
         <article class="card">
-  <picture>
-    <source srcset="images/tesalin-gradient.c30a3e9b.webp" type="image/webp">
-    <img src="images/tesalin-gradient.4b5f6d59.jpg" width="320" height="255" alt=" Тесалін значно перевершує плацебо і діє дозозалежно" loading="lazy">
-  </picture>
+  <div class="card__inner">
+    <picture>
+      <source srcset="images/women-sneeze.fda80fd2.webp" type="image/webp">
+      <img src="images/women-sneeze.25713053.jpg" width="320" height="255" alt=" Нове слово в лікуванні алергічного риніту" loading="lazy">
+    </picture>
 
-  <h3>
-    <a href="#">
-      Тесалін значно перевершує плацебо і діє дозозалежно
-    </a>
-  </h3>
+    <h3>
+      <a href="#">
+        Нове слово в лікуванні алергічного риніту
+      </a>
+    </h3>
+  </div>
 
   <a href="#">
     Читати
@@ -481,16 +471,39 @@
 
       <li>
         <article class="card">
-  <picture>
-    <source srcset="images/pills.92e1e20d.webp" type="image/webp">
-    <img src="images/pills.acd53548.jpg" width="320" height="255" alt=" Інструкція Тесалін" loading="lazy">
-  </picture>
+  <div class="card__inner">
+    <picture>
+      <source srcset="images/tesalin-gradient.c30a3e9b.webp" type="image/webp">
+      <img src="images/tesalin-gradient.4b5f6d59.jpg" width="320" height="255" alt=" Тесалін значно перевершує плацебо і діє дозозалежно" loading="lazy">
+    </picture>
 
-  <h3>
-    <a href="#">
-      Інструкція Тесалін
-    </a>
-  </h3>
+    <h3>
+      <a href="#">
+        Тесалін значно перевершує плацебо і діє дозозалежно
+      </a>
+    </h3>
+  </div>
+
+  <a href="#">
+    Читати
+  </a>
+</article>
+      </li>
+
+      <li>
+        <article class="card">
+  <div class="card__inner">
+    <picture>
+      <source srcset="images/pills.92e1e20d.webp" type="image/webp">
+      <img src="images/pills.acd53548.jpg" width="320" height="255" alt=" Інструкція Тесалін" loading="lazy">
+    </picture>
+
+    <h3>
+      <a href="#">
+        Інструкція Тесалін
+      </a>
+    </h3>
+  </div>
 
   <a href="#">
     Читати
@@ -525,6 +538,38 @@
 
         <figcaption>Максим,<cite>https://www.otzyvua.net/alluna/review-618720</cite></figcaption>
       </li>
+
+      <li>
+        <blockquote>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis ipsam ut voluptate quisquam quia a
+          doloremque alias fuga odio sapiente.
+        </blockquote>
+
+        <figcaption>Максим,<cite>https://www.otzyvua.net/alluna/review-618720</cite></figcaption>
+      </li>
+
+      <li>
+        <blockquote>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis non a aspernatur consequatur molestias sint
+          vel, animi laborum corporis saepe ducimus impedit fugiat modi sequi quam explicabo ipsa. Vel dignissimos,
+          tempore quod possimus accusamus natus ex sit voluptas doloribus odit.
+        </blockquote>
+
+        <figcaption>Максим,<cite>https://www.otzyvua.net/alluna/review-618720</cite></figcaption>
+      </li>
+
+      <li>
+        <blockquote>
+          Много лет слушаю Цоя и хотел бы, чтоб мой сон был тоже спокойным. Но мне и «слышится стук копыт», и все вокруг
+          «мешает
+          уснуть, тревожит мой сон». Но потом жена дала мне Аллуну. Откуда она о ней узнала – без понятия, но результат
+          налицо в
+          буквальном смысле (это я про исчезающие синяки под глазами)! Я стал быстро засыпать, стал высыпаться, и ушла
+          раздражительность (помните, как в интернете: оказывается, все вокруг не такие уж негодяи, если выспаться).
+        </blockquote>
+
+        <figcaption>Максим,<cite>https://www.otzyvua.net/alluna/review-618720</cite></figcaption>
+      </li>
     </ul>
 
   </div>
@@ -538,7 +583,9 @@
   </p>
 </footer>
 
-  </div>
-</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js" defer=""></script>
+<script src="allergy.75b513a4.js" type="module"></script><script src="allergy.5062d1d5.js" nomodule="" defer=""></script>
+</div></body>
 
 </html>

@@ -15,4 +15,17 @@
   &--colored {
     color: var(--color-green-400);
   }
+
+  &--test {
+    margin-bottom: 51px;
+    padding-top: 29px;
+  }
+
+  @include media(tablet-wide) {
+    @include font-size(41, 48);
+  }
+
+  @include media(mobile-l) {
+    @include font-size(33, 43);
+  }
 }

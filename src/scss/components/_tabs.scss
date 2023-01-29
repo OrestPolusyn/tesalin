@@ -1,0 +1,142 @@
+@use "../utils/functions/"as*;
+@use "../utils/mixins"as*;
+
+.tabs {
+  &__switcher {
+    @include flex;
+
+    margin-bottom: rem(40);
+
+    @include media(mobile-m) {
+      display: block;
+    }
+  }
+
+  &__item {
+    width: 100%;
+
+    &:not(:last-child) {
+      margin-right: 40px;
+
+      @include media(tablet) {
+        margin-right: 20px;
+      }
+
+      @include media(mobile-m) {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+    }
+
+    &:first-of-type {
+      max-width: 572px;
+
+      @include media(desktop) {
+        max-width: max-content;
+      }
+
+      @include media(mobile-m) {
+        max-width: none;
+      }
+    }
+
+    &:last-of-type {
+      max-width: 530px;
+
+      @include media(desktop) {
+        max-width: max-content;
+      }
+
+      @include media(mobile-m) {
+        max-width: none;
+      }
+    }
+
+    @include media(mobile-m) {
+      padding-left: 40px;
+    }
+  }
+
+  &__btn {
+    @include font-size(45, 54);
+
+    position: relative;
+    border-radius: var(--radius-main);
+    padding: 21px 10px;
+    width: 100%;
+    font-family: var(--font-family-inter);
+    font-weight: 300;
+    color: var(--color-green-400);
+    background-color: var(--color-green-300);
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: rem(42);
+      bottom: -38px;
+      display: none;
+      border-top: solid 27px var(--color-green-400);
+      border-right: solid 14px transparent;
+      border-left: solid 14px transparent;
+
+      @include media(tablet) {
+        left: 15px;
+        bottom: -25px;
+        border-top-width: 20px;
+        border-right-width: 14px;
+        border-left-width: 14px;
+      }
+
+      @include media(mobile-m) {
+        left: -40px;
+        bottom: 50%;
+        transform: rotate(-90deg) translateX(-50%);
+      }
+    }
+
+    &--active {
+      color: var(--color-white);
+      background-color: var(--color-green-400);
+
+      &::before {
+        display: block;
+      }
+    }
+
+    @include media(desktop) {
+      @include font-size(38, 45);
+
+      padding: 21px 15px;
+    }
+
+    @include media(desktop-mac) {
+      @include font-size(33, 40);
+    }
+
+    @include media(tablet) {
+      @include font-size(25, 30);
+
+      padding: 15px;
+    }
+
+    @include media(tablet) {
+      @include font-size(22, 28);
+
+      padding: 10px 15px;
+    }
+  }
+
+  &__panel {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+
+    &--active.tabs__panel {
+      position: relative;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}

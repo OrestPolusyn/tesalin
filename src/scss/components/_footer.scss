@@ -5,7 +5,16 @@
   @include flex-all-center;
   @include font-size(25, 30);
 
-  padding: clamp(10px, rem(25), 35px) 0;
+  padding: clamp(10px, rem(25), 35px) 15px;
+  text-align: center;
   color: var(--color-white);
   background-color: var(--color-green-400);
+
+  @include media(tablet) {
+    @include font-size(20, 27);
+  }
+
+  @include media(mobile-l) {
+    @include font-size(18, 23);
+  }
 }

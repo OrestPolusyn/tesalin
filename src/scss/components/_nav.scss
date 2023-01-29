@@ -4,11 +4,78 @@
 .nav {
   ul {
     @include flex-v-center;
+
+    @include media(tablet) {
+      flex-direction: column;
+      padding: 20px 0;
+      height: 100%;
+    }
   }
 
   li {
     &:not(:last-child) {
       margin-right: rem(40);
+
+      @include media(desktop-mac) {
+        margin-right: rem(25);
+      }
+
+      @include media(tablet) {
+        margin-right: 0;
+        margin-bottom: rem(30);
+      }
     }
+
+    a {
+      position: relative;
+      transition: color 0.2s;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: 0 auto;
+        width: 0;
+        height: 2px;
+        background-color: var(--color-green-400);
+        transition: width 0.2s;
+      }
+
+      &:hover,
+      &:focus {
+        color: var(--color-green-400);
+
+        &::before {
+          width: 100%;
+        }
+      }
+
+      @include media(tablet) {
+        font-weight: 700;
+      }
+    }
+
+    &:last-child {
+      @include media(tablet) {
+        padding-bottom: 30px;
+      }
+    }
+  }
+
+  @include media(tablet) {
+    @include flex-all-center;
+
+    position: absolute;
+    right: -100%;
+    top: var(--header-height);
+    overflow-y: auto;
+    width: 100%;
+    max-width: 260px;
+    height: calc(100vh - var(--header-height));
+    height: calc(var(--vh, 1vh) * 100 - var(--header-height));
+    background-color: var(--color-green-200);
+    transition: right 0.2s;
   }
 }

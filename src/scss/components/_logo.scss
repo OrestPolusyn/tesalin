@@ -1,0 +1,19 @@
+@use "../utils/functions/"as*;
+@use "../utils/mixins/"as*;
+
+.logo {
+  width: 100%;
+  max-width: 245px;
+
+  @include media(desktop) {
+    max-width: 200px;
+  }
+
+  @include media(desktop-mac) {
+    max-width: 170px;
+  }
+
+  @include media(tablet) {
+    max-width: 130px;
+  }
+}

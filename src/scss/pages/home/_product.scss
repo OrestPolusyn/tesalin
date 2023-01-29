@@ -2,19 +2,37 @@
 @use "../../utils/functions/"as*;
 
 .product {
-  padding: clamp(40px, rem(50), 45px) 0 clamp(30px, rem(50), 40px);
+  margin-bottom: rem(26);
+  background-color: var(--color-green-300);
 
   &__inner {
     position: relative;
-    background-color: var(--color-green-300);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include media(mobile-l) {
+      flex-direction: column;
+    }
   }
 
   &__image {
-    position: absolute;
-    left: 50px;
-    top: -54%;
+    margin-top: rem(-80);
+    margin-left: rem(-135);
     width: 100%;
     max-width: 650px;
+
+    @include media(mobile-l) {
+      margin-top: rem(-90);
+    }
+
+    @include media(mobile-m) {
+      margin-top: rem(-70);
+    }
+
+    @media (max-width:1730px) {
+      margin-left: 0;
+    }
   }
 
   &__content {
@@ -22,9 +40,29 @@
     padding: clamp(20px, rem(40), 48px) 0 clamp(20px, rem(40), 54px);
     width: 100%;
     max-width: 887px;
+
+    @include media(desktop-mac) {
+      padding: 20px 0;
+    }
+
+    @include media(mobile-l) {
+      text-align: center;
+    }
   }
 
   p {
     @include font-size(36, 43);
+
+    @include media(desktop-mac) {
+      @include font-size(28, 35);
+    }
+
+    @include media(tablet) {
+      @include font-size(25, 30);
+    }
+
+    @include media(mobile-s) {
+      @include font-size(22, 27);
+    }
   }
 }

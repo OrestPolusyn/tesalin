@@ -8,12 +8,17 @@
 
   ul {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     margin-bottom: rem(44);
-    gap: rem(33) rem(26);
+    gap: rem(50) rem(26);
+
+    @include media(mobile-m) {
+      margin: 0 auto;
+      max-width: 375px;
+    }
   }
 
-  a {
+  >a {
     margin-bottom: rem(36);
   }
 }

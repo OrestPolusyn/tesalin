@@ -1,0 +1,95 @@
+@use "../../utils/mixins"as*;
+@use "../../utils/functions/"as*;
+
+.recipe {
+  margin-top: -11px;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: rem(25);
+    gap: rem(40) rem(27);
+
+    >li {
+      &:not(:last-child) {
+        @include media(tablet) {
+          margin-bottom: 40px;
+        }
+      }
+    }
+
+    @include media(tablet) {
+      display: block;
+    }
+  }
+
+  h2 {
+    margin-bottom: rem(57);
+    text-align: left;
+  }
+
+  li {
+    >h3 {
+      @include font-size(36, 43);
+
+      margin-bottom: rem(21);
+      text-align: center;
+      text-transform: uppercase;
+      color: var(--color-green-400);
+
+      @include media(desktop-mac) {
+        @include font-size(28, 36);
+      }
+
+      @include media(tablet) {
+        @include font-size(30, 36);
+
+        text-align: left;
+      }
+
+      @include media(mobile-m) {
+        @include font-size(26, 30);
+      }
+    }
+
+    ul {
+      li {
+        &:not(:last-child) {
+          margin-bottom: rem(27);
+
+          @include media(tablet) {
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      img {
+        width: 100%;
+
+        @include media(tablet) {
+          object-fit: cover;
+          object-position: center;
+          aspect-ratio: 16/9;
+        }
+      }
+
+      h3 {
+        margin: 0;
+        padding: 24px 21px;
+        max-width: none;
+        text-align: left;
+        color: var(--color-main);
+      }
+
+      @include media(tablet) {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(228px, 1fr));
+        gap: rem(40) 20px;
+      }
+    }
+  }
+
+  .btn {
+    margin-bottom: rem(23);
+  }
+}

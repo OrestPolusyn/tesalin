@@ -1,0 +1,116 @@
+@use "../utils/functions/"as*;
+@use "../utils/mixins/"as*;
+
+label {
+  position: relative;
+  display: block;
+  padding-left: 65px;
+  font-size: 25px;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+}
+
+input[type=radio] {
+  +label {
+    @include media(mobile-l) {
+      padding-left: 28px;
+      font-size: 20px;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      transform: translateY(-50%);
+
+      @include media(mobile-l) {
+        top: 15px;
+      }
+    }
+
+    &::before {
+      left: 22px;
+      border: 2px solid var(--color-green-400);
+      background-color: var(--color-white);
+
+      @include media(mobile-l) {
+        left: 0;
+      }
+    }
+
+    &::after {
+      left: 27px;
+      opacity: 0;
+      visibility: hidden;
+      width: 10px;
+      height: 10px;
+      background-color: var(--color-green-400);
+
+      @include media(mobile-l) {
+        left: 5;
+      }
+    }
+  }
+}
+
+input[type=checkbox] {
+  +label {
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 40px;
+      height: 40px;
+      transform: translateY(-50%);
+
+      @include media(mobile-m) {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    &::before {
+      border: 3px solid var(--color-green-400);
+      background-color: var(--color-white);
+
+      @include media(mobile-m) {
+        border-width: 2px;
+      }
+    }
+
+    &::after {
+      left: 6px;
+      z-index: 1;
+      opacity: 0;
+      visibility: hidden;
+      mask-image: url("data:image/svg+xml,%3Csvg version='1.1' id='fi_32282' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='405.272px' height='405.272px' viewBox='0 0 405.272 405.272' style='enable-background:new 0 0 405.272 405.272;' xml:space='preserve'%3E%3Cg%3E%3Cpath d='M393.401,124.425L179.603,338.208c-15.832,15.835-41.514,15.835-57.361,0L11.878,227.836 c-15.838-15.835-15.838-41.52,0-57.358c15.841-15.841,41.521-15.841,57.355-0.006l81.698,81.699L336.037,67.064 c15.841-15.841,41.523-15.829,57.358,0C409.23,82.902,409.23,108.578,393.401,124.425z'%3E%3C/path%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3C/svg%3E");
+      mask-position: center;
+      mask-repeat: no-repeat;
+      mask-size: contain;
+      width: 25px;
+      height: 25px;
+      background-color: var(--color-green-400);
+
+      @include media(mobile-m) {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+}
+
+input {
+  &:checked {
+    +label::after {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}

@@ -1,0 +1,223 @@
+@use "../../utils/mixins"as*;
+@use "../../utils/functions/"as*;
+
+.test {
+  &__result {
+    padding: 95px 0;
+    width: 100%;
+    background-position: center bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .btn {
+      @include flex-all-center;
+      @include font-size(30, 36);
+
+      position: relative;
+      bottom: -39px;
+      margin: 0 auto;
+      border-radius: calc(var(--radius-main) - 5px);
+      padding: 10px;
+      width: 100%;
+      max-width: 230px;
+      text-align: center;
+      text-transform: uppercase;
+      color: var(--color-white);
+      background-color: var(--color-green-400);
+      transform: rotate(-7deg) translateX(-75%);
+
+      &::before {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 50%;
+        width: 100%;
+        height: 94px;
+        max-width: 205px;
+        background-image: url("../icons/line.svg");
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        transform: translate(89%, -80%) rotate(6deg);
+
+        @include media(desktop-mac) {
+          display: none;
+        }
+      }
+
+      @include media(desktop-mac) {
+        transform: rotate(0) translateX(0);
+      }
+    }
+
+    @media (max-width:1340px) {
+      background-position: 12px bottom;
+    }
+
+    @include media(desktop-mac) {
+      background-position: center;
+    }
+  }
+
+  &__inner {
+    &:not(:last-child) {
+      margin-bottom: rem(31);
+    }
+  }
+
+  >ul {
+    margin-bottom: 40px;
+    border-radius: var(--radius-main);
+    padding: rem(33) rem(42) rem(28);
+    background-color: var(--color-yellow-300);
+
+    @include media(tablet) {
+      padding: 25px;
+    }
+
+    @include media(mobile-s) {
+      padding: 30px 15px;
+    }
+  }
+
+  h3 {
+    @include font-size(30, 36);
+
+    margin-bottom: 13px;
+    font-family: var(--font-family-inter);
+    letter-spacing: 0.01em;
+    color: var(--color-main);
+
+    +div {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(100px, 230px));
+    }
+
+    @include media(tablet-wide) {
+      @include font-size(26, 28);
+    }
+
+    @include media(tablet) {
+      @include font-size(23, 28);
+    }
+  }
+
+  li {
+    &:not(:last-child) {
+      margin-bottom: rem(29);
+    }
+  }
+
+  &--result ul {
+    margin-bottom: 29px;
+  }
+
+  &--check {
+    h3 {
+      @include font-size(36, 44);
+
+      margin-bottom: rem(38);
+      font-family: var(--font-family-inter);
+      font-weight: 400;
+      color: var(--color-main);
+
+      @include media(tablet-wide) {
+        @include font-size(33, 38);
+      }
+
+      @include media(mobile-m) {
+        @include font-size(25, 30);
+      }
+    }
+
+    label {
+      @include font-size(30, 36);
+
+      font-family: var(--font-family-inter);
+
+      @include media(tablet-wide) {
+        @include font-size(26, 33);
+      }
+
+      @include media(mobile-m) {
+        @include font-size(20, 26);
+
+        padding-left: 40px;
+      }
+    }
+
+    >div:not(.test__result) {
+      border-radius: var(--radius-main);
+      padding: rem(33) rem(42) rem(38);
+      background-color: var(--color-yellow-300);
+
+      @include media(tablet-wide) {
+        padding: 30px;
+      }
+
+      @include media(mobile-m) {
+        padding: 30px 15px;
+      }
+    }
+
+    ul li {
+      &:not(:last-child) {
+        margin-bottom: rem(32);
+      }
+    }
+  }
+}
+
+.test-result {
+  @include font-size(30, 36);
+
+  margin-bottom: rem(31);
+  font-family: var(--font-family-inter);
+  font-weight: 300;
+
+  h2 {
+    margin-bottom: 7px;
+    text-align: center;
+  }
+
+  p {
+    border-radius: var(--radius-main);
+    padding: rem(33) rem(43);
+    background-color: var(--color-green-200);
+
+    @include media(tablet) {
+      padding: 20px;
+    }
+  }
+
+  &--reverse {
+    p {
+      color: var(--color-red-400);
+      background-color: var(--color-yellow-300);
+    }
+  }
+
+  @include media(tablet-wide) {
+    @include font-size(23, 28);
+  }
+}
+
+.test-alert {
+  @include font-size(40, 48);
+  @include flex-all-center;
+
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  flex-direction: column;
+  border-radius: var(--radius-main);
+  padding: 30px;
+  width: 100%;
+  height: 70vh;
+  max-width: 1004px;
+  max-height: 504px;
+  box-shadow: 50px 50px 64px rgba(0, 0, 0, 0.2);
+  color: var(--color-red-400);
+  background-color: var(--color-green-200);
+  transform: translate(-50%, -50%);
+}
