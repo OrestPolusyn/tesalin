@@ -1934,7 +1934,7 @@
 .allergy ul {
   grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   justify-content: space-between;
-  gap: 4.6875rem 4.0625rem;
+  gap: 4.6875rem 3.4375rem;
   margin-bottom: 15px;
   padding: 3rem 0;
   display: grid;
@@ -1997,6 +1997,14 @@
     font-size: 25px;
     line-height: 1.2;
   }
+}
+
+.allergy button {
+  transition: transform .15s;
+}
+
+.allergy .scale {
+  transform: scale(1.2);
 }
 
 .flip {
@@ -2793,25 +2801,6 @@
   width: 100%;
   height: 100%;
   background-color: var(--color-white);
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.popper-close {
-  width: 30px;
-  height: 30px;
-  position: absolute;
-}
-
-.popper-close:before {
-  content: "";
-  width: 30px;
-  height: 30px;
-  background-image: url("icons/close.22ea9476.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
   position: absolute;
   top: 0;
   left: 0;

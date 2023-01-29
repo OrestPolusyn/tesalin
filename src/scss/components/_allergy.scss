@@ -8,7 +8,7 @@
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     margin-bottom: 15px;
     padding: rem(48) 0;
-    gap: rem(75) rem(65);
+    gap: rem(75) rem(55);
 
     @include media(desktop-hd, min) {
       grid-template-columns: repeat(7, 1fr);
@@ -53,5 +53,13 @@
         @include font-size(25, 30);
       }
     }
+  }
+
+  button {
+    transition: transform 0.15s;
+  }
+
+  .scale {
+    transform: scale(1.2);
   }
 }

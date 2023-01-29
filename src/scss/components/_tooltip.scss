@@ -19,26 +19,6 @@
   }
 }
 
-.popper-close {
-  position: absolute;
-
-  width: 30px;
-  height: 30px;
-
-  &::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 30px;
-    height: 30px;
-    background-image: url("../icons/close.svg");
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-}
-
 .jBox-content {
   padding: 0 !important;
 }
