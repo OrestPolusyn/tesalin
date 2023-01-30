@@ -1,12 +1,12 @@
 new jBox('Tooltip', {
   attach: '[tip]',
   preventDefault: true,
-  trigger: 'click',
+  trigger: 'mouseenter',
   animation: 'move',
   closeButton: true,
   maxWidth: 450,
   adjustTracker: true,
-  closeOnClick: 'body',
+  closeOnClick: 'body' || 'box',
   closeOnEsc: true,
   closeOnMouseleave: true,
   position: {

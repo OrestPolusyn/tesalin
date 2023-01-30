@@ -8603,7 +8603,7 @@ $(".reviews ul").slick({
 new jBox("Tooltip", {
     attach: "[tip]",
     preventDefault: true,
-    trigger: "click",
+    trigger: "mouseenter",
     animation: "move",
     closeButton: true,
     maxWidth: 450,
