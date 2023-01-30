@@ -4,6 +4,10 @@
 .articles {
   h2 {
     margin-bottom: rem(76);
+
+    @include media(mobile-l) {
+      margin-bottom: 30px;
+    }
   }
 
   ul {
@@ -13,7 +17,7 @@
     gap: rem(50) rem(26);
 
     @include media(mobile-m) {
-      margin: 0 auto;
+      margin: 0 auto 40px;
       max-width: 375px;
     }
   }

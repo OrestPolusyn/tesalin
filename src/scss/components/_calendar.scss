@@ -18,11 +18,11 @@
     }
 
     @include media(mobile-l) {
-      grid-template-columns: 276px 1fr;
+      grid-template-columns: 246px 1fr;
     }
 
     @include media(mobile-s) {
-      grid-template-columns: 215px 1fr;
+      grid-template-columns: 180px 1fr;
     }
   }
 
@@ -118,6 +118,12 @@
 
         padding-right: 15px;
       }
+
+      @include media(mobile-s) {
+        @include font-size(23, 30);
+
+        padding-right: 0;
+      }
     }
 
     @include media(tablet-wide) {
@@ -125,11 +131,11 @@
     }
 
     @include media(mobile-l) {
-      grid-template-columns: 150px 125px;
+      grid-template-columns: 120px 125px;
     }
 
     @include media(mobile-s) {
-      grid-template-columns: 120px 100px;
+      grid-template-columns: 80px 85px;
     }
   }
 
@@ -175,6 +181,13 @@
           @include media(mobile-l) {
             transform: translate(-15%, -50%);
           }
+
+          @include media(mobile-s) {
+            transform: translate(0%, -50%);
+
+            width: 25px;
+            height: 40px;
+          }
         }
       }
 
@@ -218,6 +231,10 @@
           }
         }
       }
+
+      @include media(mobile-s) {
+        @include font-size(15, 15);
+      }
     }
   }
 
@@ -260,8 +277,6 @@
       &:focus {
         background-color: var(--color-violet-700);
       }
-
-
     }
   }
 
@@ -277,6 +292,10 @@
     width: 100%;
     max-width: 180px;
     background-color: var(--color-white);
+
+    @include media(mobile-m) {
+      display: none;
+    }
   }
 
   .yasen {

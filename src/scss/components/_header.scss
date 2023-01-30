@@ -20,7 +20,7 @@
     width: 100%;
     height: 100%;
     background-color: var(--color-white);
-    opacity: 0.8;
+    opacity: 0.9;
   }
 
   &__wrapper {
@@ -36,6 +36,7 @@
 
     padding: clamp(15px, rem(30), 26px) 0 clamp(15px, rem(30), 25px);
     width: 100%;
+    transition: padding 0.1s;
 
     @include media(tablet-wide) {
       padding: 15px 0;
@@ -56,5 +57,26 @@
 
   &.hide {
     transform: translateY(-100%);
+  }
+
+  &.scroll {
+    border-bottom: 1px solid var(--color-green-300);
+
+    .header {
+      &__inner {
+        @include media(tablet, min) {
+          padding: 15px 0;
+        }
+      }
+
+      &__sublogo {
+        margin-right: rem(54);
+        max-width: 150px;
+      }
+    }
+
+    .logo {
+      max-width: 200px;
+    }
   }
 }

@@ -8479,6 +8479,1419 @@ $02c44a70162568c4$var$applyFocusVisiblePolyfill(document);
 
 var $8dStN = parcelRequire("8dStN");
 
+/*! @license ScrollReveal v4.0.9
+
+	Copyright 2021 Fisssion LLC.
+
+	Licensed under the GNU General Public License 3.0 for
+	compatible open source projects and non-commercial use.
+
+	For commercial sites, themes, projects, and applications,
+	keep your source code private/proprietary by purchasing
+	a commercial license from https://scrollrevealjs.org/
+*/ /*! @license Tealight v0.3.6
+
+	Copyright 2018 Fisssion LLC.
+
+	Permission is hereby granted, free of charge, to any person obtaining a copy
+	of this software and associated documentation files (the "Software"), to deal
+	in the Software without restriction, including without limitation the rights
+	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+	copies of the Software, and to permit persons to whom the Software is
+	furnished to do so, subject to the following conditions:
+
+	The above copyright notice and this permission notice shall be included in all
+	copies or substantial portions of the Software.
+
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+	SOFTWARE.
+
+*/ /*! @license is-dom-node v1.0.4
+
+	Copyright 2018 Fisssion LLC.
+
+	Permission is hereby granted, free of charge, to any person obtaining a copy
+	of this software and associated documentation files (the "Software"), to deal
+	in the Software without restriction, including without limitation the rights
+	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+	copies of the Software, and to permit persons to whom the Software is
+	furnished to do so, subject to the following conditions:
+
+	The above copyright notice and this permission notice shall be included in all
+	copies or substantial portions of the Software.
+
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+	SOFTWARE.
+
+*/ function $cdaf5b2b19a01d09$var$isDomNode(x) {
+    return typeof window.Node === "object" ? x instanceof window.Node : x !== null && typeof x === "object" && typeof x.nodeType === "number" && typeof x.nodeName === "string";
+}
+var $cdaf5b2b19a01d09$export$2e2bcd8739ae039 = $cdaf5b2b19a01d09$var$isDomNode;
+
+
+/*! @license is-dom-node-list v1.2.1
+
+	Copyright 2018 Fisssion LLC.
+
+	Permission is hereby granted, free of charge, to any person obtaining a copy
+	of this software and associated documentation files (the "Software"), to deal
+	in the Software without restriction, including without limitation the rights
+	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+	copies of the Software, and to permit persons to whom the Software is
+	furnished to do so, subject to the following conditions:
+
+	The above copyright notice and this permission notice shall be included in all
+	copies or substantial portions of the Software.
+
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+	SOFTWARE.
+
+*/ 
+function $2dab67a3a85efb77$var$isDomNodeList(x) {
+    var prototypeToString = Object.prototype.toString.call(x);
+    var regex = /^\[object (HTMLCollection|NodeList|Object)\]$/;
+    return typeof window.NodeList === "object" ? x instanceof window.NodeList : x !== null && typeof x === "object" && typeof x.length === "number" && regex.test(prototypeToString) && (x.length === 0 || (0, $cdaf5b2b19a01d09$export$2e2bcd8739ae039)(x[0]));
+}
+var $2dab67a3a85efb77$export$2e2bcd8739ae039 = $2dab67a3a85efb77$var$isDomNodeList;
+
+
+function $b8a6c484e93e029f$var$tealight(target, context) {
+    if (context === void 0) context = document;
+    if (target instanceof Array) return target.filter((0, $cdaf5b2b19a01d09$export$2e2bcd8739ae039));
+    if ((0, $cdaf5b2b19a01d09$export$2e2bcd8739ae039)(target)) return [
+        target
+    ];
+    if ((0, $2dab67a3a85efb77$export$2e2bcd8739ae039)(target)) return Array.prototype.slice.call(target);
+    if (typeof target === "string") try {
+        var query = context.querySelectorAll(target);
+        return Array.prototype.slice.call(query);
+    } catch (err) {
+        return [];
+    }
+    return [];
+}
+var $b8a6c484e93e029f$export$2e2bcd8739ae039 = $b8a6c484e93e029f$var$tealight;
+
+
+/*! @license Rematrix v0.3.0
+
+	Copyright 2018 Julian Lloyd.
+
+	Permission is hereby granted, free of charge, to any person obtaining a copy
+	of this software and associated documentation files (the "Software"), to deal
+	in the Software without restriction, including without limitation the rights
+	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+	copies of the Software, and to permit persons to whom the Software is
+	furnished to do so, subject to the following conditions:
+
+	The above copyright notice and this permission notice shall be included in
+	all copies or substantial portions of the Software.
+
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+	THE SOFTWARE.
+*/ /**
+ * @module Rematrix
+ */ /**
+ * Transformation matrices in the browser come in two flavors:
+ *
+ *  - `matrix` using 6 values (short)
+ *  - `matrix3d` using 16 values (long)
+ *
+ * This utility follows this [conversion guide](https://goo.gl/EJlUQ1)
+ * to expand short form matrices to their equivalent long form.
+ *
+ * @param  {array} source - Accepts both short and long form matrices.
+ * @return {array}
+ */ function $b5435767bbbd16c4$export$d9468344d3651243(source) {
+    if (source.constructor !== Array) throw new TypeError("Expected array.");
+    if (source.length === 16) return source;
+    if (source.length === 6) {
+        var matrix = $b5435767bbbd16c4$export$f0954fd7d5368655();
+        matrix[0] = source[0];
+        matrix[1] = source[1];
+        matrix[4] = source[2];
+        matrix[5] = source[3];
+        matrix[12] = source[4];
+        matrix[13] = source[5];
+        return matrix;
+    }
+    throw new RangeError("Expected array with either 6 or 16 values.");
+}
+/**
+ * Returns a matrix representing no transformation. The product of any matrix
+ * multiplied by the identity matrix will be the original matrix.
+ *
+ * > **Tip:** Similar to how `5 * 1 === 5`, where `1` is the identity.
+ *
+ * @return {array}
+ */ function $b5435767bbbd16c4$export$f0954fd7d5368655() {
+    var matrix = [];
+    for(var i = 0; i < 16; i++)i % 5 == 0 ? matrix.push(1) : matrix.push(0);
+    return matrix;
+}
+/**
+ * Returns a matrix describing the inverse transformation of the source
+ * matrix. The product of any matrix multiplied by its inverse will be the
+ * identity matrix.
+ *
+ * > **Tip:** Similar to how `5 * (1/5) === 1`, where `1/5` is the inverse.
+ *
+ * @param  {array} source - Accepts both short and long form matrices.
+ * @return {array}
+ */ function $b5435767bbbd16c4$export$70ae2c07e401031b(source) {
+    var m = $b5435767bbbd16c4$export$d9468344d3651243(source);
+    var s0 = m[0] * m[5] - m[4] * m[1];
+    var s1 = m[0] * m[6] - m[4] * m[2];
+    var s2 = m[0] * m[7] - m[4] * m[3];
+    var s3 = m[1] * m[6] - m[5] * m[2];
+    var s4 = m[1] * m[7] - m[5] * m[3];
+    var s5 = m[2] * m[7] - m[6] * m[3];
+    var c5 = m[10] * m[15] - m[14] * m[11];
+    var c4 = m[9] * m[15] - m[13] * m[11];
+    var c3 = m[9] * m[14] - m[13] * m[10];
+    var c2 = m[8] * m[15] - m[12] * m[11];
+    var c1 = m[8] * m[14] - m[12] * m[10];
+    var c0 = m[8] * m[13] - m[12] * m[9];
+    var determinant = 1 / (s0 * c5 - s1 * c4 + s2 * c3 + s3 * c2 - s4 * c1 + s5 * c0);
+    if (isNaN(determinant) || determinant === Infinity) throw new Error("Inverse determinant attempted to divide by zero.");
+    return [
+        (m[5] * c5 - m[6] * c4 + m[7] * c3) * determinant,
+        (-m[1] * c5 + m[2] * c4 - m[3] * c3) * determinant,
+        (m[13] * s5 - m[14] * s4 + m[15] * s3) * determinant,
+        (-m[9] * s5 + m[10] * s4 - m[11] * s3) * determinant,
+        (-m[4] * c5 + m[6] * c2 - m[7] * c1) * determinant,
+        (m[0] * c5 - m[2] * c2 + m[3] * c1) * determinant,
+        (-m[12] * s5 + m[14] * s2 - m[15] * s1) * determinant,
+        (m[8] * s5 - m[10] * s2 + m[11] * s1) * determinant,
+        (m[4] * c4 - m[5] * c2 + m[7] * c0) * determinant,
+        (-m[0] * c4 + m[1] * c2 - m[3] * c0) * determinant,
+        (m[12] * s4 - m[13] * s2 + m[15] * s0) * determinant,
+        (-m[8] * s4 + m[9] * s2 - m[11] * s0) * determinant,
+        (-m[4] * c3 + m[5] * c1 - m[6] * c0) * determinant,
+        (m[0] * c3 - m[1] * c1 + m[2] * c0) * determinant,
+        (-m[12] * s3 + m[13] * s1 - m[14] * s0) * determinant,
+        (m[8] * s3 - m[9] * s1 + m[10] * s0) * determinant
+    ];
+}
+/**
+ * Returns a 4x4 matrix describing the combined transformations
+ * of both arguments.
+ *
+ * > **Note:** Order is very important. For example, rotating 45°
+ * along the Z-axis, followed by translating 500 pixels along the
+ * Y-axis... is not the same as translating 500 pixels along the
+ * Y-axis, followed by rotating 45° along on the Z-axis.
+ *
+ * @param  {array} m - Accepts both short and long form matrices.
+ * @param  {array} x - Accepts both short and long form matrices.
+ * @return {array}
+ */ function $b5435767bbbd16c4$export$2060d2db72cce88f(m, x) {
+    var fm = $b5435767bbbd16c4$export$d9468344d3651243(m);
+    var fx = $b5435767bbbd16c4$export$d9468344d3651243(x);
+    var product = [];
+    for(var i = 0; i < 4; i++){
+        var row = [
+            fm[i],
+            fm[i + 4],
+            fm[i + 8],
+            fm[i + 12]
+        ];
+        for(var j = 0; j < 4; j++){
+            var k = j * 4;
+            var col = [
+                fx[k],
+                fx[k + 1],
+                fx[k + 2],
+                fx[k + 3]
+            ];
+            var result = row[0] * col[0] + row[1] * col[1] + row[2] * col[2] + row[3] * col[3];
+            product[i + k] = result;
+        }
+    }
+    return product;
+}
+/**
+ * Attempts to return a 4x4 matrix describing the CSS transform
+ * matrix passed in, but will return the identity matrix as a
+ * fallback.
+ *
+ * > **Tip:** This method is used to convert a CSS matrix (retrieved as a
+ * `string` from computed styles) to its equivalent array format.
+ *
+ * @param  {string} source - `matrix` or `matrix3d` CSS Transform value.
+ * @return {array}
+ */ function $b5435767bbbd16c4$export$98e6a39c04603d36(source) {
+    if (typeof source === "string") {
+        var match = source.match(/matrix(3d)?\(([^)]+)\)/);
+        if (match) {
+            var raw = match[2].split(", ").map(parseFloat);
+            return $b5435767bbbd16c4$export$d9468344d3651243(raw);
+        }
+    }
+    return $b5435767bbbd16c4$export$f0954fd7d5368655();
+}
+/**
+ * Returns a 4x4 matrix describing Z-axis rotation.
+ *
+ * > **Tip:** This is just an alias for `Rematrix.rotateZ` for parity with CSS
+ *
+ * @param  {number} angle - Measured in degrees.
+ * @return {array}
+ */ function $b5435767bbbd16c4$export$bb628a54ab399bc9(angle) {
+    return $b5435767bbbd16c4$export$ea6eae3365de5b9c(angle);
+}
+/**
+ * Returns a 4x4 matrix describing X-axis rotation.
+ *
+ * @param  {number} angle - Measured in degrees.
+ * @return {array}
+ */ function $b5435767bbbd16c4$export$a59c8716592e09af(angle) {
+    var theta = Math.PI / 180 * angle;
+    var matrix = $b5435767bbbd16c4$export$f0954fd7d5368655();
+    matrix[5] = matrix[10] = Math.cos(theta);
+    matrix[6] = matrix[9] = Math.sin(theta);
+    matrix[9] *= -1;
+    return matrix;
+}
+/**
+ * Returns a 4x4 matrix describing Y-axis rotation.
+ *
+ * @param  {number} angle - Measured in degrees.
+ * @return {array}
+ */ function $b5435767bbbd16c4$export$cf71e4d4ca4d1cfd(angle) {
+    var theta = Math.PI / 180 * angle;
+    var matrix = $b5435767bbbd16c4$export$f0954fd7d5368655();
+    matrix[0] = matrix[10] = Math.cos(theta);
+    matrix[2] = matrix[8] = Math.sin(theta);
+    matrix[2] *= -1;
+    return matrix;
+}
+/**
+ * Returns a 4x4 matrix describing Z-axis rotation.
+ *
+ * @param  {number} angle - Measured in degrees.
+ * @return {array}
+ */ function $b5435767bbbd16c4$export$ea6eae3365de5b9c(angle) {
+    var theta = Math.PI / 180 * angle;
+    var matrix = $b5435767bbbd16c4$export$f0954fd7d5368655();
+    matrix[0] = matrix[5] = Math.cos(theta);
+    matrix[1] = matrix[4] = Math.sin(theta);
+    matrix[4] *= -1;
+    return matrix;
+}
+/**
+ * Returns a 4x4 matrix describing 2D scaling. The first argument
+ * is used for both X and Y-axis scaling, unless an optional
+ * second argument is provided to explicitly define Y-axis scaling.
+ *
+ * @param  {number} scalar    - Decimal multiplier.
+ * @param  {number} [scalarY] - Decimal multiplier.
+ * @return {array}
+ */ function $b5435767bbbd16c4$export$dcdf75081b88279d(scalar, scalarY) {
+    var matrix = $b5435767bbbd16c4$export$f0954fd7d5368655();
+    matrix[0] = scalar;
+    matrix[5] = typeof scalarY === "number" ? scalarY : scalar;
+    return matrix;
+}
+/**
+ * Returns a 4x4 matrix describing X-axis scaling.
+ *
+ * @param  {number} scalar - Decimal multiplier.
+ * @return {array}
+ */ function $b5435767bbbd16c4$export$55295ade51f88202(scalar) {
+    var matrix = $b5435767bbbd16c4$export$f0954fd7d5368655();
+    matrix[0] = scalar;
+    return matrix;
+}
+/**
+ * Returns a 4x4 matrix describing Y-axis scaling.
+ *
+ * @param  {number} scalar - Decimal multiplier.
+ * @return {array}
+ */ function $b5435767bbbd16c4$export$2092e2a44ac13bb2(scalar) {
+    var matrix = $b5435767bbbd16c4$export$f0954fd7d5368655();
+    matrix[5] = scalar;
+    return matrix;
+}
+/**
+ * Returns a 4x4 matrix describing Z-axis scaling.
+ *
+ * @param  {number} scalar - Decimal multiplier.
+ * @return {array}
+ */ function $b5435767bbbd16c4$export$13034b1ece9569d5(scalar) {
+    var matrix = $b5435767bbbd16c4$export$f0954fd7d5368655();
+    matrix[10] = scalar;
+    return matrix;
+}
+/**
+ * Returns a 4x4 matrix describing shear. The first argument
+ * defines X-axis shearing, and an optional second argument
+ * defines Y-axis shearing.
+ *
+ * @param  {number} angleX   - Measured in degrees.
+ * @param  {number} [angleY] - Measured in degrees.
+ * @return {array}
+ */ function $b5435767bbbd16c4$export$dd2d5a892675faf1(angleX, angleY) {
+    var thetaX = Math.PI / 180 * angleX;
+    var matrix = $b5435767bbbd16c4$export$f0954fd7d5368655();
+    matrix[4] = Math.tan(thetaX);
+    if (angleY) {
+        var thetaY = Math.PI / 180 * angleY;
+        matrix[1] = Math.tan(thetaY);
+    }
+    return matrix;
+}
+/**
+ * Returns a 4x4 matrix describing X-axis shear.
+ *
+ * @param  {number} angle - Measured in degrees.
+ * @return {array}
+ */ function $b5435767bbbd16c4$export$e446fc4c2803fd1b(angle) {
+    var theta = Math.PI / 180 * angle;
+    var matrix = $b5435767bbbd16c4$export$f0954fd7d5368655();
+    matrix[4] = Math.tan(theta);
+    return matrix;
+}
+/**
+ * Returns a 4x4 matrix describing Y-axis shear.
+ *
+ * @param  {number} angle - Measured in degrees
+ * @return {array}
+ */ function $b5435767bbbd16c4$export$1649e48e73861f36(angle) {
+    var theta = Math.PI / 180 * angle;
+    var matrix = $b5435767bbbd16c4$export$f0954fd7d5368655();
+    matrix[1] = Math.tan(theta);
+    return matrix;
+}
+/**
+ * Returns a CSS Transform property value equivalent to the source matrix.
+ *
+ * @param  {array} source - Accepts both short and long form matrices.
+ * @return {string}
+ */ function $b5435767bbbd16c4$export$f84e8e69fd4488a5(source) {
+    return "matrix3d(" + $b5435767bbbd16c4$export$d9468344d3651243(source).join(", ") + ")";
+}
+/**
+ * Returns a 4x4 matrix describing 2D translation. The first
+ * argument defines X-axis translation, and an optional second
+ * argument defines Y-axis translation.
+ *
+ * @param  {number} distanceX   - Measured in pixels.
+ * @param  {number} [distanceY] - Measured in pixels.
+ * @return {array}
+ */ function $b5435767bbbd16c4$export$d73ee8ef04f5226a(distanceX, distanceY) {
+    var matrix = $b5435767bbbd16c4$export$f0954fd7d5368655();
+    matrix[12] = distanceX;
+    if (distanceY) matrix[13] = distanceY;
+    return matrix;
+}
+/**
+ * Returns a 4x4 matrix describing X-axis translation.
+ *
+ * @param  {number} distance - Measured in pixels.
+ * @return {array}
+ */ function $b5435767bbbd16c4$export$5667f2d3f182f284(distance) {
+    var matrix = $b5435767bbbd16c4$export$f0954fd7d5368655();
+    matrix[12] = distance;
+    return matrix;
+}
+/**
+ * Returns a 4x4 matrix describing Y-axis translation.
+ *
+ * @param  {number} distance - Measured in pixels.
+ * @return {array}
+ */ function $b5435767bbbd16c4$export$a1f0f3245f0cf0a4(distance) {
+    var matrix = $b5435767bbbd16c4$export$f0954fd7d5368655();
+    matrix[13] = distance;
+    return matrix;
+}
+/**
+ * Returns a 4x4 matrix describing Z-axis translation.
+ *
+ * @param  {number} distance - Measured in pixels.
+ * @return {array}
+ */ function $b5435767bbbd16c4$export$6e43fd17fc519956(distance) {
+    var matrix = $b5435767bbbd16c4$export$f0954fd7d5368655();
+    matrix[14] = distance;
+    return matrix;
+}
+
+
+/*! @license miniraf v1.0.0
+
+	Copyright 2018 Fisssion LLC.
+
+	Permission is hereby granted, free of charge, to any person obtaining a copy
+	of this software and associated documentation files (the "Software"), to deal
+	in the Software without restriction, including without limitation the rights
+	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+	copies of the Software, and to permit persons to whom the Software is
+	furnished to do so, subject to the following conditions:
+
+	The above copyright notice and this permission notice shall be included in all
+	copies or substantial portions of the Software.
+
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+	SOFTWARE.
+
+*/ var $d0c0ddebd3470fec$var$polyfill = function() {
+    var clock = Date.now();
+    return function(callback) {
+        var currentTime = Date.now();
+        if (currentTime - clock > 16) {
+            clock = currentTime;
+            callback(currentTime);
+        } else setTimeout(function() {
+            return $d0c0ddebd3470fec$var$polyfill(callback);
+        }, 0);
+    };
+}();
+var $d0c0ddebd3470fec$var$index = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || $d0c0ddebd3470fec$var$polyfill;
+var $d0c0ddebd3470fec$export$2e2bcd8739ae039 = $d0c0ddebd3470fec$var$index;
+
+
+var $84400942f6180132$var$defaults = {
+    delay: 0,
+    distance: "0",
+    duration: 600,
+    easing: "cubic-bezier(0.5, 0, 0, 1)",
+    interval: 0,
+    opacity: 0,
+    origin: "bottom",
+    rotate: {
+        x: 0,
+        y: 0,
+        z: 0
+    },
+    scale: 1,
+    cleanup: false,
+    container: document.documentElement,
+    desktop: true,
+    mobile: true,
+    reset: false,
+    useDelay: "always",
+    viewFactor: 0.0,
+    viewOffset: {
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0
+    },
+    afterReset: function afterReset() {},
+    afterReveal: function afterReveal() {},
+    beforeReset: function beforeReset() {},
+    beforeReveal: function beforeReveal() {}
+};
+function $84400942f6180132$var$failure() {
+    document.documentElement.classList.remove("sr");
+    return {
+        clean: function clean() {},
+        destroy: function destroy() {},
+        reveal: function reveal() {},
+        sync: function sync() {},
+        get noop () {
+            return true;
+        }
+    };
+}
+function $84400942f6180132$var$success() {
+    document.documentElement.classList.add("sr");
+    if (document.body) document.body.style.height = "100%";
+    else document.addEventListener("DOMContentLoaded", function() {
+        document.body.style.height = "100%";
+    });
+}
+var $84400942f6180132$var$mount = {
+    success: $84400942f6180132$var$success,
+    failure: $84400942f6180132$var$failure
+};
+function $84400942f6180132$var$isObject(x) {
+    return x !== null && x instanceof Object && (x.constructor === Object || Object.prototype.toString.call(x) === "[object Object]");
+}
+function $84400942f6180132$var$each(collection, callback) {
+    if ($84400942f6180132$var$isObject(collection)) {
+        var keys = Object.keys(collection);
+        return keys.forEach(function(key) {
+            return callback(collection[key], key, collection);
+        });
+    }
+    if (collection instanceof Array) return collection.forEach(function(item, i) {
+        return callback(item, i, collection);
+    });
+    throw new TypeError("Expected either an array or object literal.");
+}
+function $84400942f6180132$var$logger(message) {
+    var details = [], len = arguments.length - 1;
+    while(len-- > 0)details[len] = arguments[len + 1];
+    if (this.constructor.debug && console) {
+        var report = "%cScrollReveal: " + message;
+        details.forEach(function(detail) {
+            return report += "\n — " + detail;
+        });
+        console.log(report, "color: #ea654b;"); // eslint-disable-line no-console
+    }
+}
+function $84400942f6180132$var$rinse() {
+    var this$1 = this;
+    var struct = function() {
+        return {
+            active: [],
+            stale: []
+        };
+    };
+    var elementIds = struct();
+    var sequenceIds = struct();
+    var containerIds = struct();
+    /**
+	 * Take stock of active element IDs.
+	 */ try {
+        $84400942f6180132$var$each((0, $b8a6c484e93e029f$export$2e2bcd8739ae039)("[data-sr-id]"), function(node) {
+            var id = parseInt(node.getAttribute("data-sr-id"));
+            elementIds.active.push(id);
+        });
+    } catch (e) {
+        throw e;
+    }
+    /**
+	 * Destroy stale elements.
+	 */ $84400942f6180132$var$each(this.store.elements, function(element) {
+        if (elementIds.active.indexOf(element.id) === -1) elementIds.stale.push(element.id);
+    });
+    $84400942f6180132$var$each(elementIds.stale, function(staleId) {
+        return delete this$1.store.elements[staleId];
+    });
+    /**
+	 * Take stock of active container and sequence IDs.
+	 */ $84400942f6180132$var$each(this.store.elements, function(element) {
+        if (containerIds.active.indexOf(element.containerId) === -1) containerIds.active.push(element.containerId);
+        if (element.hasOwnProperty("sequence")) {
+            if (sequenceIds.active.indexOf(element.sequence.id) === -1) sequenceIds.active.push(element.sequence.id);
+        }
+    });
+    /**
+	 * Destroy stale containers.
+	 */ $84400942f6180132$var$each(this.store.containers, function(container) {
+        if (containerIds.active.indexOf(container.id) === -1) containerIds.stale.push(container.id);
+    });
+    $84400942f6180132$var$each(containerIds.stale, function(staleId) {
+        var stale = this$1.store.containers[staleId].node;
+        stale.removeEventListener("scroll", this$1.delegate);
+        stale.removeEventListener("resize", this$1.delegate);
+        delete this$1.store.containers[staleId];
+    });
+    /**
+	 * Destroy stale sequences.
+	 */ $84400942f6180132$var$each(this.store.sequences, function(sequence) {
+        if (sequenceIds.active.indexOf(sequence.id) === -1) sequenceIds.stale.push(sequence.id);
+    });
+    $84400942f6180132$var$each(sequenceIds.stale, function(staleId) {
+        return delete this$1.store.sequences[staleId];
+    });
+}
+var $84400942f6180132$var$getPrefixedCssProp = function() {
+    var properties = {};
+    var style = document.documentElement.style;
+    function getPrefixedCssProperty(name, source) {
+        if (source === void 0) source = style;
+        if (name && typeof name === "string") {
+            if (properties[name]) return properties[name];
+            if (typeof source[name] === "string") return properties[name] = name;
+            if (typeof source["-webkit-" + name] === "string") return properties[name] = "-webkit-" + name;
+            throw new RangeError('Unable to find "' + name + '" style property.');
+        }
+        throw new TypeError("Expected a string.");
+    }
+    getPrefixedCssProperty.clearCache = function() {
+        return properties = {};
+    };
+    return getPrefixedCssProperty;
+}();
+function $84400942f6180132$var$style(element) {
+    var computed = window.getComputedStyle(element.node);
+    var position = computed.position;
+    var config = element.config;
+    /**
+	 * Generate inline styles
+	 */ var inline = {};
+    var inlineStyle = element.node.getAttribute("style") || "";
+    var inlineMatch = inlineStyle.match(/[\w-]+\s*:\s*[^;]+\s*/gi) || [];
+    inline.computed = inlineMatch ? inlineMatch.map(function(m) {
+        return m.trim();
+    }).join("; ") + ";" : "";
+    inline.generated = inlineMatch.some(function(m) {
+        return m.match(/visibility\s?:\s?visible/i);
+    }) ? inline.computed : inlineMatch.concat([
+        "visibility: visible"
+    ]).map(function(m) {
+        return m.trim();
+    }).join("; ") + ";";
+    /**
+	 * Generate opacity styles
+	 */ var computedOpacity = parseFloat(computed.opacity);
+    var configOpacity = !isNaN(parseFloat(config.opacity)) ? parseFloat(config.opacity) : parseFloat(computed.opacity);
+    var opacity = {
+        computed: computedOpacity !== configOpacity ? "opacity: " + computedOpacity + ";" : "",
+        generated: computedOpacity !== configOpacity ? "opacity: " + configOpacity + ";" : ""
+    };
+    /**
+	 * Generate transformation styles
+	 */ var transformations = [];
+    if (parseFloat(config.distance)) {
+        var axis = config.origin === "top" || config.origin === "bottom" ? "Y" : "X";
+        /**
+		 * Let’s make sure our our pixel distances are negative for top and left.
+		 * e.g. { origin: 'top', distance: '25px' } starts at `top: -25px` in CSS.
+		 */ var distance = config.distance;
+        if (config.origin === "top" || config.origin === "left") distance = /^-/.test(distance) ? distance.substr(1) : "-" + distance;
+        var ref = distance.match(/(^-?\d+\.?\d?)|(em$|px$|%$)/g);
+        var value = ref[0];
+        var unit = ref[1];
+        switch(unit){
+            case "em":
+                distance = parseInt(computed.fontSize) * value;
+                break;
+            case "px":
+                distance = value;
+                break;
+            case "%":
+                /**
+				 * Here we use `getBoundingClientRect` instead of
+				 * the existing data attached to `element.geometry`
+				 * because only the former includes any transformations
+				 * current applied to the element.
+				 *
+				 * If that behavior ends up being unintuitive, this
+				 * logic could instead utilize `element.geometry.height`
+				 * and `element.geoemetry.width` for the distance calculation
+				 */ distance = axis === "Y" ? element.node.getBoundingClientRect().height * value / 100 : element.node.getBoundingClientRect().width * value / 100;
+                break;
+            default:
+                throw new RangeError("Unrecognized or missing distance unit.");
+        }
+        if (axis === "Y") transformations.push((0, $b5435767bbbd16c4$export$a1f0f3245f0cf0a4)(distance));
+        else transformations.push((0, $b5435767bbbd16c4$export$5667f2d3f182f284)(distance));
+    }
+    if (config.rotate.x) transformations.push((0, $b5435767bbbd16c4$export$a59c8716592e09af)(config.rotate.x));
+    if (config.rotate.y) transformations.push((0, $b5435767bbbd16c4$export$cf71e4d4ca4d1cfd)(config.rotate.y));
+    if (config.rotate.z) transformations.push((0, $b5435767bbbd16c4$export$ea6eae3365de5b9c)(config.rotate.z));
+    if (config.scale !== 1) {
+        if (config.scale === 0) /**
+			 * The CSS Transforms matrix interpolation specification
+			 * basically disallows transitions of non-invertible
+			 * matrixes, which means browsers won't transition
+			 * elements with zero scale.
+			 *
+			 * That’s inconvenient for the API and developer
+			 * experience, so we simply nudge their value
+			 * slightly above zero; this allows browsers
+			 * to transition our element as expected.
+			 *
+			 * `0.0002` was the smallest number
+			 * that performed across browsers.
+			 */ transformations.push((0, $b5435767bbbd16c4$export$dcdf75081b88279d)(0.0002));
+        else transformations.push((0, $b5435767bbbd16c4$export$dcdf75081b88279d)(config.scale));
+    }
+    var transform = {};
+    if (transformations.length) {
+        transform.property = $84400942f6180132$var$getPrefixedCssProp("transform");
+        /**
+		 * The default computed transform value should be one of:
+		 * undefined || 'none' || 'matrix()' || 'matrix3d()'
+		 */ transform.computed = {
+            raw: computed[transform.property],
+            matrix: (0, $b5435767bbbd16c4$export$98e6a39c04603d36)(computed[transform.property])
+        };
+        transformations.unshift(transform.computed.matrix);
+        var product = transformations.reduce((0, $b5435767bbbd16c4$export$2060d2db72cce88f));
+        transform.generated = {
+            initial: transform.property + ": matrix3d(" + product.join(", ") + ");",
+            final: transform.property + ": matrix3d(" + transform.computed.matrix.join(", ") + ");"
+        };
+    } else transform.generated = {
+        initial: "",
+        final: ""
+    };
+    /**
+	 * Generate transition styles
+	 */ var transition = {};
+    if (opacity.generated || transform.generated.initial) {
+        transition.property = $84400942f6180132$var$getPrefixedCssProp("transition");
+        transition.computed = computed[transition.property];
+        transition.fragments = [];
+        var delay = config.delay;
+        var duration = config.duration;
+        var easing = config.easing;
+        if (opacity.generated) transition.fragments.push({
+            delayed: "opacity " + duration / 1000 + "s " + easing + " " + delay / 1000 + "s",
+            instant: "opacity " + duration / 1000 + "s " + easing + " 0s"
+        });
+        if (transform.generated.initial) transition.fragments.push({
+            delayed: transform.property + " " + duration / 1000 + "s " + easing + " " + delay / 1000 + "s",
+            instant: transform.property + " " + duration / 1000 + "s " + easing + " 0s"
+        });
+        /**
+		 * The default computed transition property should be undefined, or one of:
+		 * '' || 'none 0s ease 0s' || 'all 0s ease 0s' || 'all 0s 0s cubic-bezier()'
+		 */ var hasCustomTransition = transition.computed && !transition.computed.match(/all 0s|none 0s/);
+        if (hasCustomTransition) transition.fragments.unshift({
+            delayed: transition.computed,
+            instant: transition.computed
+        });
+        var composed = transition.fragments.reduce(function(composition, fragment, i) {
+            composition.delayed += i === 0 ? fragment.delayed : ", " + fragment.delayed;
+            composition.instant += i === 0 ? fragment.instant : ", " + fragment.instant;
+            return composition;
+        }, {
+            delayed: "",
+            instant: ""
+        });
+        transition.generated = {
+            delayed: transition.property + ": " + composed.delayed + ";",
+            instant: transition.property + ": " + composed.instant + ";"
+        };
+    } else transition.generated = {
+        delayed: "",
+        instant: ""
+    };
+    return {
+        inline: inline,
+        opacity: opacity,
+        position: position,
+        transform: transform,
+        transition: transition
+    };
+}
+/**
+ * apply a CSS string to an element using the CSSOM (element.style) rather
+ * than setAttribute, which may violate the content security policy.
+ *
+ * @param {Node}   [el]  Element to receive styles.
+ * @param {string} [declaration] Styles to apply.
+ */ function $84400942f6180132$var$applyStyle(el, declaration) {
+    declaration.split(";").forEach(function(pair) {
+        var ref = pair.split(":");
+        var property = ref[0];
+        var value = ref.slice(1);
+        if (property && value) el.style[property.trim()] = value.join(":");
+    });
+}
+function $84400942f6180132$var$clean(target) {
+    var this$1 = this;
+    var dirty;
+    try {
+        $84400942f6180132$var$each((0, $b8a6c484e93e029f$export$2e2bcd8739ae039)(target), function(node) {
+            var id = node.getAttribute("data-sr-id");
+            if (id !== null) {
+                dirty = true;
+                var element = this$1.store.elements[id];
+                if (element.callbackTimer) window.clearTimeout(element.callbackTimer.clock);
+                $84400942f6180132$var$applyStyle(element.node, element.styles.inline.generated);
+                node.removeAttribute("data-sr-id");
+                delete this$1.store.elements[id];
+            }
+        });
+    } catch (e) {
+        return $84400942f6180132$var$logger.call(this, "Clean failed.", e.message);
+    }
+    if (dirty) try {
+        $84400942f6180132$var$rinse.call(this);
+    } catch (e1) {
+        return $84400942f6180132$var$logger.call(this, "Clean failed.", e1.message);
+    }
+}
+function $84400942f6180132$var$destroy() {
+    var this$1 = this;
+    /**
+	 * Remove all generated styles and element ids
+	 */ $84400942f6180132$var$each(this.store.elements, function(element) {
+        $84400942f6180132$var$applyStyle(element.node, element.styles.inline.generated);
+        element.node.removeAttribute("data-sr-id");
+    });
+    /**
+	 * Remove all event listeners.
+	 */ $84400942f6180132$var$each(this.store.containers, function(container) {
+        var target = container.node === document.documentElement ? window : container.node;
+        target.removeEventListener("scroll", this$1.delegate);
+        target.removeEventListener("resize", this$1.delegate);
+    });
+    /**
+	 * Clear all data from the store
+	 */ this.store = {
+        containers: {},
+        elements: {},
+        history: [],
+        sequences: {}
+    };
+}
+function $84400942f6180132$var$deepAssign(target) {
+    var sources = [], len = arguments.length - 1;
+    while(len-- > 0)sources[len] = arguments[len + 1];
+    if ($84400942f6180132$var$isObject(target)) {
+        $84400942f6180132$var$each(sources, function(source) {
+            $84400942f6180132$var$each(source, function(data, key) {
+                if ($84400942f6180132$var$isObject(data)) {
+                    if (!target[key] || !$84400942f6180132$var$isObject(target[key])) target[key] = {};
+                    $84400942f6180132$var$deepAssign(target[key], data);
+                } else target[key] = data;
+            });
+        });
+        return target;
+    } else throw new TypeError("Target must be an object literal.");
+}
+function $84400942f6180132$var$isMobile(agent) {
+    if (agent === void 0) agent = navigator.userAgent;
+    return /Android|iPhone|iPad|iPod/i.test(agent);
+}
+var $84400942f6180132$var$nextUniqueId = function() {
+    var uid = 0;
+    return function() {
+        return uid++;
+    };
+}();
+function $84400942f6180132$var$initialize() {
+    var this$1 = this;
+    $84400942f6180132$var$rinse.call(this);
+    $84400942f6180132$var$each(this.store.elements, function(element) {
+        var styles = [
+            element.styles.inline.generated
+        ];
+        if (element.visible) {
+            styles.push(element.styles.opacity.computed);
+            styles.push(element.styles.transform.generated.final);
+            element.revealed = true;
+        } else {
+            styles.push(element.styles.opacity.generated);
+            styles.push(element.styles.transform.generated.initial);
+            element.revealed = false;
+        }
+        $84400942f6180132$var$applyStyle(element.node, styles.filter(function(s) {
+            return s !== "";
+        }).join(" "));
+    });
+    $84400942f6180132$var$each(this.store.containers, function(container) {
+        var target = container.node === document.documentElement ? window : container.node;
+        target.addEventListener("scroll", this$1.delegate);
+        target.addEventListener("resize", this$1.delegate);
+    });
+    /**
+	 * Manually invoke delegate once to capture
+	 * element and container dimensions, container
+	 * scroll position, and trigger any valid reveals
+	 */ this.delegate();
+    /**
+	 * Wipe any existing `setTimeout` now
+	 * that initialization has completed.
+	 */ this.initTimeout = null;
+}
+function $84400942f6180132$var$animate(element, force) {
+    if (force === void 0) force = {};
+    var pristine = force.pristine || this.pristine;
+    var delayed = element.config.useDelay === "always" || element.config.useDelay === "onload" && pristine || element.config.useDelay === "once" && !element.seen;
+    var shouldReveal = element.visible && !element.revealed;
+    var shouldReset = !element.visible && element.revealed && element.config.reset;
+    if (force.reveal || shouldReveal) return $84400942f6180132$var$triggerReveal.call(this, element, delayed);
+    if (force.reset || shouldReset) return $84400942f6180132$var$triggerReset.call(this, element);
+}
+function $84400942f6180132$var$triggerReveal(element, delayed) {
+    var styles = [
+        element.styles.inline.generated,
+        element.styles.opacity.computed,
+        element.styles.transform.generated.final
+    ];
+    if (delayed) styles.push(element.styles.transition.generated.delayed);
+    else styles.push(element.styles.transition.generated.instant);
+    element.revealed = element.seen = true;
+    $84400942f6180132$var$applyStyle(element.node, styles.filter(function(s) {
+        return s !== "";
+    }).join(" "));
+    $84400942f6180132$var$registerCallbacks.call(this, element, delayed);
+}
+function $84400942f6180132$var$triggerReset(element) {
+    var styles = [
+        element.styles.inline.generated,
+        element.styles.opacity.generated,
+        element.styles.transform.generated.initial,
+        element.styles.transition.generated.instant
+    ];
+    element.revealed = false;
+    $84400942f6180132$var$applyStyle(element.node, styles.filter(function(s) {
+        return s !== "";
+    }).join(" "));
+    $84400942f6180132$var$registerCallbacks.call(this, element);
+}
+function $84400942f6180132$var$registerCallbacks(element, isDelayed) {
+    var this$1 = this;
+    var duration = isDelayed ? element.config.duration + element.config.delay : element.config.duration;
+    var beforeCallback = element.revealed ? element.config.beforeReveal : element.config.beforeReset;
+    var afterCallback = element.revealed ? element.config.afterReveal : element.config.afterReset;
+    var elapsed = 0;
+    if (element.callbackTimer) {
+        elapsed = Date.now() - element.callbackTimer.start;
+        window.clearTimeout(element.callbackTimer.clock);
+    }
+    beforeCallback(element.node);
+    element.callbackTimer = {
+        start: Date.now(),
+        clock: window.setTimeout(function() {
+            afterCallback(element.node);
+            element.callbackTimer = null;
+            if (element.revealed && !element.config.reset && element.config.cleanup) $84400942f6180132$var$clean.call(this$1, element.node);
+        }, duration - elapsed)
+    };
+}
+function $84400942f6180132$var$sequence(element, pristine) {
+    if (pristine === void 0) pristine = this.pristine;
+    /**
+	 * We first check if the element should reset.
+	 */ if (!element.visible && element.revealed && element.config.reset) return $84400942f6180132$var$animate.call(this, element, {
+        reset: true
+    });
+    var seq = this.store.sequences[element.sequence.id];
+    var i = element.sequence.index;
+    if (seq) {
+        var visible = new $84400942f6180132$var$SequenceModel(seq, "visible", this.store);
+        var revealed = new $84400942f6180132$var$SequenceModel(seq, "revealed", this.store);
+        seq.models = {
+            visible: visible,
+            revealed: revealed
+        };
+        /**
+		 * If the sequence has no revealed members,
+		 * then we reveal the first visible element
+		 * within that sequence.
+		 *
+		 * The sequence then cues a recursive call
+		 * in both directions.
+		 */ if (!revealed.body.length) {
+            var nextId = seq.members[visible.body[0]];
+            var nextElement = this.store.elements[nextId];
+            if (nextElement) {
+                $84400942f6180132$var$cue.call(this, seq, visible.body[0], -1, pristine);
+                $84400942f6180132$var$cue.call(this, seq, visible.body[0], 1, pristine);
+                return $84400942f6180132$var$animate.call(this, nextElement, {
+                    reveal: true,
+                    pristine: pristine
+                });
+            }
+        }
+        /**
+		 * If our element isn’t resetting, we check the
+		 * element sequence index against the head, and
+		 * then the foot of the sequence.
+		 */ if (!seq.blocked.head && i === [].concat(revealed.head).pop() && i >= [].concat(visible.body).shift()) {
+            $84400942f6180132$var$cue.call(this, seq, i, -1, pristine);
+            return $84400942f6180132$var$animate.call(this, element, {
+                reveal: true,
+                pristine: pristine
+            });
+        }
+        if (!seq.blocked.foot && i === [].concat(revealed.foot).shift() && i <= [].concat(visible.body).pop()) {
+            $84400942f6180132$var$cue.call(this, seq, i, 1, pristine);
+            return $84400942f6180132$var$animate.call(this, element, {
+                reveal: true,
+                pristine: pristine
+            });
+        }
+    }
+}
+function $84400942f6180132$var$Sequence(interval) {
+    var i = Math.abs(interval);
+    if (!isNaN(i)) {
+        this.id = $84400942f6180132$var$nextUniqueId();
+        this.interval = Math.max(i, 16);
+        this.members = [];
+        this.models = {};
+        this.blocked = {
+            head: false,
+            foot: false
+        };
+    } else throw new RangeError("Invalid sequence interval.");
+}
+function $84400942f6180132$var$SequenceModel(seq, prop, store) {
+    var this$1 = this;
+    this.head = [];
+    this.body = [];
+    this.foot = [];
+    $84400942f6180132$var$each(seq.members, function(id, index) {
+        var element = store.elements[id];
+        if (element && element[prop]) this$1.body.push(index);
+    });
+    if (this.body.length) $84400942f6180132$var$each(seq.members, function(id, index) {
+        var element = store.elements[id];
+        if (element && !element[prop]) {
+            if (index < this$1.body[0]) this$1.head.push(index);
+            else this$1.foot.push(index);
+        }
+    });
+}
+function $84400942f6180132$var$cue(seq, i, direction, pristine) {
+    var this$1 = this;
+    var blocked = [
+        "head",
+        null,
+        "foot"
+    ][1 + direction];
+    var nextId = seq.members[i + direction];
+    var nextElement = this.store.elements[nextId];
+    seq.blocked[blocked] = true;
+    setTimeout(function() {
+        seq.blocked[blocked] = false;
+        if (nextElement) $84400942f6180132$var$sequence.call(this$1, nextElement, pristine);
+    }, seq.interval);
+}
+function $84400942f6180132$var$reveal(target, options, syncing) {
+    var this$1 = this;
+    if (options === void 0) options = {};
+    if (syncing === void 0) syncing = false;
+    var containerBuffer = [];
+    var sequence$$1;
+    var interval = options.interval || $84400942f6180132$var$defaults.interval;
+    try {
+        if (interval) sequence$$1 = new $84400942f6180132$var$Sequence(interval);
+        var nodes = (0, $b8a6c484e93e029f$export$2e2bcd8739ae039)(target);
+        if (!nodes.length) throw new Error("Invalid reveal target.");
+        var elements = nodes.reduce(function(elementBuffer, elementNode) {
+            var element = {};
+            var existingId = elementNode.getAttribute("data-sr-id");
+            if (existingId) {
+                $84400942f6180132$var$deepAssign(element, this$1.store.elements[existingId]);
+                /**
+				 * In order to prevent previously generated styles
+				 * from throwing off the new styles, the style tag
+				 * has to be reverted to its pre-reveal state.
+				 */ $84400942f6180132$var$applyStyle(element.node, element.styles.inline.computed);
+            } else {
+                element.id = $84400942f6180132$var$nextUniqueId();
+                element.node = elementNode;
+                element.seen = false;
+                element.revealed = false;
+                element.visible = false;
+            }
+            var config = $84400942f6180132$var$deepAssign({}, element.config || this$1.defaults, options);
+            if (!config.mobile && $84400942f6180132$var$isMobile() || !config.desktop && !$84400942f6180132$var$isMobile()) {
+                if (existingId) $84400942f6180132$var$clean.call(this$1, element);
+                return elementBuffer // skip elements that are disabled
+                ;
+            }
+            var containerNode = (0, $b8a6c484e93e029f$export$2e2bcd8739ae039)(config.container)[0];
+            if (!containerNode) throw new Error("Invalid container.");
+            if (!containerNode.contains(elementNode)) return elementBuffer // skip elements found outside the container
+            ;
+            var containerId;
+            containerId = $84400942f6180132$var$getContainerId(containerNode, containerBuffer, this$1.store.containers);
+            if (containerId === null) {
+                containerId = $84400942f6180132$var$nextUniqueId();
+                containerBuffer.push({
+                    id: containerId,
+                    node: containerNode
+                });
+            }
+            element.config = config;
+            element.containerId = containerId;
+            element.styles = $84400942f6180132$var$style(element);
+            if (sequence$$1) {
+                element.sequence = {
+                    id: sequence$$1.id,
+                    index: sequence$$1.members.length
+                };
+                sequence$$1.members.push(element.id);
+            }
+            elementBuffer.push(element);
+            return elementBuffer;
+        }, []);
+        /**
+		 * Modifying the DOM via setAttribute needs to be handled
+		 * separately from reading computed styles in the map above
+		 * for the browser to batch DOM changes (limiting reflows)
+		 */ $84400942f6180132$var$each(elements, function(element) {
+            this$1.store.elements[element.id] = element;
+            element.node.setAttribute("data-sr-id", element.id);
+        });
+    } catch (e) {
+        return $84400942f6180132$var$logger.call(this, "Reveal failed.", e.message);
+    }
+    /**
+	 * Now that element set-up is complete...
+	 * Let’s commit any container and sequence data we have to the store.
+	 */ $84400942f6180132$var$each(containerBuffer, function(container) {
+        this$1.store.containers[container.id] = {
+            id: container.id,
+            node: container.node
+        };
+    });
+    if (sequence$$1) this.store.sequences[sequence$$1.id] = sequence$$1;
+    /**
+	 * If reveal wasn't invoked by sync, we want to
+	 * make sure to add this call to the history.
+	 */ if (syncing !== true) {
+        this.store.history.push({
+            target: target,
+            options: options
+        });
+        /**
+		 * Push initialization to the event queue, giving
+		 * multiple reveal calls time to be interpreted.
+		 */ if (this.initTimeout) window.clearTimeout(this.initTimeout);
+        this.initTimeout = window.setTimeout($84400942f6180132$var$initialize.bind(this), 0);
+    }
+}
+function $84400942f6180132$var$getContainerId(node) {
+    var collections = [], len = arguments.length - 1;
+    while(len-- > 0)collections[len] = arguments[len + 1];
+    var id = null;
+    $84400942f6180132$var$each(collections, function(collection) {
+        $84400942f6180132$var$each(collection, function(container) {
+            if (id === null && container.node === node) id = container.id;
+        });
+    });
+    return id;
+}
+/**
+ * Re-runs the reveal method for each record stored in history,
+ * for capturing new content asynchronously loaded into the DOM.
+ */ function $84400942f6180132$var$sync() {
+    var this$1 = this;
+    $84400942f6180132$var$each(this.store.history, function(record) {
+        $84400942f6180132$var$reveal.call(this$1, record.target, record.options, true);
+    });
+    $84400942f6180132$var$initialize.call(this);
+}
+var $84400942f6180132$var$polyfill = function(x) {
+    return (x > 0) - (x < 0) || +x;
+};
+var $84400942f6180132$var$mathSign = Math.sign || $84400942f6180132$var$polyfill;
+function $84400942f6180132$var$getGeometry(target, isContainer) {
+    /**
+	 * We want to ignore padding and scrollbars for container elements.
+	 * More information here: https://goo.gl/vOZpbz
+	 */ var height = isContainer ? target.node.clientHeight : target.node.offsetHeight;
+    var width = isContainer ? target.node.clientWidth : target.node.offsetWidth;
+    var offsetTop = 0;
+    var offsetLeft = 0;
+    var node = target.node;
+    do {
+        if (!isNaN(node.offsetTop)) offsetTop += node.offsetTop;
+        if (!isNaN(node.offsetLeft)) offsetLeft += node.offsetLeft;
+        node = node.offsetParent;
+    }while (node);
+    return {
+        bounds: {
+            top: offsetTop,
+            right: offsetLeft + width,
+            bottom: offsetTop + height,
+            left: offsetLeft
+        },
+        height: height,
+        width: width
+    };
+}
+function $84400942f6180132$var$getScrolled(container) {
+    var top, left;
+    if (container.node === document.documentElement) {
+        top = window.pageYOffset;
+        left = window.pageXOffset;
+    } else {
+        top = container.node.scrollTop;
+        left = container.node.scrollLeft;
+    }
+    return {
+        top: top,
+        left: left
+    };
+}
+function $84400942f6180132$var$isElementVisible(element) {
+    if (element === void 0) element = {};
+    var container = this.store.containers[element.containerId];
+    if (!container) return;
+    var viewFactor = Math.max(0, Math.min(1, element.config.viewFactor));
+    var viewOffset = element.config.viewOffset;
+    var elementBounds = {
+        top: element.geometry.bounds.top + element.geometry.height * viewFactor,
+        right: element.geometry.bounds.right - element.geometry.width * viewFactor,
+        bottom: element.geometry.bounds.bottom - element.geometry.height * viewFactor,
+        left: element.geometry.bounds.left + element.geometry.width * viewFactor
+    };
+    var containerBounds = {
+        top: container.geometry.bounds.top + container.scroll.top + viewOffset.top,
+        right: container.geometry.bounds.right + container.scroll.left - viewOffset.right,
+        bottom: container.geometry.bounds.bottom + container.scroll.top - viewOffset.bottom,
+        left: container.geometry.bounds.left + container.scroll.left + viewOffset.left
+    };
+    return elementBounds.top < containerBounds.bottom && elementBounds.right > containerBounds.left && elementBounds.bottom > containerBounds.top && elementBounds.left < containerBounds.right || element.styles.position === "fixed";
+}
+function $84400942f6180132$var$delegate(event, elements) {
+    var this$1 = this;
+    if (event === void 0) event = {
+        type: "init"
+    };
+    if (elements === void 0) elements = this.store.elements;
+    (0, $d0c0ddebd3470fec$export$2e2bcd8739ae039)(function() {
+        var stale = event.type === "init" || event.type === "resize";
+        $84400942f6180132$var$each(this$1.store.containers, function(container) {
+            if (stale) container.geometry = $84400942f6180132$var$getGeometry.call(this$1, container, true);
+            var scroll = $84400942f6180132$var$getScrolled.call(this$1, container);
+            if (container.scroll) container.direction = {
+                x: $84400942f6180132$var$mathSign(scroll.left - container.scroll.left),
+                y: $84400942f6180132$var$mathSign(scroll.top - container.scroll.top)
+            };
+            container.scroll = scroll;
+        });
+        /**
+		 * Due to how the sequencer is implemented, it’s
+		 * important that we update the state of all
+		 * elements, before any animation logic is
+		 * evaluated (in the second loop below).
+		 */ $84400942f6180132$var$each(elements, function(element) {
+            if (stale || element.geometry === undefined) element.geometry = $84400942f6180132$var$getGeometry.call(this$1, element);
+            element.visible = $84400942f6180132$var$isElementVisible.call(this$1, element);
+        });
+        $84400942f6180132$var$each(elements, function(element) {
+            if (element.sequence) $84400942f6180132$var$sequence.call(this$1, element);
+            else $84400942f6180132$var$animate.call(this$1, element);
+        });
+        this$1.pristine = false;
+    });
+}
+function $84400942f6180132$var$isTransformSupported() {
+    var style = document.documentElement.style;
+    return "transform" in style || "WebkitTransform" in style;
+}
+function $84400942f6180132$var$isTransitionSupported() {
+    var style = document.documentElement.style;
+    return "transition" in style || "WebkitTransition" in style;
+}
+var $84400942f6180132$var$version = "4.0.9";
+var $84400942f6180132$var$boundDelegate;
+var $84400942f6180132$var$boundDestroy;
+var $84400942f6180132$var$boundReveal;
+var $84400942f6180132$var$boundClean;
+var $84400942f6180132$var$boundSync;
+var $84400942f6180132$var$config;
+var $84400942f6180132$var$debug;
+var $84400942f6180132$var$instance;
+function $84400942f6180132$var$ScrollReveal(options) {
+    if (options === void 0) options = {};
+    var invokedWithoutNew = typeof this === "undefined" || Object.getPrototypeOf(this) !== $84400942f6180132$var$ScrollReveal.prototype;
+    if (invokedWithoutNew) return new $84400942f6180132$var$ScrollReveal(options);
+    if (!$84400942f6180132$var$ScrollReveal.isSupported()) {
+        $84400942f6180132$var$logger.call(this, "Instantiation failed.", "This browser is not supported.");
+        return $84400942f6180132$var$mount.failure();
+    }
+    var buffer;
+    try {
+        buffer = $84400942f6180132$var$config ? $84400942f6180132$var$deepAssign({}, $84400942f6180132$var$config, options) : $84400942f6180132$var$deepAssign({}, $84400942f6180132$var$defaults, options);
+    } catch (e) {
+        $84400942f6180132$var$logger.call(this, "Invalid configuration.", e.message);
+        return $84400942f6180132$var$mount.failure();
+    }
+    try {
+        var container = (0, $b8a6c484e93e029f$export$2e2bcd8739ae039)(buffer.container)[0];
+        if (!container) throw new Error("Invalid container.");
+    } catch (e1) {
+        $84400942f6180132$var$logger.call(this, e1.message);
+        return $84400942f6180132$var$mount.failure();
+    }
+    $84400942f6180132$var$config = buffer;
+    if (!$84400942f6180132$var$config.mobile && $84400942f6180132$var$isMobile() || !$84400942f6180132$var$config.desktop && !$84400942f6180132$var$isMobile()) {
+        $84400942f6180132$var$logger.call(this, "This device is disabled.", "desktop: " + $84400942f6180132$var$config.desktop, "mobile: " + $84400942f6180132$var$config.mobile);
+        return $84400942f6180132$var$mount.failure();
+    }
+    $84400942f6180132$var$mount.success();
+    this.store = {
+        containers: {},
+        elements: {},
+        history: [],
+        sequences: {}
+    };
+    this.pristine = true;
+    $84400942f6180132$var$boundDelegate = $84400942f6180132$var$boundDelegate || $84400942f6180132$var$delegate.bind(this);
+    $84400942f6180132$var$boundDestroy = $84400942f6180132$var$boundDestroy || $84400942f6180132$var$destroy.bind(this);
+    $84400942f6180132$var$boundReveal = $84400942f6180132$var$boundReveal || $84400942f6180132$var$reveal.bind(this);
+    $84400942f6180132$var$boundClean = $84400942f6180132$var$boundClean || $84400942f6180132$var$clean.bind(this);
+    $84400942f6180132$var$boundSync = $84400942f6180132$var$boundSync || $84400942f6180132$var$sync.bind(this);
+    Object.defineProperty(this, "delegate", {
+        get: function() {
+            return $84400942f6180132$var$boundDelegate;
+        }
+    });
+    Object.defineProperty(this, "destroy", {
+        get: function() {
+            return $84400942f6180132$var$boundDestroy;
+        }
+    });
+    Object.defineProperty(this, "reveal", {
+        get: function() {
+            return $84400942f6180132$var$boundReveal;
+        }
+    });
+    Object.defineProperty(this, "clean", {
+        get: function() {
+            return $84400942f6180132$var$boundClean;
+        }
+    });
+    Object.defineProperty(this, "sync", {
+        get: function() {
+            return $84400942f6180132$var$boundSync;
+        }
+    });
+    Object.defineProperty(this, "defaults", {
+        get: function() {
+            return $84400942f6180132$var$config;
+        }
+    });
+    Object.defineProperty(this, "version", {
+        get: function() {
+            return $84400942f6180132$var$version;
+        }
+    });
+    Object.defineProperty(this, "noop", {
+        get: function() {
+            return false;
+        }
+    });
+    return $84400942f6180132$var$instance ? $84400942f6180132$var$instance : $84400942f6180132$var$instance = this;
+}
+$84400942f6180132$var$ScrollReveal.isSupported = function() {
+    return $84400942f6180132$var$isTransformSupported() && $84400942f6180132$var$isTransitionSupported();
+};
+Object.defineProperty($84400942f6180132$var$ScrollReveal, "debug", {
+    get: function() {
+        return $84400942f6180132$var$debug || false;
+    },
+    set: function(value) {
+        return $84400942f6180132$var$debug = typeof value === "boolean" ? value : $84400942f6180132$var$debug;
+    }
+});
+$84400942f6180132$var$ScrollReveal();
+var $84400942f6180132$export$2e2bcd8739ae039 = $84400942f6180132$var$ScrollReveal;
+
+
+window.sr = (0, $84400942f6180132$export$2e2bcd8739ae039)();
 window.jBox = (0, (/*@__PURE__*/$parcel$interopDefault($8dStN)));
 
 
@@ -8545,12 +9958,8 @@ let $fdd2f74e107d548b$var$newHeaderPosition;
 let $fdd2f74e107d548b$var$headerHeight = (0, $a47a85354d581c97$export$98ba287114e9d0c3)();
 const $fdd2f74e107d548b$var$hideHeaderOnScroll = ()=>{
     $fdd2f74e107d548b$var$lastHeaderPosition = window.scrollY;
-    (0, $6cd5a34147d3d71e$export$6e6f8e21af33b231)(".header", "scroll");
-    if ($fdd2f74e107d548b$var$headerHeight < $fdd2f74e107d548b$var$lastHeaderPosition && $fdd2f74e107d548b$var$lastHeaderPosition > $fdd2f74e107d548b$var$newHeaderPosition) {
-        (0, $6cd5a34147d3d71e$export$6e6f8e21af33b231)(".header", "hide");
-        (0, $6cd5a34147d3d71e$export$6e6f8e21af33b231)(".header", "scroll");
-    } else if ($fdd2f74e107d548b$var$newHeaderPosition > $fdd2f74e107d548b$var$lastHeaderPosition) (0, $6cd5a34147d3d71e$export$21b4674b9a6e7161)(".header", "hide");
-    if ($fdd2f74e107d548b$var$lastHeaderPosition < $fdd2f74e107d548b$var$headerHeight) (0, $6cd5a34147d3d71e$export$21b4674b9a6e7161)(".header", "scroll");
+    if ($fdd2f74e107d548b$var$headerHeight < $fdd2f74e107d548b$var$lastHeaderPosition && $fdd2f74e107d548b$var$lastHeaderPosition > $fdd2f74e107d548b$var$newHeaderPosition) (0, $6cd5a34147d3d71e$export$6e6f8e21af33b231)(".header", "hide");
+    else if ($fdd2f74e107d548b$var$newHeaderPosition > $fdd2f74e107d548b$var$lastHeaderPosition) (0, $6cd5a34147d3d71e$export$21b4674b9a6e7161)(".header", "hide");
     $fdd2f74e107d548b$var$newHeaderPosition = $fdd2f74e107d548b$var$lastHeaderPosition;
 };
 window.addEventListener("scroll", (e)=>{
@@ -8586,9 +9995,6 @@ $(".reviews ul").slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     speed: 300,
-    centerMode: true,
-    fade: true,
-    cssEase: "linear",
     responsive: [
         {
             breakpoint: 576,
@@ -8626,6 +10032,73 @@ new jBox("Tooltip", {
     onClose: function() {
         this.source[0].classList.remove("scale");
     }
+});
+
+
+sr.reveal(".header,.product__content", {
+    duration: 300,
+    easing: "ease",
+    delay: "500",
+    origin: "top",
+    mobile: false
+});
+sr.reveal(".hero__inner > *, .title,.test ul > *,.single > *,.single__content >*, .allergy ul > *", {
+    duration: 300,
+    distance: "20px",
+    easing: "ease",
+    delay: "100",
+    origin: "top",
+    interval: 200,
+    mobile: false
+});
+sr.reveal(".recipe__grid h3,.recipe__grid li > *, .btn", {
+    duration: 300,
+    distance: "20px",
+    easing: "ease",
+    delay: "100",
+    origin: "top",
+    mobile: false
+});
+sr.reveal(".advantages__list > *, .product__image, .research ul>li,.tabs__switcher > *,.single__flowering ul > *, .single__list ul > *,.single__items li:not(:nth-child(2)), .articles ul>*", {
+    duration: 400,
+    distance: "40px",
+    easing: "ease",
+    delay: "100",
+    origin: "left",
+    interval: 200,
+    mobile: false
+});
+sr.reveal(".single__items li:nth-child(2)", {
+    duration: 400,
+    distance: "40px",
+    easing: "ease",
+    delay: "100",
+    origin: "rigth",
+    interval: 200,
+    mobile: false
+});
+sr.reveal(".symptoms-banner,.reviews,.footer,.test__result, .yellow", {
+    duration: 600,
+    easing: "ease",
+    delay: "300",
+    origin: "center",
+    mobile: false
+});
+sr.reveal(".flip > *", {
+    duration: 400,
+    distance: "40px",
+    easing: "ease",
+    delay: "100",
+    origin: "top",
+    interval: 200,
+    mobile: false
+});
+
+
+document.querySelector(".close")?.addEventListener("click", (e)=>{
+    if (!e.target.matches(".close")) return;
+    console.log(e.target.closest(".test-alert"));
+    e.target.closest(".test-alert").classList.remove("test-alert--open");
 });
 
 

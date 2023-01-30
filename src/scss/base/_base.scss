@@ -42,7 +42,17 @@
     }
 
     .nav {
-      right: 0;
+      transform: translate(0);
+    }
+
+    .header {
+      &.hide {
+        transform: translate(0)
+      }
+    }
+
+    &.scroll {
+      overflow: hidden;
     }
   }
 

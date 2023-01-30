@@ -130,11 +130,13 @@
     position: absolute;
     left: 0;
     top: 0;
+    z-index: -1;
     opacity: 0;
     visibility: hidden;
 
     &--active.tabs__panel {
       position: relative;
+      z-index: 1;
       opacity: 1;
       visibility: visible;
     }

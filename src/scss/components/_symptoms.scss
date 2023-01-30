@@ -6,6 +6,10 @@
 
   h2 {
     margin-bottom: clamp(20px, rem(40), 60px);
+
+    @include media(mobile-l) {
+      margin-bottom: 30px;
+    }
   }
 }
 
@@ -73,6 +77,10 @@
   @include media(tablet) {
     background-position: right bottom;
     background-size: auto;
+  }
+
+  @include media(mobile-l) {
+    margin-bottom: 0;
   }
 }
 

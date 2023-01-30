@@ -7,6 +7,10 @@
 
   h2 {
     margin-bottom: clamp(30px, rem(55), 70px);
+
+    @include media(mobile-l) {
+      margin-bottom: 30px;
+    }
   }
 
   &__list {
@@ -112,5 +116,9 @@
 
   @include media(tablet) {
     margin-bottom: clamp(70px, rem(70), 10px);
+  }
+
+  @include media(mobile-l) {
+    padding: 30px 0;
   }
 }

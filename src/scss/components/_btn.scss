@@ -2,12 +2,13 @@
 @use "../utils/functions/"as*;
 
 .btn,
-button:not(.burger, .tabs__btn, .slick-arrow, .slick-dots button, .allergy button) {
+button:not(.burger, .tabs__btn, .slick-arrow, .slick-dots button, .allergy button, .close) {
   @include flex-all-center;
   @include font-size(30, 36);
 
   position: relative;
   margin: 0 auto;
+  border: 1px solid transparent;
   border-radius: calc(var(--radius-main) - 5px);
   padding: 10px;
   width: 100%;
@@ -15,6 +16,15 @@ button:not(.burger, .tabs__btn, .slick-arrow, .slick-dots button, .allergy butto
   text-align: center;
   color: var(--color-white);
   background-color: var(--color-green-400);
+  transition-property: border-color, color, background-color;
+  transition-duration: 0.15s;
+
+  &:hover,
+  &:focus {
+    border-color: var(--color-green-400);
+    color: var(--color-green-400);
+    background-color: var(--color-white);
+  }
 
   @include media(tablet) {
     @include font-size(23, 28);

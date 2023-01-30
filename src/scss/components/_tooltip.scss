@@ -28,8 +28,11 @@
 }
 
 .jBox-closeButton-box .jBox-closeButton {
-  right: 13px;
-  top: 10px;
+  width: 16px !important;
+  height: 16px !important;
+  right: 10px !important;
+  top: 10px !important;
+  background-color: transparent;
 }
 
 .jBox-closeButton-box:before {
@@ -42,10 +45,11 @@
 }
 
 .jBox-closeButton path {
-  fill: #000;
+  fill: #000 !important;
 }
 
 .jBox-pointer-left::after,
 .jBox-pointer-right::after {
-  display: none !important;
+  // display: none !important;
+  border: 1px solid #283864cc;
 }

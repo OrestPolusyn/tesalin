@@ -7,6 +7,14 @@
 
   h2 {
     margin-bottom: clamp(20px, rem(75), 108px);
+
+    @include media(tablet) {
+      margin-bottom: 70px;
+    }
+
+    @include media(mobile-l) {
+      margin-bottom: 30px;
+    }
   }
 
   ul {
@@ -39,5 +47,9 @@
 
   @include media(tablet) {
     padding-bottom: rem(40);
+  }
+
+  @include media(mobile-l) {
+    padding: 30px 0;
   }
 }

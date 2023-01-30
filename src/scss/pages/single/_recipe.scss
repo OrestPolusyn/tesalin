@@ -24,8 +24,12 @@
   }
 
   h2 {
-    margin-bottom: rem(57);
+    margin-bottom: rem(50);
     text-align: left;
+
+    @include media(mobile-l) {
+      margin-bottom: 30px;
+    }
   }
 
   li {

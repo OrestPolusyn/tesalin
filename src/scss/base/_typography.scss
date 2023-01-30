@@ -27,5 +27,7 @@
 
   @include media(mobile-l) {
     @include font-size(33, 43);
+
+    margin-bottom: 30px;
   }
 }

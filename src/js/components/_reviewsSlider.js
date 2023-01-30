@@ -4,9 +4,6 @@ $('.reviews ul').slick({
   slidesToShow: 1,
   slidesToScroll: 1,
   speed: 300,
-  centerMode: true,
-  fade: true,
-  cssEase: 'linear',
   responsive: [
     {
       breakpoint: 576,

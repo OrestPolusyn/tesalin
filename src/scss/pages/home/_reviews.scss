@@ -12,9 +12,9 @@
     @include font-size(16, 19);
 
     margin: 0 auto;
-    padding: 0 100px;
+    padding: 0 50px;
     width: 100%;
-    max-width: 930px;
+    max-width: 824px;
     text-align: center;
 
     @include media(mobile-l) {
@@ -29,8 +29,8 @@
 
   li {
     blockquote {
-      word-wrap: break-word;
       margin-bottom: clamp(20px, rem(30), 40px);
+      word-wrap: break-word;
     }
 
     cite {
@@ -60,12 +60,20 @@
 }
 
 .slick-prev {
-  left: 0;
+  left: -50px;
+
+  @include media(tablet) {
+    left: 0;
+  }
 }
 
 .slick-next {
-  right: 0;
+  right: -50px;
   transform: scale(-1, -1);
+
+  @include media(tablet) {
+    right: 0;
+  }
 }
 
 .slick-dots {

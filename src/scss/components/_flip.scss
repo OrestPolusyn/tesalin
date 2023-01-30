@@ -45,13 +45,8 @@
 
     &:hover,
     &:focus {
-      .flip__front {
-        transform: rotateY(180deg);
-      }
-
       .flip__back {
         opacity: 1;
-        transform: rotateY(0deg);
       }
     }
 

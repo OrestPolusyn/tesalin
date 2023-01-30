@@ -7,6 +7,10 @@
   >* {
     margin-bottom: rem(35);
     text-align: left;
+
+    @include media(mobile-l) {
+      margin-bottom: 25px;
+    }
   }
 
   &__list {
@@ -91,6 +95,10 @@
 
       &:not(:last-child) {
         margin-bottom: rem(49);
+
+        @include media(mobile-l) {
+          margin-bottom: 30px;
+        }
       }
 
       &:nth-child(even) {
@@ -149,6 +157,10 @@
     &.green {
       margin-bottom: 0;
       padding: rem(28) 0 rem(37);
+    }
+
+    @include media(mobile-l) {
+      padding: 25px 0;
     }
   }
 
@@ -267,6 +279,12 @@
       @include media(mobile-l) {
         max-width: 220px;
       }
+    }
+  }
+
+  h2 {
+    @include media(mobile-l) {
+      @include font-size(30, 30);
     }
   }
 
