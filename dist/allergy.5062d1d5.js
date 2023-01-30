@@ -10108,4 +10108,4 @@ document.querySelector(".close")?.addEventListener("click", (e)=>{
 if (null) null.accept();
 
 })();
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=allergy.5062d1d5.js.map
