@@ -11,5 +11,7 @@ export const getHeaderHeight = () => {
   return headerHeight;
 };
 
-window.addEventListener('resize', getHeaderHeight);
+window.addEventListener('resize', () => {
+  getHeaderHeight;
+});
 getHeaderHeight();

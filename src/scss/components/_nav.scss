@@ -69,14 +69,13 @@
 
     position: absolute;
     top: var(--header-height);
-    right: 0;
+    right: -100%;
     overflow-y: auto;
     width: 100%;
     max-width: 260px;
     height: calc(100vh - var(--header-height));
     height: calc(var(--vh, 1vh) * 100 - var(--header-height));
     background-color: var(--color-green-200);
-    transform: translateX(100%);
-    transition: transform 0.2s;
+    transition: right 0.2s;
   }
 }

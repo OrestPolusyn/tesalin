@@ -3,11 +3,7 @@
 
 .logo {
   width: 100%;
-  max-width: 245px;
-
-  @include media(desktop) {
-    max-width: 200px;
-  }
+  max-width: 190px;
 
   @include media(desktop-mac) {
     max-width: 170px;

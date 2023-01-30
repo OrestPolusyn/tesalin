@@ -9903,7 +9903,9 @@ const $61b4e5ecd72168e5$export$98ba287114e9d0c3 = ()=>{
     document.documentElement.style.setProperty("--header-height", `${headerHeight}px`);
     return headerHeight;
 };
-window.addEventListener("resize", $61b4e5ecd72168e5$export$98ba287114e9d0c3);
+window.addEventListener("resize", ()=>{
+    $61b4e5ecd72168e5$export$98ba287114e9d0c3;
+});
 $61b4e5ecd72168e5$export$98ba287114e9d0c3();
 
 
@@ -10043,7 +10045,7 @@ sr.reveal(".header,.product__content", {
     origin: "top",
     mobile: false
 });
-sr.reveal(".hero__inner > *, .title,.test ul > *,.single > *,.single__content >*, .allergy ul > *", {
+sr.reveal(".hero__inner > *, .title,.test ul > *,.single > *,.single__content >*, .allergy ul", {
     duration: 300,
     distance: "20px",
     easing: "ease",

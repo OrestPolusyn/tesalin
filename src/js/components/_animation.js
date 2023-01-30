@@ -7,7 +7,7 @@ sr.reveal('.header,.product__content', {
 });
 
 sr.reveal(
-  '.hero__inner > *, .title,.test ul > *,.single > *,.single__content >*, .allergy ul > *',
+  '.hero__inner > *, .title,.test ul > *,.single > *,.single__content >*, .allergy ul',
   {
     duration: 300,
     distance: '20px',

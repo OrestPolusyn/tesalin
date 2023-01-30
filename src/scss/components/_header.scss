@@ -34,7 +34,7 @@
   &__inner {
     @include flex-all-sb;
 
-    padding: clamp(15px, rem(30), 26px) 0 clamp(15px, rem(30), 25px);
+    padding: 20px 0;
     width: 100%;
     transition: padding 0.1s;
 
@@ -44,7 +44,8 @@
   }
 
   &__sublogo {
-    margin-right: 34px;
+    margin-right: rem(46);
+    max-width: 150px;
 
     @include media(tablet) {
       margin-right: 20px;
@@ -61,22 +62,5 @@
 
   &.scroll {
     border-bottom: 1px solid var(--color-green-300);
-
-    .header {
-      &__inner {
-        @include media(tablet, min) {
-          padding: 15px 0;
-        }
-      }
-
-      &__sublogo {
-        margin-right: rem(54);
-        max-width: 150px;
-      }
-    }
-
-    .logo {
-      max-width: 200px;
-    }
   }
 }

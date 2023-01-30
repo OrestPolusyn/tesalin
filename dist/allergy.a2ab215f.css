@@ -299,7 +299,11 @@ details > summary {
   left: 0;
 }
 
-.page--menu .nav, .page--menu .header.hide {
+.page--menu .nav {
+  right: 0;
+}
+
+.page--menu .header.hide {
   transform: translate(0);
 }
 
@@ -1808,7 +1812,7 @@ details > summary {
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  padding: clamp(15px, 1.875rem, 26px) 0 clamp(15px, 1.875rem, 25px);
+  padding: 20px 0;
   transition: padding .1s;
   display: flex;
 }
@@ -1820,7 +1824,8 @@ details > summary {
 }
 
 .header__sublogo {
-  margin-right: 34px;
+  max-width: 150px;
+  margin-right: 2.875rem;
 }
 
 @media only screen and (max-width: 992px) {
@@ -1839,21 +1844,6 @@ details > summary {
 
 .header.scroll {
   border-bottom: 1px solid var(--color-green-300);
-}
-
-@media only screen and (min-width: 993px) {
-  .header.scroll .header__inner {
-    padding: 15px 0;
-  }
-}
-
-.header.scroll .header__sublogo {
-  max-width: 150px;
-  margin-right: 3.375rem;
-}
-
-.header.scroll .logo {
-  max-width: 200px;
 }
 
 .nav ul {
@@ -1930,12 +1920,11 @@ details > summary {
     background-color: var(--color-green-200);
     justify-content: center;
     align-items: center;
-    transition: transform .2s;
+    transition: right .2s;
     display: flex;
     position: absolute;
-    right: 0;
+    right: -100%;
     overflow-y: auto;
-    transform: translateX(100%);
   }
 }
 
@@ -2730,13 +2719,7 @@ details > summary {
 
 .logo {
   width: 100%;
-  max-width: 245px;
-}
-
-@media only screen and (max-width: 1440px) {
-  .logo {
-    max-width: 200px;
-  }
+  max-width: 190px;
 }
 
 @media only screen and (max-width: 1280px) {
@@ -2774,13 +2757,7 @@ details > summary {
 
 @media only screen and (max-width: 768px) {
   .calendar__wrapper {
-    grid-template-columns: 246px 1fr;
-  }
-}
-
-@media only screen and (max-width: 475px) {
-  .calendar__wrapper {
-    grid-template-columns: 180px 1fr;
+    grid-template-columns: 110px 1fr;
   }
 }
 
@@ -2894,13 +2871,7 @@ details > summary {
 
 @media only screen and (max-width: 768px) {
   .calendar__seasons {
-    grid-template-columns: 120px 125px;
-  }
-}
-
-@media only screen and (max-width: 475px) {
-  .calendar__seasons {
-    grid-template-columns: 80px 85px;
+    grid-template-columns: 0 110px;
   }
 }
 
@@ -2979,9 +2950,9 @@ details > summary {
   left: -75px;
 }
 
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 768px) {
   .calendar__mounth span:nth-child(2):before, .calendar__mounth span:nth-child(2):after {
-    left: -50px;
+    left: 0;
   }
 }
 
@@ -3002,11 +2973,11 @@ details > summary {
   visibility: visible;
 }
 
-@media only screen and (max-width: 475px) {
+@media only screen and (max-width: 768px) {
   .calendar__mounth span {
     letter-spacing: normal;
-    font-size: 15px;
-    line-height: 1;
+    font-size: 17px;
+    line-height: .882353;
   }
 }
 
@@ -3067,7 +3038,7 @@ details > summary {
   left: 30px;
 }
 
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 768px) {
   .calendar__instruction {
     display: none;
   }
