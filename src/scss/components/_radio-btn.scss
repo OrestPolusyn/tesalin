@@ -70,7 +70,7 @@ input[type=checkbox] {
       height: 40px;
       transform: translateY(-50%);
 
-      @include media(mobile-m) {
+      @include media(mobile-l) {
         width: 30px;
         height: 30px;
       }
@@ -80,7 +80,7 @@ input[type=checkbox] {
       border: 3px solid var(--color-green-400);
       background-color: var(--color-white);
 
-      @include media(mobile-m) {
+      @include media(mobile-l) {
         border-width: 2px;
       }
     }
@@ -98,7 +98,7 @@ input[type=checkbox] {
       height: 25px;
       background-color: var(--color-green-400);
 
-      @include media(mobile-m) {
+      @include media(mobile-l) {
         width: 18px;
         height: 18px;
       }

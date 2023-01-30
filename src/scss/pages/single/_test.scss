@@ -47,7 +47,17 @@
 
       @include media(desktop-mac) {
         bottom: 0;
-        transform: rotate(0) translateX(0);
+        transform: rotate(0) translateX(0) !important;
+      }
+
+      @include media(tablet) {
+        @include font-size(25, 30);
+      }
+
+      @include media(mobile-l) {
+        @include font-size(22, 26);
+
+        padding: 7px;
       }
     }
 
@@ -57,6 +67,14 @@
 
     @include media(desktop-mac) {
       background-position: center;
+    }
+
+    @include media(tablet) {
+      padding: 70px 0;
+    }
+
+    @include media(mobile-l) {
+      padding: 50px 0;
     }
   }
 
@@ -140,8 +158,8 @@
         @include font-size(26, 33);
       }
 
-      @include media(mobile-m) {
-        @include font-size(20, 26);
+      @include media(mobile-l) {
+        @include font-size(18, 23);
 
         padding-left: 40px;
       }

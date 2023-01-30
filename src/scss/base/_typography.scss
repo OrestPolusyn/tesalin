@@ -19,6 +19,10 @@
   &--test {
     margin-bottom: 51px;
     padding-top: 29px;
+
+    @include media(mobile-l) {
+      padding-top: 0;
+    }
   }
 
   @include media(tablet-wide) {

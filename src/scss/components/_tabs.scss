@@ -88,8 +88,11 @@
       }
 
       @include media(mobile-m) {
-        left: -40px;
-        bottom: 50%;
+        left: -35px;
+        bottom: 60%;
+        border-top-width: 16px;
+        border-right-width: 10px;
+        border-left-width: 10px;
         transform: rotate(-90deg) translateX(-50%);
       }
     }
@@ -123,6 +126,12 @@
       @include font-size(22, 28);
 
       padding: 10px 15px;
+    }
+
+    @include media(mobile-l) {
+      @include font-size(18, 23);
+
+      padding: 7px 15px;
     }
   }
 
