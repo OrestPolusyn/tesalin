@@ -7,7 +7,7 @@ sr.reveal('.header,.product__content', {
 });
 
 sr.reveal(
-  '.hero__inner > *, .title,.test ul > *,.single > *,.single__content >*, .allergy ul',
+  '.hero__inner > *, .advantages .title, .symptoms .title,.research .title,.test ul > *,, .allergy ul',
   {
     duration: 300,
     distance: '20px',
@@ -19,39 +19,29 @@ sr.reveal(
   }
 );
 
-sr.reveal('.recipe__grid h3,.recipe__grid li > *, .btn', {
-  duration: 300,
-  distance: '20px',
-  easing: 'ease',
-  delay: '100',
-  origin: 'top',
-  mobile: false,
-});
-
 sr.reveal(
-  '.advantages__list > *, .product__image, .research ul>li,.tabs__switcher > *,.single__flowering ul > *, .single__list ul > *,.single__items li:not(:nth-child(2)), .articles ul>*',
+  '.recipe__grid h3,.recipe__grid li > *, .btn,.advantages__list > *, .articles ul>*',
   {
-    duration: 400,
-    distance: '40px',
+    duration: 800,
+    distance: '20px',
     easing: 'ease',
     delay: '100',
-    origin: 'left',
-    interval: 200,
+    origin: 'top',
     mobile: false,
   }
 );
 
-sr.reveal('.single__items li:nth-child(2)', {
+sr.reveal('.product__image, .research ul>li,.tabs__switcher > *', {
   duration: 400,
   distance: '40px',
   easing: 'ease',
   delay: '100',
-  origin: 'rigth',
+  origin: 'left',
   interval: 200,
   mobile: false,
 });
 
-sr.reveal('.symptoms-banner,.reviews,.footer,.test__result, .yellow', {
+sr.reveal('.symptoms-banner,.reviews,.footer,.test__result', {
   duration: 600,
   easing: 'ease',
   delay: '300',

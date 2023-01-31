@@ -26,11 +26,11 @@
   }
 
   @include media(tablet-wide) {
-    @include font-size(41, 48);
+    @include font-size(39, 48);
   }
 
   @include media(mobile-l) {
-    @include font-size(33, 43);
+    @include font-size(28, 38);
 
     margin-bottom: 30px;
   }

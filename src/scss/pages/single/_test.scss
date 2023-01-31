@@ -94,7 +94,8 @@
       padding: 25px;
     }
 
-    @include media(mobile-s) {
+    @include media(mobile-l) {
+      margin-bottom: 0;
       padding: 30px 15px;
     }
   }
@@ -123,6 +124,10 @@
 
     @include media(tablet) {
       @include font-size(23, 28);
+    }
+
+    @include media(mobile-s) {
+      @include font-size(18, 24);
     }
   }
 

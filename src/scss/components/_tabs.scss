@@ -51,10 +51,6 @@
         max-width: none;
       }
     }
-
-    @include media(mobile-m) {
-      padding-left: 40px;
-    }
   }
 
   &__btn {
@@ -88,10 +84,11 @@
       }
 
       @include media(mobile-m) {
-        left: -35px;
+        left: 12px;
         bottom: 60%;
         border-top-width: 16px;
         border-right-width: 10px;
+        border-top-color: var(--color-white);
         border-left-width: 10px;
         transform: rotate(-90deg) translateX(-50%);
       }
