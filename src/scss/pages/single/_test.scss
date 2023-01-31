@@ -110,6 +110,11 @@
     +div {
       display: grid;
       grid-template-columns: repeat(2, minmax(100px, 230px));
+
+      @include media(mobile-m) {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
     }
 
     @include media(tablet-wide) {
@@ -124,6 +129,10 @@
   li {
     &:not(:last-child) {
       margin-bottom: rem(29);
+
+      @include media(mobile-m) {
+        margin-bottom: 30px;
+      }
     }
   }
 

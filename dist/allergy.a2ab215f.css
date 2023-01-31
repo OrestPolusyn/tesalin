@@ -1208,6 +1208,12 @@ details > summary {
   }
 }
 
+@media only screen and (max-width: 576px) {
+  .single__items {
+    margin-bottom: 40px;
+  }
+}
+
 .single__content {
   margin-bottom: 2rem;
   padding: 2.8125rem 0;
@@ -1372,7 +1378,15 @@ details > summary {
   .single__flowering img {
     max-width: 220px;
   }
+}
 
+@media only screen and (max-width: 576px) {
+  .single__flowering {
+    margin-bottom: 40px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
   .single h2 {
     letter-spacing: normal;
     font-size: 30px;
@@ -1386,6 +1400,12 @@ details > summary {
 
 .single p:not(:last-child) {
   margin-bottom: 30px;
+}
+
+@media only screen and (max-width: 576px) {
+  .single {
+    padding-top: 0;
+  }
 }
 
 .recipe {
@@ -1420,6 +1440,12 @@ details > summary {
   }
 }
 
+@media only screen and (max-width: 576px) {
+  .recipe h2 {
+    font-size: 29px;
+  }
+}
+
 .recipe li > h3 {
   letter-spacing: normal;
   text-align: center;
@@ -1450,8 +1476,8 @@ details > summary {
 @media only screen and (max-width: 576px) {
   .recipe li > h3 {
     letter-spacing: normal;
-    font-size: 26px;
-    line-height: 1.15385;
+    font-size: 25px;
+    line-height: 1.2;
   }
 }
 
@@ -1631,6 +1657,13 @@ details > summary {
   display: grid;
 }
 
+@media only screen and (max-width: 576px) {
+  .test h3 + div {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
 @media only screen and (max-width: 1180px) {
   .test h3 {
     letter-spacing: normal;
@@ -1649,6 +1682,12 @@ details > summary {
 
 .test li:not(:last-child) {
   margin-bottom: 1.8125rem;
+}
+
+@media only screen and (max-width: 576px) {
+  .test li:not(:last-child) {
+    margin-bottom: 30px;
+  }
 }
 
 .test--result ul {
@@ -3312,8 +3351,8 @@ input[type="checkbox"] + label:before, input[type="checkbox"] + label:after {
 
 @media only screen and (max-width: 768px) {
   input[type="checkbox"] + label:before, input[type="checkbox"] + label:after {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
   }
 }
 
@@ -3348,8 +3387,9 @@ input[type="checkbox"] + label:after {
 
 @media only screen and (max-width: 768px) {
   input[type="checkbox"] + label:after {
-    width: 18px;
-    height: 18px;
+    width: 15px;
+    height: 15px;
+    left: 5px;
   }
 }
 

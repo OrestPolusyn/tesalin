@@ -140,6 +140,10 @@
         max-width: 220px;
       }
     }
+
+    @include media(mobile-m) {
+      margin-bottom: 40px;
+    }
   }
 
   &__content {
@@ -280,6 +284,10 @@
         max-width: 220px;
       }
     }
+
+    @include media(mobile-m) {
+      margin-bottom: 40px;
+    }
   }
 
   h2 {
@@ -294,5 +302,9 @@
     &:not(:last-child) {
       margin-bottom: 30px;
     }
+  }
+
+  @include media(mobile-m) {
+    padding-top: 0;
   }
 }

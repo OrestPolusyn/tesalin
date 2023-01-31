@@ -30,6 +30,10 @@
     @include media(mobile-l) {
       margin-bottom: 30px;
     }
+
+    @include media(mobile-m) {
+      font-size: 29px;
+    }
   }
 
   li {
@@ -52,7 +56,7 @@
       }
 
       @include media(mobile-m) {
-        @include font-size(26, 30);
+        @include font-size(25, 30);
       }
     }
 
