@@ -10054,7 +10054,7 @@ sr.reveal(".hero__inner > *, .advantages .title, .symptoms .title,.research .tit
     interval: 200,
     mobile: false
 });
-sr.reveal(".recipe__grid h3,.recipe__grid li > *, .btn,.advantages__list > *, .articles ul>*", {
+sr.reveal(".recipe__grid h3,.recipe__grid li > *, .btn,.advantages__list > *, .articles ul>*,.single__list ul > *, .single__items > *,.single__content > *, .single__flowering ul > *", {
     duration: 800,
     distance: "20px",
     easing: "ease",

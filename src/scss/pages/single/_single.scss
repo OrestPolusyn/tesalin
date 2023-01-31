@@ -292,7 +292,7 @@
 
   h2 {
     @include media(mobile-l) {
-      @include font-size(30, 30);
+      @include font-size(28, 30);
     }
   }
 

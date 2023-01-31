@@ -20,7 +20,7 @@ sr.reveal(
 );
 
 sr.reveal(
-  '.recipe__grid h3,.recipe__grid li > *, .btn,.advantages__list > *, .articles ul>*',
+  '.recipe__grid h3,.recipe__grid li > *, .btn,.advantages__list > *, .articles ul>*,.single__list ul > *, .single__items > *,.single__content > *, .single__flowering ul > *',
   {
     duration: 800,
     distance: '20px',

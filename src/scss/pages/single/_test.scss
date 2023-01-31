@@ -114,7 +114,7 @@
 
       @include media(mobile-m) {
         grid-template-columns: 1fr;
-        gap: 10px;
+        gap: 4px;
       }
     }
 
@@ -126,8 +126,10 @@
       @include font-size(23, 28);
     }
 
-    @include media(mobile-s) {
+    @include media(mobile-m) {
       @include font-size(18, 24);
+
+      margin-bottom: 10px;
     }
   }
 
@@ -196,6 +198,10 @@
     ul li {
       &:not(:last-child) {
         margin-bottom: rem(32);
+
+        @include media(mobile-l) {
+          margin-bottom: 25px;
+        }
       }
     }
   }

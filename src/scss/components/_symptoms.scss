@@ -30,6 +30,10 @@
     @include media(tablet) {
       margin-bottom: rem(30);
     }
+
+    @include media(mobile-l) {
+      @include font-size(28, 37);
+    }
   }
 
   button {

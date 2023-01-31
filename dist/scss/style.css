@@ -1389,8 +1389,8 @@ details > summary {
 @media only screen and (max-width: 768px) {
   .single h2 {
     letter-spacing: normal;
-    font-size: 30px;
-    line-height: 1;
+    font-size: 28px;
+    line-height: 1.07143;
   }
 }
 
@@ -1661,7 +1661,7 @@ details > summary {
 @media only screen and (max-width: 576px) {
   .test h3 + div {
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 4px;
   }
 }
 
@@ -1681,9 +1681,10 @@ details > summary {
   }
 }
 
-@media only screen and (max-width: 475px) {
+@media only screen and (max-width: 576px) {
   .test h3 {
     letter-spacing: normal;
+    margin-bottom: 10px;
     font-size: 18px;
     line-height: 1.33333;
   }
@@ -1773,6 +1774,12 @@ details > summary {
 
 .test--check ul li:not(:last-child) {
   margin-bottom: 2rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .test--check ul li:not(:last-child) {
+    margin-bottom: 25px;
+  }
 }
 
 .test-result {
@@ -2102,6 +2109,14 @@ details > summary {
 @media only screen and (max-width: 992px) {
   .symptoms-banner p {
     margin-bottom: 1.875rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .symptoms-banner p {
+    letter-spacing: normal;
+    font-size: 28px;
+    line-height: 1.32143;
   }
 }
 
@@ -2644,6 +2659,7 @@ details > summary {
 
 @media only screen and (max-width: 576px) {
   .tabs__switcher {
+    margin-bottom: 20px;
     display: block;
   }
 }
@@ -3298,7 +3314,8 @@ label {
 @media only screen and (max-width: 768px) {
   input[type="radio"] + label {
     padding-left: 28px;
-    font-size: 20px;
+    font-size: 18px;
+    line-height: 1.7;
   }
 }
 
