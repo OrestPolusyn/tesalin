@@ -4,14 +4,14 @@
   scrollbar-width: thin;
 
   &::-webkit-scrollbar {
-    width: 4px;
+    width: 10px;
     height: 4px;
   }
 
   &::-webkit-scrollbar-track {
     -webkit-border-radius: 10px;
     border-radius: 10px;
-    background-color: var(--color-green-400);
+    background-color: var(--color-green-200);
   }
 
   &::-webkit-scrollbar-thumb {

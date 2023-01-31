@@ -3428,12 +3428,12 @@ input:checked + label:after {
 }
 
 .scroll::-webkit-scrollbar {
-  width: 4px;
+  width: 10px;
   height: 4px;
 }
 
 .scroll::-webkit-scrollbar-track {
-  background-color: var(--color-green-400);
+  background-color: var(--color-green-200);
   border-radius: 10px;
 }
 
