@@ -3,10 +3,12 @@
   box-sizing: border-box;
 }
 
-.jBox-title, .jBox-content, .jBox-container {
+.jBox-title,
+.jBox-content,
+.jBox-container {
+  position: relative;
   word-break: break-word;
   box-sizing: border-box;
-  position: relative;
 }
 
 .jBox-container {
@@ -15,26 +17,29 @@
 
 .jBox-content {
   padding: 8px 12px;
-  transition: opacity .2s;
   overflow-x: hidden;
   overflow-y: auto;
+  transition: opacity .2s;
 }
 
 .jBox-footer {
   box-sizing: border-box;
 }
 
-.jBox-Tooltip .jBox-container, .jBox-Mouse .jBox-container {
+.jBox-Tooltip .jBox-container,
+.jBox-Mouse .jBox-container {
   border-radius: 4px;
-  box-shadow: 0 0 3px #00000040;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
 }
 
-.jBox-Tooltip .jBox-title, .jBox-Mouse .jBox-title {
+.jBox-Tooltip .jBox-title,
+.jBox-Mouse .jBox-title {
   padding: 8px 10px 0;
   font-weight: bold;
 }
 
-.jBox-Tooltip.jBox-hasTitle .jBox-content, .jBox-Mouse.jBox-hasTitle .jBox-content {
+.jBox-Tooltip.jBox-hasTitle .jBox-content,
+.jBox-Mouse.jBox-hasTitle .jBox-content {
   padding-top: 5px;
 }
 
@@ -43,19 +48,19 @@
 }
 
 .jBox-pointer {
-  box-sizing: border-box;
   position: absolute;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .jBox-pointer:after {
-  content: "";
+  content: '';
   width: 20px;
   height: 20px;
-  box-sizing: border-box;
-  background: #fff;
   position: absolute;
+  background: #fff;
   transform: rotate(45deg);
+  box-sizing: border-box;
 }
 
 .jBox-pointer-top {
@@ -63,9 +68,9 @@
 }
 
 .jBox-pointer-top:after {
-  top: 6px;
   left: 5px;
-  box-shadow: -1px -1px 2px #00000026;
+  top: 6px;
+  box-shadow: -1px -1px 2px rgba(0, 0, 0, 0.15);
 }
 
 .jBox-pointer-right {
@@ -75,7 +80,7 @@
 .jBox-pointer-right:after {
   top: 5px;
   right: 6px;
-  box-shadow: 1px -1px 2px #00000026;
+  box-shadow: 1px -1px 2px rgba(0, 0, 0, 0.15);
 }
 
 .jBox-pointer-left {
@@ -85,7 +90,7 @@
 .jBox-pointer-left:after {
   top: 5px;
   left: 6px;
-  box-shadow: -1px 1px 2px #00000026;
+  box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.15);
 }
 
 .jBox-pointer-bottom {
@@ -93,17 +98,19 @@
 }
 
 .jBox-pointer-bottom:after {
-  bottom: 6px;
   left: 5px;
-  box-shadow: 1px 1px 2px #00000026;
+  bottom: 6px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
 }
 
-.jBox-pointer-top, .jBox-pointer-bottom {
+.jBox-pointer-top,
+.jBox-pointer-bottom {
   width: 30px;
   height: 12px;
 }
 
-.jBox-pointer-left, .jBox-pointer-right {
+.jBox-pointer-left,
+.jBox-pointer-right {
   width: 12px;
   height: 30px;
 }
@@ -112,8 +119,9 @@
   border-radius: 4px;
 }
 
-.jBox-Modal .jBox-container, .jBox-Modal.jBox-closeButton-box:before {
-  box-shadow: 0 3px 15px #0006, 0 0 5px #0006;
+.jBox-Modal .jBox-container,
+.jBox-Modal.jBox-closeButton-box:before {
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.4), 0 0 5px rgba(0, 0, 0, 0.4);
 }
 
 .jBox-Modal .jBox-content {
@@ -121,10 +129,10 @@
 }
 
 .jBox-Modal .jBox-title {
-  background: #fafafa;
-  border-bottom: 1px solid #eee;
   border-radius: 4px 4px 0 0;
   padding: 15px 20px;
+  background: #fafafa;
+  border-bottom: 1px solid #eee;
 }
 
 .jBox-Modal.jBox-closeButton-title .jBox-title {
@@ -138,8 +146,8 @@
 .jBox-closeButton {
   z-index: 1;
   cursor: pointer;
-  box-sizing: border-box;
   position: absolute;
+  box-sizing: border-box;
 }
 
 .jBox-closeButton svg {
@@ -158,10 +166,10 @@
 }
 
 .jBox-overlay .jBox-closeButton {
-  width: 40px;
-  height: 40px;
   top: 0;
   right: 0;
+  width: 40px;
+  height: 40px;
 }
 
 .jBox-overlay .jBox-closeButton svg {
@@ -180,10 +188,10 @@
 }
 
 .jBox-closeButton-title .jBox-closeButton {
-  width: 50px;
   top: 0;
-  bottom: 0;
   right: 0;
+  bottom: 0;
+  width: 50px;
 }
 
 .jBox-closeButton-title svg {
@@ -198,12 +206,12 @@
 }
 
 .jBox-closeButton-box .jBox-closeButton {
+  top: -8px;
+  right: -10px;
   width: 24px;
   height: 24px;
   background: #fff;
   border-radius: 50%;
-  top: -8px;
-  right: -10px;
 }
 
 .jBox-closeButton-box .jBox-closeButton svg {
@@ -214,14 +222,14 @@
 }
 
 .jBox-closeButton-box:before {
-  content: "";
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
+  content: '';
   position: absolute;
   top: -8px;
   right: -10px;
-  box-shadow: 0 0 5px #0000004d;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 .jBox-closeButton-box.jBox-pointerPosition-top:before {
@@ -237,22 +245,23 @@
 }
 
 .jBox-overlay {
-  width: 100%;
-  height: 100%;
-  background-color: #000000d1;
   position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.82);
 }
 
 .jBox-footer {
   background: #fafafa;
   border-top: 1px solid #eee;
-  border-radius: 0 0 3px 3px;
   padding: 8px 10px;
+  border-radius: 0 0 3px 3px;
 }
 
-body[class^="jBox-blockScroll-"], body[class*=" jBox-blockScroll-"] {
+body[class^="jBox-blockScroll-"],
+body[class*=" jBox-blockScroll-"] {
   overflow: hidden;
 }
 
@@ -271,57 +280,58 @@ body[class^="jBox-blockScroll-"], body[class*=" jBox-blockScroll-"] {
 }
 
 .jBox-loading-spinner .jBox-content {
-  opacity: 0;
   min-height: 38px !important;
   min-width: 38px !important;
+  opacity: 0;
 }
 
 .jBox-spinner {
   box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
   width: 24px;
   height: 24px;
   margin-top: -12px;
   margin-left: -12px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
 }
 
 .jBox-spinner:before {
+  display: block;
   box-sizing: border-box;
-  content: "";
+  content: '';
   width: 24px;
   height: 24px;
-  border: 2px solid #0003;
-  border-top-color: #000c;
   border-radius: 50%;
-  animation: .6s linear infinite jBoxLoading;
-  display: block;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-top-color: rgba(0, 0, 0, 0.8);
+  animation: jBoxLoading .6s linear infinite;
 }
 
 .jBox-countdown {
-  z-index: 0;
-  opacity: .2;
-  height: 3px;
-  background: #000;
   border-radius: 4px 4px 0 0;
+  z-index: 0;
+  background: #000;
+  opacity: .2;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
+  height: 3px;
   overflow: hidden;
 }
 
 .jBox-countdown-inner {
-  width: 100%;
-  height: 3px;
-  background: #fff;
-  position: absolute;
   top: 0;
   right: 0;
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  background: #fff;
 }
 
-[class^="jBox-animated-"], [class*=" jBox-animated-"] {
+[class^="jBox-animated-"],
+[class*=" jBox-animated-"] {
   animation-fill-mode: both;
 }
 
@@ -330,25 +340,31 @@ body[class^="jBox-blockScroll-"], body[class*=" jBox-blockScroll-"] {
     transform: scale(1);
   }
 
-  10%, 20% {
-    transform: scale(.8)rotate(-4deg);
+  10%,
+  20% {
+    transform: scale(0.8) rotate(-4deg);
   }
 
-  30%, 50%, 70%, 90% {
-    transform: scale(1.2)rotate(4deg);
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: scale(1.2) rotate(4deg);
   }
 
-  40%, 60%, 80% {
-    transform: scale(1.2)rotate(-4deg);
+  40%,
+  60%,
+  80% {
+    transform: scale(1.2) rotate(-4deg);
   }
 
   100% {
-    transform: scale(1)rotate(0);
+    transform: scale(1) rotate(0);
   }
 }
 
 .jBox-animated-tada {
-  animation: 1s jBox-tada;
+  animation: jBox-tada 1s;
 }
 
 @keyframes jBox-tadaSmall {
@@ -356,57 +372,71 @@ body[class^="jBox-blockScroll-"], body[class*=" jBox-blockScroll-"] {
     transform: scale(1);
   }
 
-  10%, 20% {
-    transform: scale(.9)rotate(-2deg);
+  10%,
+  20% {
+    transform: scale(0.9) rotate(-2deg);
   }
 
-  30%, 50%, 70%, 90% {
-    transform: scale(1.1)rotate(2deg);
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: scale(1.1) rotate(2deg);
   }
 
-  40%, 60%, 80% {
-    transform: scale(1.1)rotate(-2deg);
+  40%,
+  60%,
+  80% {
+    transform: scale(1.1) rotate(-2deg);
   }
 
   100% {
-    transform: scale(1)rotate(0);
+    transform: scale(1) rotate(0);
   }
 }
 
 .jBox-animated-tadaSmall {
-  animation: 1s jBox-tadaSmall;
+  animation: jBox-tadaSmall 1s;
 }
 
 @keyframes jBox-flash {
-  0%, 50%, 100% {
+
+  0%,
+  50%,
+  100% {
     opacity: 1;
   }
 
-  25%, 75% {
+  25%,
+  75% {
     opacity: 0;
   }
 }
 
 .jBox-animated-flash {
-  animation: .5s jBox-flash;
+  animation: jBox-flash .5s;
 }
 
 @keyframes jBox-shake {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateX(0);
   }
 
-  20%, 60% {
+  20%,
+  60% {
     transform: translateX(-6px);
   }
 
-  40%, 80% {
+  40%,
+  80% {
     transform: translateX(6px);
   }
 }
 
 .jBox-animated-shake {
-  animation: .4s jBox-shake;
+  animation: jBox-shake .4s;
 }
 
 @keyframes jBox-pulseUp {
@@ -424,7 +454,7 @@ body[class^="jBox-blockScroll-"], body[class*=" jBox-blockScroll-"] {
 }
 
 .jBox-animated-pulseUp {
-  animation: .25s jBox-pulseUp;
+  animation: jBox-pulseUp .25s;
 }
 
 @keyframes jBox-pulseDown {
@@ -433,7 +463,7 @@ body[class^="jBox-blockScroll-"], body[class*=" jBox-blockScroll-"] {
   }
 
   50% {
-    transform: scale(.85);
+    transform: scale(0.85);
   }
 
   100% {
@@ -442,7 +472,7 @@ body[class^="jBox-blockScroll-"], body[class*=" jBox-blockScroll-"] {
 }
 
 .jBox-animated-pulseDown {
-  animation: .25s jBox-pulseDown;
+  animation: jBox-pulseDown .25s;
 }
 
 @keyframes jBox-popIn {
@@ -460,7 +490,7 @@ body[class^="jBox-blockScroll-"], body[class*=" jBox-blockScroll-"] {
 }
 
 .jBox-animated-popIn {
-  animation: .25s jBox-popIn;
+  animation: jBox-popIn .25s;
 }
 
 @keyframes jBox-popOut {
@@ -478,7 +508,7 @@ body[class^="jBox-blockScroll-"], body[class*=" jBox-blockScroll-"] {
 }
 
 .jBox-animated-popOut {
-  animation: .25s jBox-popOut;
+  animation: jBox-popOut .25s;
 }
 
 @keyframes jBox-fadeIn {
@@ -492,7 +522,7 @@ body[class^="jBox-blockScroll-"], body[class*=" jBox-blockScroll-"] {
 }
 
 .jBox-animated-fadeIn {
-  animation: .2s jBox-fadeIn;
+  animation: jBox-fadeIn .2s;
 }
 
 @keyframes jBox-fadeOut {
@@ -506,7 +536,7 @@ body[class^="jBox-blockScroll-"], body[class*=" jBox-blockScroll-"] {
 }
 
 .jBox-animated-fadeOut {
-  animation: .2s jBox-fadeOut;
+  animation: jBox-fadeOut .2s;
 }
 
 @keyframes jBox-slideUp {
@@ -515,13 +545,13 @@ body[class^="jBox-blockScroll-"], body[class*=" jBox-blockScroll-"] {
   }
 
   100% {
-    opacity: 0;
     transform: translateY(-300px);
+    opacity: 0;
   }
 }
 
 .jBox-animated-slideUp {
-  animation: .4s jBox-slideUp;
+  animation: jBox-slideUp .4s;
 }
 
 @keyframes jBox-slideRight {
@@ -530,13 +560,13 @@ body[class^="jBox-blockScroll-"], body[class*=" jBox-blockScroll-"] {
   }
 
   100% {
-    opacity: 0;
     transform: translateX(300px);
+    opacity: 0;
   }
 }
 
 .jBox-animated-slideRight {
-  animation: .4s jBox-slideRight;
+  animation: jBox-slideRight .4s;
 }
 
 @keyframes jBox-slideDown {
@@ -545,13 +575,13 @@ body[class^="jBox-blockScroll-"], body[class*=" jBox-blockScroll-"] {
   }
 
   100% {
-    opacity: 0;
     transform: translateY(300px);
+    opacity: 0;
   }
 }
 
 .jBox-animated-slideDown {
-  animation: .4s jBox-slideDown;
+  animation: jBox-slideDown .4s;
 }
 
 @keyframes jBox-slideLeft {
@@ -560,13 +590,13 @@ body[class^="jBox-blockScroll-"], body[class*=" jBox-blockScroll-"] {
   }
 
   100% {
-    opacity: 0;
     transform: translateX(-300px);
+    opacity: 0;
   }
 }
 
 .jBox-animated-slideLeft {
-  animation: .4s jBox-slideLeft;
+  animation: jBox-slideLeft .4s;
 }
 
 .jBox-Confirm .jBox-content {
@@ -585,95 +615,97 @@ body[class^="jBox-blockScroll-"], body[class*=" jBox-blockScroll-"] {
 }
 
 .jBox-Confirm-button {
+  display: block;
   float: left;
   cursor: pointer;
   text-align: center;
   width: 50%;
-  height: 46px;
-  box-sizing: border-box;
-  padding: 0 10px;
   line-height: 46px;
-  transition: color .2s, background-color .2s;
-  display: block;
+  height: 46px;
   overflow: hidden;
+  padding: 0 10px;
+  transition: color .2s, background-color .2s;
+  box-sizing: border-box;
 }
 
 .jBox-Confirm-button-cancel {
-  color: #666;
-  background: #ddd;
   border-bottom-left-radius: 4px;
+  background: #ddd;
+  color: #666;
 }
 
-.jBox-Confirm-button-cancel:hover, .jBox-Confirm-button-cancel:active {
+.jBox-Confirm-button-cancel:hover,
+.jBox-Confirm-button-cancel:active {
   background: #ccc;
 }
 
 .jBox-Confirm-button-cancel:active {
-  box-shadow: inset 0 1px 3px #0003;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .jBox-Confirm-button-submit {
-  color: #fff;
-  background: #7d0;
   border-bottom-right-radius: 4px;
+  background: #7d0;
+  color: #fff;
 }
 
-.jBox-Confirm-button-submit:hover, .jBox-Confirm-button-submit:active {
+.jBox-Confirm-button-submit:hover,
+.jBox-Confirm-button-submit:active {
   background: #6c0;
 }
 
 .jBox-Confirm-button-submit:active {
-  box-shadow: inset 0 1px 3px #0003;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .jBox-Image .jBox-container {
-  background-color: #0000;
+  background-color: transparent;
 }
 
 .jBox-Image .jBox-content {
+  padding: 0;
   width: 100%;
   height: 100%;
-  padding: 0;
 }
 
 .jBox-image-container {
+  background: center center no-repeat;
+  position: absolute;
   width: 100%;
   height: 100%;
   opacity: 0;
-  background: center no-repeat;
-  position: absolute;
 }
 
 .jBox-image-label-wrapper {
-  height: 40px;
-  z-index: 100;
-  display: flex;
   position: absolute;
   top: 100%;
   left: 0;
   right: 0;
+  height: 40px;
+  z-index: 100;
+  display: flex;
 }
 
 .jBox-image-label-container {
-  flex: 1;
   position: relative;
+  flex: 1;
 }
 
 .jBox-image-label {
   box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  bottom: 0;
   width: 100%;
   text-align: center;
   color: #fff;
-  opacity: 0;
-  z-index: 0;
-  pointer-events: none;
   padding: 8px 12px;
   font-size: 15px;
   line-height: 24px;
   transition: opacity .36s;
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .jBox-image-label.expanded {
@@ -697,20 +729,22 @@ body[class^="jBox-blockScroll-"], body[class*=" jBox-blockScroll-"] {
   }
 }
 
-.jBox-image-pointer-next, .jBox-image-pointer-prev {
+.jBox-image-pointer-next,
+.jBox-image-pointer-prev {
+  flex-shrink: 0;
   width: 40px;
   height: 40px;
   cursor: pointer;
   opacity: .8;
-  -webkit-user-select: none;
+  transition: opacity .2s;
+  background: no-repeat center center url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ijc0LjcgMjI0IDE4LjcgMzIiPg0KPHBhdGggZmlsbD0iI2ZmZmZmZiIgZD0iTTkzLDIyNy40TDgwLjQsMjQwTDkzLDI1Mi42YzAuNCwwLjQsMC40LDEuMSwwLDEuNWwtMS42LDEuNmMtMC40LDAuNC0xLDAuNS0xLjUsMEw3NSwyNDAuN2MtMC40LTAuNC0wLjUtMSwwLTEuNWwxNC45LTE0LjljMC40LTAuNCwxLTAuNCwxLjUsMGwxLjYsMS42QzkzLjUsMjI2LjQsOTMuNCwyMjcsOTMsMjI3LjR6Ii8+DQo8L3N2Zz4=);
+  background-size: 11px auto;
   user-select: none;
   z-index: 1;
-  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ijc0LjcgMjI0IDE4LjcgMzIiPg0KPHBhdGggZmlsbD0iI2ZmZmZmZiIgZD0iTTkzLDIyNy40TDgwLjQsMjQwTDkzLDI1Mi42YzAuNCwwLjQsMC40LDEuMSwwLDEuNWwtMS42LDEuNmMtMC40LDAuNC0xLDAuNS0xLjUsMEw3NSwyNDAuN2MtMC40LTAuNC0wLjUtMSwwLTEuNWwxNC45LTE0LjljMC40LTAuNCwxLTAuNCwxLjUsMGwxLjYsMS42QzkzLjUsMjI2LjQsOTMuNCwyMjcsOTMsMjI3LjR6Ii8+DQo8L3N2Zz4=") center / 11px no-repeat;
-  flex-shrink: 0;
-  transition: opacity .2s;
 }
 
-.jBox-image-pointer-next:hover, .jBox-image-pointer-prev:hover {
+.jBox-image-pointer-next:hover,
+.jBox-image-pointer-prev:hover {
   opacity: 1;
 }
 
@@ -719,13 +753,13 @@ body[class^="jBox-blockScroll-"], body[class*=" jBox-blockScroll-"] {
 }
 
 .jBox-image-counter-container {
+  flex-shrink: 0;
   white-space: nowrap;
   height: 40px;
+  line-height: 40px;
+  font-size: 13px;
   color: #fff;
   text-align: right;
-  flex-shrink: 0;
-  font-size: 13px;
-  line-height: 40px;
   display: none;
 }
 
@@ -733,51 +767,55 @@ body[class^="jBox-blockScroll-"], body[class*=" jBox-blockScroll-"] {
   display: block;
 }
 
-.jBox-overlay.jBox-overlay-Image, .jBox-image-not-found {
+.jBox-overlay.jBox-overlay-Image {
+  background: #000;
+}
+
+.jBox-image-not-found {
   background: #000;
 }
 
 .jBox-image-not-found:before {
-  content: "";
+  content: '';
   box-sizing: border-box;
+  display: block;
   width: 80px;
   height: 80px;
-  border: 5px solid #222;
-  border-radius: 50%;
   margin-top: -40px;
   margin-left: -40px;
-  display: block;
   position: absolute;
   top: 50%;
   left: 50%;
+  border: 5px solid #222;
+  border-radius: 50%;
 }
 
 .jBox-image-not-found:after {
-  content: "";
+  content: '';
+  display: block;
   box-sizing: content-box;
   z-index: auto;
   width: 6px;
   height: 74px;
-  transform-origin: 50% 50% 0;
-  background: #222;
   margin-top: -37px;
   margin-left: -3px;
-  display: block;
   position: absolute;
   top: 50%;
   left: 50%;
+  background: #222;
   transform: rotateZ(45deg);
+  transform-origin: 50% 50% 0;
 }
 
 .jBox-image-download-button-wrapper {
-  height: 40px;
-  cursor: pointer;
-  opacity: .8;
-  transition: opacity .2s;
-  display: flex;
   position: absolute;
   top: -40px;
   right: 35px;
+  height: 40px;
+  display: flex;
+  cursor: pointer;
+  opacity: .8;
+  transition: opacity .2s;
 }
 
 .jBox-image-download-button-wrapper:hover {
@@ -787,15 +825,16 @@ body[class^="jBox-blockScroll-"], body[class*=" jBox-blockScroll-"] {
 .jBox-image-download-button-icon {
   width: 40px;
   height: 40px;
-  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNjQwIj48cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNNDE2IDI1NnYtMTkyaC0xOTJ2MTkyaC0xNjBsMjU2IDI1NiAyNTYtMjU2aC0xNjB6TTAgNTc2aDY0MHY2NGgtNjQwdi02NHoiPjwvcGF0aD48L3N2Zz4=") center / 60% no-repeat;
+  background: center center no-repeat url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNjQwIj48cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNNDE2IDI1NnYtMTkyaC0xOTJ2MTkyaC0xNjBsMjU2IDI1NiAyNTYtMjU2aC0xNjB6TTAgNTc2aDY0MHY2NGgtNjQwdi02NHoiPjwvcGF0aD48L3N2Zz4=);
+  background-size: 60%;
 }
 
 .jBox-image-download-button-text {
   white-space: nowrap;
-  color: #fff;
-  padding: 0 10px 0 0;
-  font-size: 14px;
   line-height: 40px;
+  padding: 0 10px 0 0;
+  color: #fff;
+  font-size: 14px;
 }
 
 @keyframes jBoxImageLoading {
@@ -805,18 +844,18 @@ body[class^="jBox-blockScroll-"], body[class*=" jBox-blockScroll-"] {
 }
 
 .jBox-image-loading:before {
-  content: "";
-  width: 32px;
-  height: 32px;
-  border: 4px solid #333;
-  border-bottom-color: #666;
-  border-radius: 50%;
-  margin-top: -16px;
-  margin-left: -16px;
-  animation: 1.2s linear infinite jBoxImageLoading;
+  content: '';
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 32px;
+  height: 32px;
+  margin-top: -16px;
+  margin-left: -16px;
+  border: 4px solid #333;
+  border-bottom-color: #666;
+  animation: jBoxImageLoading 1.2s linear infinite;
+  border-radius: 50%;
 }
 
 .jBox-Notice {
@@ -825,7 +864,7 @@ body[class^="jBox-blockScroll-"], body[class*=" jBox-blockScroll-"] {
 
 .jBox-Notice .jBox-container {
   border-radius: 4px;
-  box-shadow: inset 1px 1px #ffffff40, inset -1px -1px #0000001a;
+  box-shadow: inset 1px 1px 0 0 rgba(255, 255, 255, 0.25), inset -1px -1px 0 0 rgba(0, 0, 0, 0.1);
 }
 
 .jBox-Notice .jBox-content {
@@ -885,7 +924,8 @@ body[class^="jBox-blockScroll-"], body[class*=" jBox-blockScroll-"] {
   background: #000;
 }
 
-.jBox-Notice.jBox-Notice-black.jBox-closeButton-title.jBox-hasTitle .jBox-closeButton path, .jBox-Notice.jBox-Notice-black.jBox-closeButton-title.jBox-hasTitle .jBox-closeButton:hover path {
+.jBox-Notice.jBox-Notice-black.jBox-closeButton-title.jBox-hasTitle .jBox-closeButton path,
+.jBox-Notice.jBox-Notice-black.jBox-closeButton-title.jBox-hasTitle .jBox-closeButton:hover path {
   fill: #fff;
 }
 
@@ -894,7 +934,8 @@ body[class^="jBox-blockScroll-"], body[class*=" jBox-blockScroll-"] {
   background: #f6f6f6;
 }
 
-.jBox-Notice.jBox-Notice-gray.jBox-closeButton-title.jBox-hasTitle .jBox-closeButton path, .jBox-Notice.jBox-Notice-gray.jBox-closeButton-title.jBox-hasTitle .jBox-closeButton:hover path {
+.jBox-Notice.jBox-Notice-gray.jBox-closeButton-title.jBox-hasTitle .jBox-closeButton path,
+.jBox-Notice.jBox-Notice-gray.jBox-closeButton-title.jBox-hasTitle .jBox-closeButton:hover path {
   fill: #222;
 }
 
@@ -903,7 +944,8 @@ body[class^="jBox-blockScroll-"], body[class*=" jBox-blockScroll-"] {
   background: #d00;
 }
 
-.jBox-Notice.jBox-Notice-red.jBox-closeButton-title.jBox-hasTitle .jBox-closeButton path, .jBox-Notice.jBox-Notice-red.jBox-closeButton-title.jBox-hasTitle .jBox-closeButton:hover path {
+.jBox-Notice.jBox-Notice-red.jBox-closeButton-title.jBox-hasTitle .jBox-closeButton path,
+.jBox-Notice.jBox-Notice-red.jBox-closeButton-title.jBox-hasTitle .jBox-closeButton:hover path {
   fill: #fff;
 }
 
@@ -912,7 +954,8 @@ body[class^="jBox-blockScroll-"], body[class*=" jBox-blockScroll-"] {
   background: #5d0;
 }
 
-.jBox-Notice.jBox-Notice-green.jBox-closeButton-title.jBox-hasTitle .jBox-closeButton path, .jBox-Notice.jBox-Notice-green.jBox-closeButton-title.jBox-hasTitle .jBox-closeButton:hover path {
+.jBox-Notice.jBox-Notice-green.jBox-closeButton-title.jBox-hasTitle .jBox-closeButton path,
+.jBox-Notice.jBox-Notice-green.jBox-closeButton-title.jBox-hasTitle .jBox-closeButton:hover path {
   fill: #fff;
 }
 
@@ -921,7 +964,8 @@ body[class^="jBox-blockScroll-"], body[class*=" jBox-blockScroll-"] {
   background: #49d;
 }
 
-.jBox-Notice.jBox-Notice-blue.jBox-closeButton-title.jBox-hasTitle .jBox-closeButton path, .jBox-Notice.jBox-Notice-blue.jBox-closeButton-title.jBox-hasTitle .jBox-closeButton:hover path {
+.jBox-Notice.jBox-Notice-blue.jBox-closeButton-title.jBox-hasTitle .jBox-closeButton path,
+.jBox-Notice.jBox-Notice-blue.jBox-closeButton-title.jBox-hasTitle .jBox-closeButton:hover path {
   fill: #fff;
 }
 
@@ -930,11 +974,13 @@ body[class^="jBox-blockScroll-"], body[class*=" jBox-blockScroll-"] {
   background: #fd0;
 }
 
-.jBox-Notice.jBox-Notice-yellow.jBox-closeButton-title.jBox-hasTitle .jBox-closeButton path, .jBox-Notice.jBox-Notice-yellow.jBox-closeButton-title.jBox-hasTitle .jBox-closeButton:hover path {
+.jBox-Notice.jBox-Notice-yellow.jBox-closeButton-title.jBox-hasTitle .jBox-closeButton path,
+.jBox-Notice.jBox-Notice-yellow.jBox-closeButton-title.jBox-hasTitle .jBox-closeButton:hover path {
   fill: #fff;
 }
 
-.jBox-NoticeFancy .jBox-content, .jBox-NoticeFancy .jBox-title {
+.jBox-NoticeFancy .jBox-content,
+.jBox-NoticeFancy .jBox-title {
   padding-left: 25px;
 }
 
@@ -944,18 +990,19 @@ body[class^="jBox-blockScroll-"], body[class*=" jBox-blockScroll-"] {
 }
 
 .jBox-NoticeFancy.jBox-Notice-color .jBox-container:after {
-  content: "";
-  width: 8px;
-  background-image: linear-gradient(45deg, #fff6 25%, #0000 25% 50%, #fff6 50% 75%, #0000 75%, #0000);
-  background-size: 14px 14px;
-  border-radius: 4px 0 0 4px;
+  content: '';
   position: absolute;
   top: 0;
-  bottom: 0;
   left: 0;
+  bottom: 0;
+  width: 8px;
+  border-radius: 4px 0 0 4px;
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);
+  background-size: 14px 14px;
 }
 
-.jBox-NoticeFancy.jBox-Notice-black .jBox-container:after, .jBox-NoticeFancy.jBox-Notice-gray .jBox-container:after {
+.jBox-NoticeFancy.jBox-Notice-black .jBox-container:after,
+.jBox-NoticeFancy.jBox-Notice-gray .jBox-container:after {
   background-color: #888;
 }
 
@@ -976,11 +1023,12 @@ body[class^="jBox-blockScroll-"], body[class*=" jBox-blockScroll-"] {
 }
 
 .jBox-NoticeFancy .jBox-countdown {
-  border-radius: 0 4px 0 0;
   left: 8px;
+  border-radius: 0 4px 0 0;
 }
 
-.jBox-TooltipBorder .jBox-container, .jBox-TooltipBorder .jBox-pointer:after {
+.jBox-TooltipBorder .jBox-container,
+.jBox-TooltipBorder .jBox-pointer:after {
   border: 2px solid #49d;
 }
 
@@ -989,21 +1037,25 @@ body[class^="jBox-blockScroll-"], body[class*=" jBox-blockScroll-"] {
   height: 22px;
 }
 
-.jBox-TooltipBorder .jBox-pointer-top, .jBox-TooltipBorder .jBox-pointer-bottom {
+.jBox-TooltipBorder .jBox-pointer-top,
+.jBox-TooltipBorder .jBox-pointer-bottom {
   width: 34px;
   height: 13px;
 }
 
-.jBox-TooltipBorder .jBox-pointer-top:after, .jBox-TooltipBorder .jBox-pointer-bottom:after {
+.jBox-TooltipBorder .jBox-pointer-top:after,
+.jBox-TooltipBorder .jBox-pointer-bottom:after {
   left: 6px;
 }
 
-.jBox-TooltipBorder .jBox-pointer-left, .jBox-TooltipBorder .jBox-pointer-right {
+.jBox-TooltipBorder .jBox-pointer-left,
+.jBox-TooltipBorder .jBox-pointer-right {
   width: 13px;
   height: 34px;
 }
 
-.jBox-TooltipBorder .jBox-pointer-left:after, .jBox-TooltipBorder .jBox-pointer-right:after {
+.jBox-TooltipBorder .jBox-pointer-left:after,
+.jBox-TooltipBorder .jBox-pointer-right:after {
   top: 6px;
 }
 
@@ -1015,23 +1067,25 @@ body[class^="jBox-blockScroll-"], body[class*=" jBox-blockScroll-"] {
 
 .jBox-TooltipBorderThick .jBox-container {
   box-shadow: none;
-  border: 4px solid #ccc;
   border-radius: 8px;
+  border: 4px solid #ccc;
 }
 
 .jBox-TooltipBorderThick .jBox-pointer:after {
   box-shadow: none;
+  border: 4px solid #ccc;
   width: 24px;
   height: 24px;
-  border: 4px solid #ccc;
 }
 
-.jBox-TooltipBorderThick .jBox-pointer-top, .jBox-TooltipBorderThick .jBox-pointer-bottom {
+.jBox-TooltipBorderThick .jBox-pointer-top,
+.jBox-TooltipBorderThick .jBox-pointer-bottom {
   width: 38px;
   height: 13px;
 }
 
-.jBox-TooltipBorderThick .jBox-pointer-left, .jBox-TooltipBorderThick .jBox-pointer-right {
+.jBox-TooltipBorderThick .jBox-pointer-left,
+.jBox-TooltipBorderThick .jBox-pointer-right {
   width: 13px;
   height: 38px;
 }
@@ -1043,18 +1097,22 @@ body[class^="jBox-blockScroll-"], body[class*=" jBox-blockScroll-"] {
 }
 
 .jBox-TooltipDark .jBox-container {
-  color: #fff;
-  background: #000;
   border-radius: 4px;
-  box-shadow: 0 0 6px #0006;
+  background: #000;
+  color: #fff;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
 }
 
-.jBox-TooltipDark .jBox-pointer:after, .jBox-TooltipDark .jBox-closeButton {
+.jBox-TooltipDark .jBox-pointer:after {
+  background: #000;
+}
+
+.jBox-TooltipDark .jBox-closeButton {
   background: #000;
 }
 
 .jBox-TooltipDark.jBox-closeButton-box:before {
-  box-shadow: 0 0 6px #0006;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
 }
 
 .jBox-TooltipDark.jBox-closeButton-box .jBox-closeButton path {
@@ -1074,11 +1132,11 @@ body[class^="jBox-blockScroll-"], body[class*=" jBox-blockScroll-"] {
 }
 
 .jBox-TooltipError .jBox-container {
-  color: #fff;
-  background: #d00;
   border-radius: 2px;
-  font-size: 13px;
+  background: #d00;
+  color: #fff;
   font-weight: bold;
+  font-size: 13px;
 }
 
 .jBox-TooltipError .jBox-content {
@@ -1087,24 +1145,26 @@ body[class^="jBox-blockScroll-"], body[class*=" jBox-blockScroll-"] {
 }
 
 .jBox-TooltipError .jBox-pointer:after {
+  background: #d00;
   width: 20px;
   height: 20px;
-  background: #d00;
 }
 
-.jBox-TooltipError .jBox-pointer-top, .jBox-TooltipError .jBox-pointer-bottom {
+.jBox-TooltipError .jBox-pointer-top,
+.jBox-TooltipError .jBox-pointer-bottom {
   width: 22px;
   height: 8px;
 }
 
-.jBox-TooltipError .jBox-pointer-right, .jBox-TooltipError .jBox-pointer-left {
+.jBox-TooltipError .jBox-pointer-right,
+.jBox-TooltipError .jBox-pointer-left {
   width: 8px;
   height: 22px;
 }
 
 .jBox-TooltipError .jBox-pointer-top:after {
-  top: 6px;
   left: 1px;
+  top: 6px;
 }
 
 .jBox-TooltipError .jBox-pointer-right:after {
@@ -1113,8 +1173,8 @@ body[class^="jBox-blockScroll-"], body[class*=" jBox-blockScroll-"] {
 }
 
 .jBox-TooltipError .jBox-pointer-bottom:after {
-  bottom: 6px;
   left: 1px;
+  bottom: 6px;
 }
 
 .jBox-TooltipError .jBox-pointer-left:after {
@@ -1140,19 +1200,21 @@ body[class^="jBox-blockScroll-"], body[class*=" jBox-blockScroll-"] {
   height: 20px;
 }
 
-.jBox-TooltipSmall .jBox-pointer-top, .jBox-TooltipSmall .jBox-pointer-bottom {
+.jBox-TooltipSmall .jBox-pointer-top,
+.jBox-TooltipSmall .jBox-pointer-bottom {
   width: 22px;
   height: 8px;
 }
 
-.jBox-TooltipSmall .jBox-pointer-right, .jBox-TooltipSmall .jBox-pointer-left {
+.jBox-TooltipSmall .jBox-pointer-right,
+.jBox-TooltipSmall .jBox-pointer-left {
   width: 8px;
   height: 22px;
 }
 
 .jBox-TooltipSmall .jBox-pointer-top:after {
-  top: 6px;
   left: 1px;
+  top: 6px;
 }
 
 .jBox-TooltipSmall .jBox-pointer-right:after {
@@ -1161,8 +1223,8 @@ body[class^="jBox-blockScroll-"], body[class*=" jBox-blockScroll-"] {
 }
 
 .jBox-TooltipSmall .jBox-pointer-bottom:after {
-  bottom: 6px;
   left: 1px;
+  bottom: 6px;
 }
 
 .jBox-TooltipSmall .jBox-pointer-left:after {
@@ -1175,10 +1237,10 @@ body[class^="jBox-blockScroll-"], body[class*=" jBox-blockScroll-"] {
 }
 
 .jBox-TooltipSmallGray .jBox-container {
-  background-image: linear-gradient(#fafafa, #f2f2f2);
-  border-radius: 12px;
   font-size: 13px;
   line-height: 24px;
+  border-radius: 12px;
+  background-image: linear-gradient(to bottom, #fafafa, #f2f2f2);
 }
 
 .jBox-TooltipSmallGray .jBox-content {
@@ -1190,20 +1252,22 @@ body[class^="jBox-blockScroll-"], body[class*=" jBox-blockScroll-"] {
   height: 20px;
 }
 
-.jBox-TooltipSmallGray .jBox-pointer-top, .jBox-TooltipSmallGray .jBox-pointer-bottom {
+.jBox-TooltipSmallGray .jBox-pointer-top,
+.jBox-TooltipSmallGray .jBox-pointer-bottom {
   width: 22px;
   height: 8px;
 }
 
-.jBox-TooltipSmallGray .jBox-pointer-left, .jBox-TooltipSmallGray .jBox-pointer-right {
+.jBox-TooltipSmallGray .jBox-pointer-left,
+.jBox-TooltipSmallGray .jBox-pointer-right {
   width: 8px;
   height: 22px;
 }
 
 .jBox-TooltipSmallGray .jBox-pointer-top:after {
   background: #fafafa;
-  top: 6px;
   left: 1px;
+  top: 6px;
 }
 
 .jBox-TooltipSmallGray .jBox-pointer-right:after {
@@ -1213,8 +1277,8 @@ body[class^="jBox-blockScroll-"], body[class*=" jBox-blockScroll-"] {
 
 .jBox-TooltipSmallGray .jBox-pointer-bottom:after {
   background: #f2f2f2;
-  bottom: 6px;
   left: 1px;
+  bottom: 6px;
 }
 
 .jBox-TooltipSmallGray .jBox-pointer-left:after {
@@ -1222,4 +1286,4 @@ body[class^="jBox-blockScroll-"], body[class*=" jBox-blockScroll-"] {
   left: 6px;
 }
 
-/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=jBox.all.css.map */

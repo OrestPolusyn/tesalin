@@ -8479,7 +8479,6 @@ $4f50619a1c07ce9e$var$applyFocusVisiblePolyfill(document);
 
 
 var $2fGkg = parcelRequire("2fGkg");
-
 /*! @license ScrollReveal v4.0.9
 
 	Copyright 2021 Fisssion LLC.
